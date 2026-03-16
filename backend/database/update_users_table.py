@@ -1,0 +1,13 @@
+import sqlite3
+
+conn = sqlite3.connect("users.db")
+cursor = conn.cursor()
+
+try:
+    cursor.execute("ALTER TABLE users ADD COLUMN role TEXT DEFAULT 'user'")
+    print("Role column added successfully")
+except Exception as e:
+    print("Column may already exist:", e)
+
+conn.commit()
+conn.close()
