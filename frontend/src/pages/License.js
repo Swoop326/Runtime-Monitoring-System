@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_BASE_URL from "../config";
 
 function License() {
 
@@ -18,7 +19,7 @@ function License() {
 
     setLoading(true);
 
-    const res = await fetch("http://localhost:5000/activate-license", {
+    const res = await fetch(`${API_BASE_URL}/activate-license`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

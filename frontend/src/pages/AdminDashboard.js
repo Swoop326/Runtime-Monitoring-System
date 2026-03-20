@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import API_BASE_URL from "../config";
 
 function AdminDashboard() {
 
@@ -10,7 +11,7 @@ function AdminDashboard() {
   // Generate license
   const generateLicense = async () => {
 
-    const res = await fetch("http://localhost:5000/generate-license", {
+    const res = await fetch(`${API_BASE_URL}/generate-license`, {
       method: "POST"
     });
 
@@ -24,7 +25,7 @@ function AdminDashboard() {
   // Load all licenses
   const loadLicenses = async () => {
 
-    const res = await fetch("http://localhost:5000/licenses");
+    const res = await fetch(`${API_BASE_URL}/licenses`);
     const data = await res.json();
 
     setLicenses(data);
@@ -33,7 +34,7 @@ function AdminDashboard() {
   // Load runtime logs
   const loadLogs = async () => {
 
-    const res = await fetch("http://localhost:5000/logs");
+    const res = await fetch(`${API_BASE_URL}/logs`);
     const data = await res.json();
 
     setLogs(data);
@@ -42,7 +43,7 @@ function AdminDashboard() {
   // Load trust score
   const loadTrustScore = async () => {
 
-    const res = await fetch("http://localhost:5000/trust-scores");
+    const res = await fetch(`${API_BASE_URL}/trust-scores`);
     const data = await res.json();
 
     setTrustData(data);

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import API_BASE_URL from "../config";
 
 function Login() {
 
@@ -17,7 +18,7 @@ function Login() {
 
     try {
 
-      const res = await fetch("http://localhost:5000/login", {
+      const res = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import API_BASE_URL from "../config";
 
 function Dashboard() {
 
@@ -10,7 +11,7 @@ function Dashboard() {
 
     try {
 
-      const res = await fetch("http://localhost:5000/trust-scores");
+      const res = await fetch(`${API_BASE_URL}/trust-scores`);
       const data = await res.json();
 
       setSecurityData(data);
@@ -26,7 +27,7 @@ function Dashboard() {
   // Start monitoring when dashboard opens
   useEffect(() => {
 
-    fetch("http://localhost:5000/start-session", {
+    fetch(`${API_BASE_URL}/start-session`, {
       method: "POST"
     });
 
@@ -34,7 +35,7 @@ function Dashboard() {
 
     // Stop monitoring if page closes
     return () => {
-      fetch("http://localhost:5000/end-session", {
+      fetch(`${API_BASE_URL}/end-session`, {
         method: "POST"
       });
     };
@@ -45,7 +46,7 @@ function Dashboard() {
 
     try {
 
-      await fetch("http://localhost:5000/log-event", {
+      await fetch(`${API_BASE_URL}/log-event`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -70,7 +71,7 @@ function Dashboard() {
 
     try {
 
-      await fetch("http://localhost:5000/end-session", {
+      await fetch(`${API_BASE_URL}/end-session`, {
         method: "POST"
       });
 
