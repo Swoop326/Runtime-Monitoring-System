@@ -1,40 +1,68 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API_BASE_URL from "../config";
+import getDeviceId from "../utils/device";
 
 function Dashboard() {
 
   const navigate = useNavigate();
   const [securityData, setSecurityData] = useState(null);
+  const [prevScore, setPrevScore] = useState(null);
 
-  const loadSecurityStatus = async () => {
+  const checkAccess = async () => {
+  try {
 
-    try {
+    const res = await fetch(
+      `${API_BASE_URL}/trust-scores?device_id=${getDeviceId()}&license_key=${localStorage.getItem("licenseKey")}`
+    );
 
-      const res = await fetch(`${API_BASE_URL}/trust-scores`);
-      const data = await res.json();
+    const data = await res.json();
 
-      setSecurityData(data);
+    // 🚫 INVALID LICENSE
+    if (data.policy === "INVALID LICENSE") {
+      alert("Invalid License");
 
-    } catch (error) {
-
-      console.error("Error loading security status:", error);
-
+      localStorage.clear();
+      navigate("/license");
+      return;
     }
 
-  };
+    // ⚠️ DETECT MULTI DEVICE
+    if (prevScore !== null && data.trust_score < prevScore) {
+      alert("⚠️ Another device detected using your license!");
+    }
 
-  // Start monitoring when dashboard opens
+    // 🚫 BLOCK IF TOO LOW
+    if (data.trust_score < 30) {
+      alert("🚫 Access blocked due to suspicious activity");
+
+      localStorage.clear();
+      navigate("/license");
+      return;
+    }
+
+    setPrevScore(data.trust_score);
+    setSecurityData(data);
+
+  } catch (error) {
+    console.error("Error checking access:", error);
+  }
+};
+
   useEffect(() => {
 
     fetch(`${API_BASE_URL}/start-session`, {
       method: "POST"
     });
 
-    loadSecurityStatus();
+    checkAccess();
 
-    // Stop monitoring if page closes
+    // 🔥 REAL-TIME CHECK
+    const interval = setInterval(checkAccess, 1500);
+
     return () => {
+      clearInterval(interval);
+
       fetch(`${API_BASE_URL}/end-session`, {
         method: "POST"
       });
@@ -42,6 +70,7 @@ function Dashboard() {
 
   }, []);
 
+  // ✅ FIXED HERE (license_key added)
   const sendEvent = async (eventName) => {
 
     try {
@@ -52,14 +81,13 @@ function Dashboard() {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          event: eventName
+          event: eventName,
+          license_key: localStorage.getItem("licenseKey"), // 🔥 IMPORTANT
+          device_id: getDeviceId()
         })
       });
 
-      console.log("Event sent:", eventName);
-
-      // refresh trust score after event
-      loadSecurityStatus();
+      checkAccess();
 
     } catch (error) {
       console.error("Error sending event:", error);
@@ -69,95 +97,47 @@ function Dashboard() {
 
   const handleLogout = async () => {
 
-    try {
+    await fetch(`${API_BASE_URL}/end-session`, { method: "POST" });
 
-      await fetch(`${API_BASE_URL}/end-session`, {
-        method: "POST"
-      });
-
-    } catch (error) {
-      console.error("Error ending session:", error);
-    }
+    const deviceId = localStorage.getItem("device_id");
 
     localStorage.clear();
+
+    // ✅ restore device id ALWAYS
+    if (deviceId) {
+      localStorage.setItem("device_id", deviceId);
+    }
+
     navigate("/");
-
-  };
-
-  const container = { display: "flex", height: "100vh" };
-  const sidebar = { width: "220px", backgroundColor: "#1e293b", color: "white", padding: "20px" };
-  const menuItem = { marginTop: "20px", cursor: "pointer", display: "block", color: "white", textDecoration: "none", background: "none", border: "none" };
-  const main = { flex: 1, padding: "40px", backgroundColor: "#f5f7fb" };
-  const card = { background: "white", padding: "25px", borderRadius: "10px", width: "250px", boxShadow: "0 5px 15px rgba(0,0,0,0.1)", textAlign: "center" };
-  const cardContainer = { display: "flex", gap: "20px", marginTop: "30px" };
-
-  const securityCard = {
-    background: "white",
-    padding: "20px",
-    borderRadius: "10px",
-    marginTop: "20px",
-    width: "300px",
-    boxShadow: "0 5px 15px rgba(0,0,0,0.1)"
   };
 
   return (
-    <div style={container}>
+    <div style={{ display: "flex", height: "100vh" }}>
 
-      <div style={sidebar}>
+      <div style={{ width: "220px", backgroundColor: "#1e293b", color: "white", padding: "20px" }}>
         <h2>AdaptiveDesk</h2>
 
-        <Link to="/dashboard" style={menuItem}>Dashboard</Link>
-        <Link to="/dashboard" style={menuItem}>Files</Link>
-        <Link to="/dashboard" style={menuItem}>Reports</Link>
-        <Link to="/profile" style={menuItem}>Profile</Link>
+        <Link to="/dashboard" style={{ marginTop: "20px", display: "block", color: "white" }}>Dashboard</Link>
+        <Link to="/profile" style={{ marginTop: "20px", display: "block", color: "white" }}>Profile</Link>
 
-        <button onClick={handleLogout} style={menuItem}>
-          Logout
-        </button>
+        <button onClick={handleLogout} style={{ marginTop: "20px" }}>Logout</button>
       </div>
 
-      <div style={main}>
+      <div style={{ flex: 1, padding: "40px" }}>
 
         <h1>Software Dashboard</h1>
-        <p>Welcome to AdaptiveDesk Licensed Software</p>
-
-        {/* Security Status Widget */}
 
         {securityData && (
-          <div style={securityCard}>
-            <h3>Security Status</h3>
-
+          <div>
             <p><b>Trust Score:</b> {securityData.trust_score}</p>
             <p><b>Policy:</b> {securityData.policy}</p>
-            <p><b>Events Detected:</b> {securityData.events_detected}</p>
-            <p><b>Device ID:</b> {securityData.device_id}</p>
+            <p><b>Device ID:</b> {getDeviceId()}</p>
           </div>
         )}
 
-        <div style={cardContainer}>
-
-          <div style={card}>
-            <h3>Upload File</h3>
-            <button onClick={() => sendEvent("file_upload")}>
-              Upload
-            </button>
-          </div>
-
-          <div style={card}>
-            <h3>Export Data</h3>
-            <button onClick={() => sendEvent("data_export")}>
-              Export
-            </button>
-          </div>
-
-          <div style={card}>
-            <h3>Generate Report</h3>
-            <button onClick={() => sendEvent("report_generated")}>
-              Generate
-            </button>
-          </div>
-
-        </div>
+        <button onClick={() => sendEvent("file_upload")}>Upload</button>
+        <button onClick={() => sendEvent("data_export")}>Export</button>
+        <button onClick={() => sendEvent("report_generated")}>Report</button>
 
       </div>
 

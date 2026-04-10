@@ -5,6 +5,7 @@ function AdminDashboard() {
 
   const [license, setLicense] = useState("");
   const [licenses, setLicenses] = useState([]);
+  const [selectedLicense, setSelectedLicense] = useState("");
   const [logs, setLogs] = useState([]);
   const [trustData, setTrustData] = useState(null);
 
@@ -18,11 +19,10 @@ function AdminDashboard() {
     const data = await res.json();
 
     setLicense(data.license_key);
-
-    loadLicenses(); // refresh license list
+    loadLicenses();
   };
 
-  // Load all licenses
+  // Load licenses
   const loadLicenses = async () => {
 
     const res = await fetch(`${API_BASE_URL}/licenses`);
@@ -31,30 +31,40 @@ function AdminDashboard() {
     setLicenses(data);
   };
 
-  // Load runtime logs
-  const loadLogs = async () => {
+  // Load logs for selected license
+  const loadLogs = async (licenseKey) => {
 
-    const res = await fetch(`${API_BASE_URL}/logs`);
+    if (!licenseKey) return;
+
+    const res = await fetch(`${API_BASE_URL}/logs?license_key=${licenseKey}`);
     const data = await res.json();
 
-    setLogs(data);
+    setLogs(Array.isArray(data) ? data : []);
   };
 
-  // Load trust score
-  const loadTrustScore = async () => {
+  // Load trust score for selected license
+  const loadTrustScore = async (licenseKey) => {
 
-    const res = await fetch(`${API_BASE_URL}/trust-scores`);
-    const data = await res.json();
+  const res = await fetch(
+    `${API_BASE_URL}/trust-scores?device_id=ADMIN&license_key=${licenseKey}`
+  );
 
-    setTrustData(data);
-  };
+  const data = await res.json();
+  setTrustData(data);
+};
 
-  // Run when page loads
   useEffect(() => {
     loadLicenses();
-    loadLogs();
-    loadTrustScore();
   }, []);
+
+  const handleSelect = (e) => {
+
+    const selected = e.target.value;
+    setSelectedLicense(selected);
+
+    loadLogs(selected);
+    loadTrustScore(selected);
+  };
 
   return (
     <div style={{ padding: "40px" }}>
@@ -80,7 +90,7 @@ function AdminDashboard() {
           <tr>
             <th>License Key</th>
             <th>Status</th>
-            <th>Device</th>
+            <th>Devices Used</th>
           </tr>
         </thead>
 
@@ -89,13 +99,30 @@ function AdminDashboard() {
             <tr key={index}>
               <td>{l.license_key}</td>
               <td>{l.active ? "Active" : "Inactive"}</td>
-              <td>{l.device_id || "Not Used"}</td>
+              <td>
+                {l.devices_used?.length > 0
+                  ? l.devices_used.join(", ")
+                  : "Not Used"}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
 
-      {/* RUNTIME LOGS */}
+      {/* SELECT LICENSE */}
+
+      <h2 style={{ marginTop: "40px" }}>Select User License</h2>
+
+      <select onChange={handleSelect} value={selectedLicense}>
+        <option value="">-- Select License --</option>
+        {licenses.map((l, index) => (
+          <option key={index} value={l.license_key}>
+            {l.license_key}
+          </option>
+        ))}
+      </select>
+
+      {/* LOGS */}
 
       <h2 style={{ marginTop: "40px" }}>Runtime Logs</h2>
 
@@ -116,15 +143,9 @@ function AdminDashboard() {
           borderRadius: "8px",
           width: "400px"
         }}>
-
-          <p><b>Device ID:</b> {trustData.device_id}</p>
-
           <p><b>Trust Score:</b> {trustData.trust_score}</p>
-
-          <p><b>Policy Decision:</b> {trustData.policy}</p>
-
-          <p><b>Runtime Events Detected:</b> {trustData.events_detected}</p>
-
+          <p><b>Policy:</b> {trustData.policy}</p>
+          <p><b>Events:</b> {trustData.events_detected}</p>
         </div>
       )}
 

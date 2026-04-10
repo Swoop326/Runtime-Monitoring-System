@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API_BASE_URL from "../config";
+import getDeviceId from "../utils/device";  // ✅ IMPORTANT
 
 function Login() {
 
@@ -18,104 +19,87 @@ function Login() {
 
     try {
 
+      // 🔥 ENSURE DEVICE ID IS CREATED & STORED
+      const deviceId = getDeviceId();
+
+      console.log("Device ID:", deviceId); // (optional debug)
+
       const res = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          email,
-          password
-        })
+        body: JSON.stringify({ email, password })
       });
 
       const data = await res.json();
 
       if (data.success) {
 
-      localStorage.setItem("isLoggedIn", "true");
-      localStorage.setItem("role", data.role);
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("role", data.role);
 
-      if (data.role === "admin") {
-        navigate("/admin");
-      } else {
-         navigate("/license");
-      }
-      } else {
+        // ✅ device_id already stored by getDeviceId()
+        localStorage.setItem("device_id", deviceId);
 
+        if (data.role === "admin") {
+          navigate("/admin");
+        } else {
+          // ✅ ALWAYS go to license (backend decides access)
+          navigate("/license");
+        }
+
+      } else {
         alert(data.message);
-
       }
 
     } catch (error) {
-
       console.error(error);
       alert("Login failed");
-
     }
 
   };
 
-  const container = {
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f5f7fb"
-  };
-
-  const card = {
-    background: "white",
-    padding: "40px",
-    borderRadius: "10px",
-    width: "350px",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-    textAlign: "center"
-  };
-
-  const input = {
-    width: "100%",
-    padding: "10px",
-    marginTop: "10px",
-    borderRadius: "5px",
-    border: "1px solid #ccc"
-  };
-
-  const button = {
-    width: "100%",
-    padding: "10px",
-    marginTop: "20px",
-    backgroundColor: "#4f46e5",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer"
-  };
-
   return (
-    <div style={container}>
+    <div style={{
+      height: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#f5f7fb"
+    }}>
 
-      <div style={card}>
+      <div style={{
+        background: "white",
+        padding: "40px",
+        borderRadius: "10px",
+        width: "350px",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+        textAlign: "center"
+      }}>
 
         <h2>AdaptiveDesk</h2>
         <p>Licensed Software Access</p>
 
         <input
-          style={input}
+          style={{ width: "100%", padding: "10px", marginTop: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
-          style={input}
+          style={{ width: "100%", padding: "10px", marginTop: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button style={button} onClick={handleLogin}>
+        <button
+          style={{ width: "100%", padding: "10px", marginTop: "20px", backgroundColor: "#4f46e5", color: "white", border: "none", borderRadius: "5px", cursor: "pointer" }}
+          onClick={handleLogin}
+        >
           Login
         </button>
 
@@ -124,7 +108,6 @@ function Login() {
         </p>
 
       </div>
-
     </div>
   );
 }

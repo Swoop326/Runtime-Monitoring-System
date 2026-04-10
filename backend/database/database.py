@@ -1,12 +1,4 @@
-import sqlite3
-
-DB_NAME = "database/licenses.db"
-
-
-def get_connection():
-    conn = sqlite3.connect(DB_NAME)
-    conn.row_factory = sqlite3.Row
-    return conn
+from database.mongo_connection import users_collection, licenses_collection
 
 
 # -------------------------
@@ -15,43 +7,42 @@ def get_connection():
 
 def create_license(license_key, created_at):
 
-    conn = get_connection()
-    cursor = conn.cursor()
-
-    cursor.execute("""
-    INSERT INTO licenses (license_key, active, device_id, created_at)
-    VALUES (?, ?, ?, ?)
-    """, (license_key, 0, None, created_at))
-
-    conn.commit()
-    conn.close()
+    licenses_collection.insert_one({
+        "license_key": license_key,
+        "active": False,
+        "devices_used": [],
+        "created_at": created_at
+    })
 
 
 def get_license(license_key):
 
-    conn = get_connection()
-    cursor = conn.cursor()
-
-    cursor.execute("SELECT * FROM licenses WHERE license_key=?", (license_key,))
-    row = cursor.fetchone()
-
-    conn.close()
-    return row
+    return licenses_collection.find_one({"license_key": license_key})
 
 
 def activate_license_db(license_key, device_id):
 
-    conn = get_connection()
-    cursor = conn.cursor()
+    license_data = get_license(license_key)
 
-    cursor.execute("""
-    UPDATE licenses
-    SET active=1, device_id=?
-    WHERE license_key=?
-    """, (device_id, license_key))
+    if not license_data:
+        return False
 
-    conn.commit()
-    conn.close()
+    devices = license_data.get("devices_used", [])
+
+    if device_id not in devices:
+        devices.append(device_id)
+
+    licenses_collection.update_one(
+        {"license_key": license_key},
+        {
+            "$set": {
+                "active": True,
+                "devices_used": devices
+            }
+        }
+    )
+
+    return True
 
 
 # -------------------------
@@ -60,25 +51,21 @@ def activate_license_db(license_key, device_id):
 
 def create_user(username, email, password):
 
-    conn = get_connection()
-    cursor = conn.cursor()
-
-    cursor.execute("""
-    INSERT INTO users (username, email, password)
-    VALUES (?, ?, ?)
-    """, (username, email, password))
-
-    conn.commit()
-    conn.close()
+    users_collection.insert_one({
+        "username": username,
+        "email": email,
+        "password": password,
+        "role": "user"
+    })
 
 
 def get_user(email):
 
-    conn = get_connection()
-    cursor = conn.cursor()
+    return users_collection.find_one({"email": email})
 
-    cursor.execute("SELECT * FROM users WHERE email=?", (email,))
-    user = cursor.fetchone()
+def update_devices(license_key, devices):
 
-    conn.close()
-    return user
+    licenses_collection.update_one(
+        {"license_key": license_key},
+        {"$set": {"devices_used": devices}}
+    )

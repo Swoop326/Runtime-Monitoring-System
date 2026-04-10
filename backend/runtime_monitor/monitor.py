@@ -47,9 +47,8 @@ def start_monitoring():
     heartbeat_thread.start()
 
 
-def record_event(event):
-
-    log_event(event, device=device_id)
+def record_event(event, license_key=None):
+    log_event(event, device=device_id, license_key=license_key)
 
 
 def stop_monitoring():

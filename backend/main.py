@@ -1,43 +1,48 @@
 from fastapi import FastAPI
 import uuid
 import datetime
-import sqlite3
+from fastapi import Request
 
-from runtime_monitor.monitor import start_monitoring, stop_monitoring
-from ml_model.anomaly_predictor import predict_anomaly
-from trust_score_policy_engine import RuntimeMetrics, TrustScoreEngine, PolicyEngine
 from fastapi.middleware.cors import CORSMiddleware
+
 from runtime_monitor.monitor import start_monitoring, stop_monitoring, record_event
 from runtime_monitor.device import get_device_id
-from database.database import activate_license_db
 
-USER_DB = "database/users.db"
+from ml_model.anomaly_predictor import predict_anomaly
+from trust_score_policy_engine import RuntimeMetrics, TrustScoreEngine, PolicyEngine
 
 from database.database import (
     create_license,
     get_license,
     activate_license_db,
-    create_user
+    create_user,
+    get_user,
+    update_devices
 )
+
+from database.mongo_connection import licenses_collection
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # allow all origins for demo
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
-# Home Endpoint
+# -------------------------
+# HOME
+# -------------------------
 @app.get("/")
 def home():
     return {"message": "Adaptive Runtime License Validation System Running"}
 
 
-# Generate License
+# -------------------------
+# LICENSE MANAGEMENT
+# -------------------------
 @app.post("/generate-license")
 def generate_license():
 
@@ -49,35 +54,65 @@ def generate_license():
     return {"license_key": license_key}
 
 
-# Activate License
 @app.post("/activate-license")
 def activate_license(data: dict):
 
     license_key = data.get("license_key")
-    device_id = get_device_id()
+    device_id = data.get("device_id")
+    override = data.get("override", False)   # 🔥 for switching device
 
     license_data = get_license(license_key)
 
     if not license_data:
         return {
             "success": False,
-            "message": "Invalid license key"
+            "message": "Invalid license"
         }
 
-    if license_data["active"] == 1:
+    devices = license_data.get("devices_used", [])
+
+    # ✅ FIRST TIME ACTIVATION
+    if len(devices) == 0:
+        update_devices(license_key, [device_id])
+
+        licenses_collection.update_one(
+            {"license_key": license_key},
+            {"$set": {"active": True}}
+        )
+
+        return {
+            "success": True,
+            "message": "License activated successfully"
+        }
+
+    # ✅ SAME DEVICE LOGIN (VERY IMPORTANT FIX)
+    if device_id in devices:
+        return {
+            "success": True,
+            "message": "Welcome back"
+        }
+
+    # 🔥 DIFFERENT DEVICE → ASK OVERRIDE
+    if not override:
         return {
             "success": False,
-            "message": "License already used"
+            "override_required": True,
+            "message": "License already active on another device. Switch?"
         }
 
-    activate_license_db(license_key, device_id)
+    # 🔥 OVERRIDE = TRUE → SWITCH DEVICE
+    update_devices(license_key, [device_id])
+
+    licenses_collection.update_one(
+        {"license_key": license_key},
+        {"$set": {"active": True}}
+    )
 
     return {
         "success": True,
-        "message": "License activated successfully"
+        "message": "Device switched successfully"
     }
 
-# Validate License
 @app.post("/validate-license")
 def validate_license_api(data: dict):
 
@@ -89,29 +124,114 @@ def validate_license_api(data: dict):
     if not license_data:
         return {"valid": False}
 
-    if license_data["active"] == 0:
+    if not license_data.get("active"):
         return {"valid": False}
 
-    if license_data["device_id"] != device_id:
+    if device_id not in license_data.get("devices_used", []):
         return {"valid": False}
 
     return {"valid": True}
 
-# Runtime Monitoring Data
-@app.post("/runtime-data")
-def runtime_data(data: dict):
 
-    usage_time = data.get("usage_time")
-    devices = data.get("devices")
+# -------------------------
+# USER AUTH
+# -------------------------
+@app.post("/signup")
+def signup(data: dict):
 
-    return {
-        "message": "Runtime data received",
-        "usage_time": usage_time,
-        "devices": devices
-    }
+    username = data.get("username")
+    email = data.get("email")
+    password = data.get("password")
+
+    if not username or not email or not password:
+        return {"success": False, "message": "Missing fields"}
+
+    create_user(username, email, password)
+
+    return {"success": True, "message": "User created successfully"}
 
 
-# ML Anomaly Detection
+@app.post("/login")
+def login(data: dict):
+
+    email = data.get("email")
+    password = data.get("password")
+
+    user = get_user(email)
+
+    if user and user["password"] == password:
+        return {
+            "success": True,
+            "username": user["username"],
+            "role": user.get("role", "user")
+        }
+
+    return {"success": False, "message": "Invalid credentials"}
+
+
+# -------------------------
+# RUNTIME MONITORING
+# -------------------------
+@app.post("/start-session")
+def start_session():
+
+    try:
+        start_monitoring()
+        return {"success": True}
+    except:
+        return {"success": False}
+
+
+@app.post("/end-session")
+def end_session():
+
+    try:
+        stop_monitoring()
+        return {"success": True}
+    except:
+        return {"success": False}
+
+
+@app.post("/log-event")
+def log_event_api(data: dict):
+
+    event = data.get("event")
+    license_key = data.get("license_key")
+    device_id = data.get("device_id")   # 🔥 ADD THIS
+
+    license_data = get_license(license_key)
+
+    if not license_data:
+        return {"success": False, "message": "Invalid license"}
+
+    devices = license_data.get("devices_used", [])
+
+    # 🚫 BLOCK OLD DEVICE HERE
+    if device_id not in devices:
+        return {
+            "success": False,
+            "message": "Session expired (another device logged in)"
+        }
+
+    # ✅ ONLY VALID DEVICE CAN LOG
+    record_event(event, license_key=license_key)
+
+    return {"success": True}
+
+# -------------------------
+# LICENSE LIST (MongoDB)
+# -------------------------
+@app.get("/licenses")
+def get_all_licenses():
+
+    licenses = list(licenses_collection.find({}, {"_id": 0}))
+
+    return licenses
+
+
+# -------------------------
+# ML + TRUST SCORE
+# -------------------------
 @app.post("/detect-anomaly")
 def detect_anomaly_api(data: dict):
 
@@ -122,14 +242,10 @@ def detect_anomaly_api(data: dict):
     }
 
 
-
-# Full Evaluation
-# (ML + Trust Score + Policy)
 @app.post("/evaluate-runtime")
 def evaluate_runtime(data: dict):
 
     anomaly_prediction = predict_anomaly(data)
-
     anomaly_score = 1 if anomaly_prediction == 1 else 0
 
     metrics = RuntimeMetrics(
@@ -155,204 +271,82 @@ def evaluate_runtime(data: dict):
         "policy_decision": decision
     }
 
-# Start Runtime Monitoring
-@app.get("/start-monitor")
-def start_runtime_monitor():
 
-    try:
-        start_monitoring()
-        return {"message": "Runtime monitoring started"}
-    except:
-        return {"message": "monitor already running"}
-
-
-
-# Stop Runtime Monitoring
-@app.get("/stop-monitor")
-def stop_runtime_monitor():
-
-    try:
-        stop_monitoring()
-        return {"message": "Runtime monitoring stopped"}
-    except:
-        return {"message": "monitor not running"}
-    
-# Signup Route
-@app.post("/signup")
-def signup(data: dict):
-
-    username = data.get("username")
-    email = data.get("email")
-    password = data.get("password")
-
-    if not username or not email or not password:
-        return {"success": False, "message": "Missing fields"}
-
-    create_user(username, email, password)
-
-    return {
-        "success": True,
-        "message": "User created successfully"
-    }
-
-# Login Route
-@app.post("/login")
-def login(data: dict):
-
-    email = data.get("email")
-    password = data.get("password")
-
-    conn = sqlite3.connect("database/licenses.db")
-    cursor = conn.cursor()
-
-    cursor.execute(
-        "SELECT username, role FROM users WHERE email=? AND password=?",
-        (email,password)
-    )
-
-    user = cursor.fetchone()
-
-    if user:
-
-        return {
-            "success": True,
-            "username": user[0],
-            "role": user[1]
-        }
-
-    return {
-        "success": False,
-        "message": "Invalid credentials"
-    }
-    
-# Start session
-@app.post("/start-session")
-def start_session():
-
-    try:
-        start_monitoring()
-        return {"success": True}
-    except:
-        return {"success": False}
-    
-# End session
-@app.post("/end-session")
-def end_session():
-
-    try:
-        stop_monitoring()
-        return {"success": True}
-    except:
-        return {"success": False}
-    
-# Log events route
-
-@app.post("/log-event")
-def log_event(data: dict):
-
-    event = data.get("event")
-
-    record_event(event)
-
-    return {"success": True}
-
-# Generate License
-@app.get("/licenses")
-def get_all_licenses():
-
-    conn = sqlite3.connect("database/licenses.db")
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-
-    cursor.execute("SELECT * FROM licenses")
-    licenses = cursor.fetchall()
-
-    conn.close()
-
-    return [dict(row) for row in licenses]
-
-# Logs
-@app.get("/logs")
-def get_logs():
-
-    logs = []
-
-    try:
-        with open("logs/runtime_log.txt", "r") as file:
-            for line in file:
-                logs.append(line.strip())
-    except:
-        pass
-
-    return logs
-
-# Trust score
-@app.post("/trust-score")
-def trust_score(data: dict):
-
-    from trust_score_policy_engine import RuntimeMetrics, TrustScoreEngine
-
-    metrics = RuntimeMetrics(
-        device_id=data.get("device_id"),
-        session_count=data.get("session_count"),
-        anomaly_score=data.get("anomaly_score"),
-        usage_frequency=data.get("usage_frequency"),
-        execution_duration=data.get("execution_duration"),
-        location_change=data.get("location_change")
-    )
-
-    engine = TrustScoreEngine()
-    engine.evaluate_runtime(metrics)
-
-    score = engine.get_score()
-
-    return {
-        "trust_score": score
-    }
-
-# Trust scores
-from runtime_monitor.device import get_device_id
+# -------------------------
+# TRUST SCORE (TEMP FILE BASED)
+# -------------------------
 
 @app.get("/trust-scores")
-def dynamic_trust_scores():
+def dynamic_trust_scores(request: Request):
 
-    logs = []
+    device_id = request.query_params.get("device_id")
+    license_key = request.query_params.get("license_key")
 
-    try:
-        with open("logs/runtime_log.txt", "r") as file:
-            for line in file:
-                logs.append(line.strip())
-    except:
-        pass
+    # 🔥 GET LICENSE DATA FROM MONGODB
+    license_data = licenses_collection.find_one({"license_key": license_key})
 
-    # If no runtime activity, return idle state
-    if len(logs) == 0:
+    if not license_data:
         return {
-            "device_id": None,
-            "trust_score": None,
-            "policy": "NO ACTIVE SESSION",
+            "device_id": device_id,
+            "trust_score": 0,
+            "policy": "INVALID LICENSE",
             "events_detected": 0
         }
 
-    # get device id dynamically
-    device_id = get_device_id()
+    devices_used = license_data.get("devices_used", [])
 
-    # runtime metrics derived from logs
-    active_sessions = 1
-    session_duration_minutes = min(len(logs), 60)
-    login_frequency_per_day = 2
-    geo_location_change = False
+    # 🔥 THIS IS THE MAIN LOGIC
+    active_sessions = len(devices_used)
+
+    logs = []
+    try:
+        with open(f"logs/{license_key}.txt", "r") as file:
+            for line in file:
+                logs.append(line.strip())
+    except:
+        pass
+
+    from collections import Counter
+
+    event_list = []
+    import json
+
+    event_list = []
+
+    for log in logs:
+        try:
+            parsed = json.loads(log)   # ✅ CORRECT
+            event_list.append(parsed.get("event"))
+        except Exception as e:
+            print("PARSE ERROR:", e)
+
+    event_count = Counter(event_list)
+
+    total_events = len(event_list)
+    print("TOTAL EVENTS:", total_events)
+
+    # 🔥 SMART SIMULATION
+    usage_frequency = total_events
+
+    execution_duration = total_events // 10
+
+    # 🔥 ANOMALY DETECTION (CORE FIX)
     anomaly_score = 0
+
+    if total_events > 50:
+        anomaly_score = 0.8   # trigger anomaly
+
+    if total_events > 150:
+        anomaly_score = 1     # heavy anomaly
 
     metrics = RuntimeMetrics(
         device_id=device_id,
         session_count=active_sessions,
         anomaly_score=anomaly_score,
-        usage_frequency=login_frequency_per_day,
-        execution_duration=session_duration_minutes,
-        location_change=geo_location_change
+        usage_frequency=usage_frequency,
+        execution_duration=execution_duration,
+        location_change=False
     )
-
     trust_engine = TrustScoreEngine()
     trust_engine.evaluate_runtime(metrics)
 
@@ -366,4 +360,39 @@ def dynamic_trust_scores():
         "trust_score": score,
         "policy": decision["action"],
         "events_detected": len(logs)
+    }
+
+@app.get("/logs")
+def get_logs(license_key: str):
+
+    logs = []
+    log_file = f"logs/{license_key}.txt"
+
+    try:
+        with open(log_file, "r") as file:
+            for line in file:
+                logs.append(line.strip())
+    except:
+        pass
+
+    return logs
+
+
+@app.post("/force-switch")
+def force_switch(data: dict):
+
+    license_key = data.get("license_key")
+    device_id = data.get("device_id")
+
+    license_data = get_license(license_key)
+
+    if not license_data:
+        return {"success": False}
+
+    # 🔥 Replace old device
+    update_devices(license_key, [device_id])
+
+    return {
+        "success": True,
+        "message": "Switched device successfully"
     }

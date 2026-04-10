@@ -94,7 +94,7 @@ class PolicyEngine:
     def __init__(self):
 
         self.policies = {
-            "full_access": 80,
+            "full_access": 90,
             "warning": 50,
             "restricted": 30
         }

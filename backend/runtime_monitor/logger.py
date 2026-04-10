@@ -1,9 +1,8 @@
 import json
 import datetime
-from .config import LOG_FILE
+import os
 
-
-def log_event(event, device=None, duration=None):
+def log_event(event, device=None, duration=None, license_key=None):
 
     log_data = {
         "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -16,5 +15,10 @@ def log_event(event, device=None, duration=None):
     if duration:
         log_data["duration"] = duration
 
-    with open(LOG_FILE, "a") as file:
+    # 🔥 PER USER LOG FILE
+    log_file = f"logs/{license_key}.txt"
+
+    os.makedirs("logs", exist_ok=True)
+
+    with open(log_file, "a") as file:
         file.write(json.dumps(log_data) + "\n")
