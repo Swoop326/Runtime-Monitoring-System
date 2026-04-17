@@ -2,25 +2,29 @@ import pandas as pd
 from sklearn.ensemble import IsolationForest
 import joblib
 
-data = pd.read_csv("license_validation_dataset.csv")
+# ✅ Load dataset
+data = pd.read_csv("ml_model/runtime_dataset.csv")
 
+# ✅ CORRECT FEATURES (NO anomaly_score, NO trust_score)
 features = [
     "session_duration_minutes",
     "active_sessions",
     "unique_devices_used",
     "login_frequency_per_day",
-    "geo_location_change",
-    "vpn_detected",
-    "rule_violation_flag",
-    "anomaly_score",
-    "trust_score"
+    "anomaly_score"   # 🔥 MOST IMPORTANT
 ]
 
 X = data[features]
 
-model = IsolationForest(contamination=0.1, random_state=42)
+# ✅ Train Isolation Forest
+model = IsolationForest(
+    contamination=0.15,   # 🔥 slightly aggressive for demo
+    random_state=42
+)
+
 model.fit(X)
 
-joblib.dump(model, "model.pkl")
+# ✅ Save model
+joblib.dump(model, "ml_model/model.pkl")
 
-print("Model trained and saved successfully")
+print("🔥 Model trained with event_rate feature successfully")

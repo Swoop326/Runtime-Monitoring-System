@@ -7,7 +7,6 @@ function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [licenseKey, setLicenseKey] = useState("");
 
   const navigate = useNavigate();
 
@@ -33,99 +32,102 @@ function Signup() {
       });
 
       const data = await res.json();
-      console.log("Signup response:", data);
 
       if (data.success) {
-
         alert("Account created successfully");
-
         navigate("/");
-
       } else {
-
         alert(data.message);
-
       }
 
     } catch (error) {
-
       console.error(error);
       alert("Signup failed");
-
     }
 
   };
 
-  const container = {
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#f5f7fb"
-  };
-
-  const card = {
-    background: "white",
-    padding: "40px",
-    borderRadius: "10px",
-    width: "350px",
-    boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
-    textAlign: "center"
-  };
-
-  const input = {
-    width: "100%",
-    padding: "10px",
-    marginTop: "10px",
-    borderRadius: "5px",
-    border: "1px solid #ccc"
-  };
-
-  const button = {
-    width: "100%",
-    padding: "10px",
-    marginTop: "20px",
-    backgroundColor: "#16a34a",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer"
-  };
-
   return (
-    <div style={container}>
+    <div style={{
+      height: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#f5f7fb"
+    }}>
 
-      <div style={card}>
+      <div style={{
+        background: "white",
+        padding: "40px",
+        borderRadius: "12px",
+        width: "360px",
+        boxShadow: "0 15px 35px rgba(0,0,0,0.1)",
+        textAlign: "center"
+      }}>
 
-        <h2>Create Account</h2>
+        <h2 style={{ marginBottom: "5px" }}>Create Account</h2>
+        <p style={{ color: "#666", marginBottom: "20px" }}>
+          Join AdaptiveDesk Secure System
+        </p>
 
         <input
-          style={input}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "10px",
+            borderRadius: "6px",
+            border: "1px solid #ccc"
+          }}
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
 
         <input
-          style={input}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "10px",
+            borderRadius: "6px",
+            border: "1px solid #ccc"
+          }}
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
-          style={input}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "10px",
+            borderRadius: "6px",
+            border: "1px solid #ccc"
+          }}
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button style={button} onClick={handleSignup}>
+        <button
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "20px",
+            backgroundColor: "#16a34a",
+            color: "white",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+            fontWeight: "bold"
+          }}
+          onClick={handleSignup}
+        >
           Sign Up
         </button>
 
-        <p style={{ marginTop: "15px" }}>
+        <p style={{ marginTop: "15px", fontSize: "14px" }}>
           Already have an account? <Link to="/">Login</Link>
         </p>
 

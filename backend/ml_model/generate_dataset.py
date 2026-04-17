@@ -1,61 +1,33 @@
 import pandas as pd
-import random
+import numpy as np
 
-rows = []
+data = []
 
-# NORMAL USERS
-for _ in range(700):
+for i in range(1000):
 
-    session_duration = random.randint(5, 120)
-    login_frequency = random.randint(1, 15)
-    active_sessions = random.randint(1,2)
-    geo_change = random.choice([0,0,0,1])
-    device_change = random.choice([0,0,1])
-    event_count = random.randint(5,60)
+    # ✅ NORMAL USERS
+    if i < 800:
+        row = {
+            "session_duration_minutes": np.random.randint(5, 60),
+            "active_sessions": np.random.randint(1, 2),
+            "unique_devices_used": np.random.randint(1, 2),
+            "login_frequency_per_day": np.random.randint(1, 10),
+            "anomaly_score": np.random.uniform(0.5, 5)   # LOW event rate
+        }
 
-    rows.append([
-        session_duration,
-        login_frequency,
-        active_sessions,
-        geo_change,
-        device_change,
-        event_count,
-        0
-    ])
+    # 🔥 ANOMALY USERS
+    else:
+        row = {
+            "session_duration_minutes": np.random.randint(1, 10),
+            "active_sessions": np.random.randint(2, 5),
+            "unique_devices_used": np.random.randint(2, 5),
+            "login_frequency_per_day": np.random.randint(20, 200),
+            "anomaly_score": np.random.uniform(20, 80)   # 🔥 HIGH event rate
+        }
 
-# ANOMALOUS USERS
-for _ in range(300):
+    data.append(row)
 
-    session_duration = random.randint(40,300)
-    login_frequency = random.randint(8,60)
-    active_sessions = random.randint(2,8)
-    geo_change = random.choice([0,1])
-    device_change = random.choice([0,1])
-    event_count = random.randint(30,200)
+df = pd.DataFrame(data)
+df.to_csv("ml_model/runtime_dataset.csv", index=False)
 
-    rows.append([
-        session_duration,
-        login_frequency,
-        active_sessions,
-        geo_change,
-        device_change,
-        event_count,
-        1
-    ])
-
-columns = [
-    "session_duration_minutes",
-    "login_frequency_per_day",
-    "active_sessions",
-    "geo_location_change",
-    "device_change",
-    "event_count",
-    "label"
-]
-
-df = pd.DataFrame(rows, columns=columns)
-df = df.sample(frac=1).reset_index(drop=True)
-
-df.to_csv("runtime_dataset.csv", index=False)
-
-print("Dataset generated successfully:", len(df))
+print("🔥 New dataset generated")

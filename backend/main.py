@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 import uuid
-import datetime
+from datetime import datetime, timedelta
 from fastapi import Request
+from collections import Counter
+import datetime
+import json
+import time
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -279,10 +283,14 @@ def evaluate_runtime(data: dict):
 @app.get("/trust-scores")
 def dynamic_trust_scores(request: Request):
 
+    import json
+    import time
+    from datetime import datetime, timedelta
+
     device_id = request.query_params.get("device_id")
     license_key = request.query_params.get("license_key")
 
-    # 🔥 GET LICENSE DATA FROM MONGODB
+    # 🔥 GET LICENSE DATA
     license_data = licenses_collection.find_one({"license_key": license_key})
 
     if not license_data:
@@ -294,10 +302,9 @@ def dynamic_trust_scores(request: Request):
         }
 
     devices_used = license_data.get("devices_used", [])
-
-    # 🔥 THIS IS THE MAIN LOGIC
     active_sessions = len(devices_used)
 
+    # 🔥 LOAD LOGS
     logs = []
     try:
         with open(f"logs/{license_key}.txt", "r") as file:
@@ -306,39 +313,82 @@ def dynamic_trust_scores(request: Request):
     except:
         pass
 
-    from collections import Counter
+    total_events = len(logs)
 
-    event_list = []
-    import json
-
-    event_list = []
+    # ✅ 🔥 FIXED EVENT RATE (REAL-TIME WINDOW)
+    now = datetime.now()
+    window = timedelta(seconds=5)
+    recent_events = []
 
     for log in logs:
         try:
-            parsed = json.loads(log)   # ✅ CORRECT
-            event_list.append(parsed.get("event"))
+            parsed = json.loads(log)
+
+            log_time = datetime.strptime(
+                parsed["timestamp"], "%Y-%m-%d %H:%M:%S"
+            )
+
+            if now - log_time <= window:
+                recent_events.append(parsed)
+
         except Exception as e:
-            print("PARSE ERROR:", e)
+            print("TIME PARSE ERROR:", e)
 
-    event_count = Counter(event_list)
+    event_rate = len(recent_events) / 5
 
-    total_events = len(event_list)
-    print("TOTAL EVENTS:", total_events)
+    print("🔥 EVENT RATE:", event_rate)
 
-    # 🔥 SMART SIMULATION
-    usage_frequency = total_events
-
+    # 🔥 FEATURE ENGINEERING
+    usage_frequency = int(event_rate * 5)
     execution_duration = total_events // 10
 
-    # 🔥 ANOMALY DETECTION (CORE FIX)
-    anomaly_score = 0
+    # 🔥 ML INPUT
+    runtime_data = {
+        "session_duration_minutes": execution_duration,
+        "active_sessions": active_sessions,
+        "unique_devices_used": len(devices_used),
+        "login_frequency_per_day": usage_frequency,
+        "geo_location_change": 0,
+        "vpn_detected": 0,
+        "rule_violation_flag": 0,
+        "anomaly_score": event_rate,   # ML input
+        "trust_score": 100
+    }
 
-    if total_events > 50:
-        anomaly_score = 0.8   # trigger anomaly
+    # 🔥 ML PREDICTION
+    try:
+        ml_prediction = predict_anomaly(runtime_data)
+        anomaly_score = 1 if ml_prediction == 1 else 0
+    except Exception as e:
+        print("ML ERROR:", e)
+        anomaly_score = 0
 
-    if total_events > 150:
-        anomaly_score = 1     # heavy anomaly
+    # 🔥 GET LATEST ANOMALY TIME
+    db_data = licenses_collection.find_one({"license_key": license_key})
+    last_anomaly_time = db_data.get("last_anomaly_time", 0)
 
+    current_time = time.time()
+
+    # 🔥 HARD RULE (FAST SPAM DETECTION)
+    if event_rate > 5:
+        anomaly_score = 1
+
+        licenses_collection.update_one(
+            {"license_key": license_key},
+            {"$set": {"last_anomaly_time": current_time}}
+        )
+
+        last_anomaly_time = current_time
+
+        print("🚨 HIGH SPEED DETECTED")
+
+    # 🔥 HOLD ANOMALY FOR 5 SEC (IMPORTANT FOR UI)
+    if current_time - last_anomaly_time < 5:
+        anomaly_score = 1
+
+    print("ANOMALY SCORE:", anomaly_score)
+
+    # 🔥 TRUST SCORE ENGINE
     metrics = RuntimeMetrics(
         device_id=device_id,
         session_count=active_sessions,
@@ -347,11 +397,23 @@ def dynamic_trust_scores(request: Request):
         execution_duration=execution_duration,
         location_change=False
     )
+
+    prev_score = license_data.get("trust_score", 100)
+
     trust_engine = TrustScoreEngine()
+    trust_engine.score = prev_score   # ✅ CONTINUE FROM LAST SCORE
+
     trust_engine.evaluate_runtime(metrics)
 
     score = trust_engine.get_score()
 
+    # 🔥 SAVE UPDATED SCORE
+    licenses_collection.update_one(
+        {"license_key": license_key},
+        {"$set": {"trust_score": score}}
+    )
+
+    # 🔥 POLICY ENGINE
     policy_engine = PolicyEngine()
     decision = policy_engine.evaluate_policy(score)
 
@@ -359,7 +421,10 @@ def dynamic_trust_scores(request: Request):
         "device_id": device_id,
         "trust_score": score,
         "policy": decision["action"],
-        "events_detected": len(logs)
+        "events_detected": total_events,
+        "event_rate": round(event_rate, 2),
+        "ml_prediction": "anomaly" if anomaly_score == 1 else "normal",
+        "anomaly_score": anomaly_score
     }
 
 @app.get("/logs")

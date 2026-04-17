@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import API_BASE_URL from "../config";
 import getDeviceId from "../utils/device";
 
@@ -9,90 +9,108 @@ function Dashboard() {
   const [securityData, setSecurityData] = useState(null);
   const [prevScore, setPrevScore] = useState(null);
 
+  const container = {
+    display: "flex",
+    height: "100vh"
+  };
+
+  const sidebar = {
+    width: "220px",
+    backgroundColor: "#1e293b",
+    color: "white",
+    padding: "20px"
+  };
+
+  const main = {
+    flex: 1,
+    padding: "40px",
+    backgroundColor: "#f5f7fb"
+  };
+
+  const card = {
+    background: "white",
+    padding: "20px",
+    borderRadius: "10px",
+    boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
+    width: "300px"
+  };
+
+  const button = {
+    padding: "10px",
+    marginTop: "10px",
+    width: "100%",
+    border: "none",
+    borderRadius: "5px",
+    backgroundColor: "#2563eb",
+    color: "white",
+    cursor: "pointer"
+  };
+
   const checkAccess = async () => {
-  try {
+    try {
 
-    const res = await fetch(
-      `${API_BASE_URL}/trust-scores?device_id=${getDeviceId()}&license_key=${localStorage.getItem("licenseKey")}`
-    );
+      const res = await fetch(
+        `${API_BASE_URL}/trust-scores?device_id=${getDeviceId()}&license_key=${localStorage.getItem("licenseKey")}`
+      );
 
-    const data = await res.json();
+      const data = await res.json();
 
-    // 🚫 INVALID LICENSE
-    if (data.policy === "INVALID LICENSE") {
-      alert("Invalid License");
+      if (data.policy === "INVALID LICENSE") {
+        alert("Invalid License");
+        localStorage.clear();
+        navigate("/license");
+        return;
+      }
 
-      localStorage.clear();
-      navigate("/license");
-      return;
+      if (prevScore !== null && data.trust_score < prevScore) {
+        alert("⚠️ Another device detected using your license!");
+      }
+
+      if (data.trust_score < 30) {
+        alert("🚫 Access blocked due to suspicious activity");
+        localStorage.clear();
+        navigate("/license");
+        return;
+      }
+
+      setPrevScore(data.trust_score);
+      setSecurityData(data);
+
+    } catch (error) {
+      console.error(error);
     }
-
-    // ⚠️ DETECT MULTI DEVICE
-    if (prevScore !== null && data.trust_score < prevScore) {
-      alert("⚠️ Another device detected using your license!");
-    }
-
-    // 🚫 BLOCK IF TOO LOW
-    if (data.trust_score < 30) {
-      alert("🚫 Access blocked due to suspicious activity");
-
-      localStorage.clear();
-      navigate("/license");
-      return;
-    }
-
-    setPrevScore(data.trust_score);
-    setSecurityData(data);
-
-  } catch (error) {
-    console.error("Error checking access:", error);
-  }
-};
+  };
 
   useEffect(() => {
 
-    fetch(`${API_BASE_URL}/start-session`, {
-      method: "POST"
-    });
+    fetch(`${API_BASE_URL}/start-session`, { method: "POST" });
 
     checkAccess();
 
-    // 🔥 REAL-TIME CHECK
-    const interval = setInterval(checkAccess, 1500);
+    const interval = setInterval(checkAccess, 2000);
 
     return () => {
       clearInterval(interval);
-
-      fetch(`${API_BASE_URL}/end-session`, {
-        method: "POST"
-      });
+      fetch(`${API_BASE_URL}/end-session`, { method: "POST" });
     };
 
   }, []);
 
-  // ✅ FIXED HERE (license_key added)
   const sendEvent = async (eventName) => {
 
-    try {
+    await fetch(`${API_BASE_URL}/log-event`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        event: eventName,
+        license_key: localStorage.getItem("licenseKey"),
+        device_id: getDeviceId()
+      })
+    });
 
-      await fetch(`${API_BASE_URL}/log-event`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          event: eventName,
-          license_key: localStorage.getItem("licenseKey"), // 🔥 IMPORTANT
-          device_id: getDeviceId()
-        })
-      });
-
-      checkAccess();
-
-    } catch (error) {
-      console.error("Error sending event:", error);
-    }
-
+    checkAccess();
   };
 
   const handleLogout = async () => {
@@ -103,7 +121,6 @@ function Dashboard() {
 
     localStorage.clear();
 
-    // ✅ restore device id ALWAYS
     if (deviceId) {
       localStorage.setItem("device_id", deviceId);
     }
@@ -112,32 +129,83 @@ function Dashboard() {
   };
 
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <div style={container}>
 
-      <div style={{ width: "220px", backgroundColor: "#1e293b", color: "white", padding: "20px" }}>
+      {/* SIDEBAR */}
+      <div style={sidebar}>
         <h2>AdaptiveDesk</h2>
 
-        <Link to="/dashboard" style={{ marginTop: "20px", display: "block", color: "white" }}>Dashboard</Link>
-        <Link to="/profile" style={{ marginTop: "20px", display: "block", color: "white" }}>Profile</Link>
+        <p style={{ marginTop: "20px" }}>Dashboard</p>
 
-        <button onClick={handleLogout} style={{ marginTop: "20px" }}>Logout</button>
+        <button onClick={handleLogout} style={{ marginTop: "20px" }}>
+          Logout
+        </button>
       </div>
 
-      <div style={{ flex: 1, padding: "40px" }}>
+      {/* MAIN */}
+      <div style={main}>
 
         <h1>Software Dashboard</h1>
 
+        {/* TRUST CARD */}
         {securityData && (
-          <div>
-            <p><b>Trust Score:</b> {securityData.trust_score}</p>
-            <p><b>Policy:</b> {securityData.policy}</p>
-            <p><b>Device ID:</b> {getDeviceId()}</p>
-          </div>
-        )}
+          <div style={{
+            marginTop: "20px",
+            padding: "15px",
+            border: "1px solid #ccc",
+            borderRadius: "8px",
+            width: "350px"
+          }}>
 
-        <button onClick={() => sendEvent("file_upload")}>Upload</button>
-        <button onClick={() => sendEvent("data_export")}>Export</button>
-        <button onClick={() => sendEvent("report_generated")}>Report</button>
+      <h3>ML Security Analysis</h3>
+
+      <p><b>Trust Score:</b> {securityData.trust_score}</p>
+      <p><b>Policy:</b> {securityData.policy}</p>
+
+      <p>
+        <b>ML Prediction:</b>{" "}
+        <span style={{
+          color: securityData.ml_prediction === "anomaly" ? "red" : "green",
+          fontWeight: "bold"
+        }}>
+          {securityData.ml_prediction?.toUpperCase()}
+        </span>
+      </p>
+
+      <p><b>Anomaly Score:</b> {securityData.anomaly_score}</p>
+
+      <p>
+        <b>Event Rate:</b>{" "}
+        <span style={{
+          color: securityData.event_rate > 15 ? "red" : "green"
+        }}>
+          {securityData.event_rate} events/sec
+        </span>
+      </p>
+
+      <p style={{ marginTop: "10px", fontSize: "14px", color: "gray" }}>
+        ML Model → Detects anomaly → Updates trust score → Applies policy
+      </p>
+
+    </div>
+  )}
+
+        {/* ACTION BUTTONS */}
+        <div style={{ marginTop: "30px", width: "300px" }}>
+
+          <button style={button} onClick={() => sendEvent("file_upload")}>
+            Upload File
+          </button>
+
+          <button style={button} onClick={() => sendEvent("data_export")}>
+            Export Data
+          </button>
+
+          <button style={button} onClick={() => sendEvent("report_generated")}>
+            Generate Report
+          </button>
+
+        </div>
 
       </div>
 

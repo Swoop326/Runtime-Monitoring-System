@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import API_BASE_URL from "../config";
-import getDeviceId from "../utils/device";  // ✅ IMPORTANT
+import getDeviceId from "../utils/device";
 
 function Login() {
 
@@ -19,10 +19,7 @@ function Login() {
 
     try {
 
-      // 🔥 ENSURE DEVICE ID IS CREATED & STORED
       const deviceId = getDeviceId();
-
-      console.log("Device ID:", deviceId); // (optional debug)
 
       const res = await fetch(`${API_BASE_URL}/login`, {
         method: "POST",
@@ -38,14 +35,11 @@ function Login() {
 
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("role", data.role);
-
-        // ✅ device_id already stored by getDeviceId()
         localStorage.setItem("device_id", deviceId);
 
         if (data.role === "admin") {
           navigate("/admin");
         } else {
-          // ✅ ALWAYS go to license (backend decides access)
           navigate("/license");
         }
 
@@ -57,7 +51,6 @@ function Login() {
       console.error(error);
       alert("Login failed");
     }
-
   };
 
   return (
@@ -72,24 +65,38 @@ function Login() {
       <div style={{
         background: "white",
         padding: "40px",
-        borderRadius: "10px",
-        width: "350px",
-        boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+        borderRadius: "12px",
+        width: "360px",
+        boxShadow: "0 15px 35px rgba(0,0,0,0.1)",
         textAlign: "center"
       }}>
 
-        <h2>AdaptiveDesk</h2>
-        <p>Licensed Software Access</p>
+        <h2 style={{ marginBottom: "5px" }}>AdaptiveDesk</h2>
+        <p style={{ color: "#666", marginBottom: "20px" }}>
+          Secure Licensed Access
+        </p>
 
         <input
-          style={{ width: "100%", padding: "10px", marginTop: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "10px",
+            borderRadius: "6px",
+            border: "1px solid #ccc"
+          }}
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
-          style={{ width: "100%", padding: "10px", marginTop: "10px", borderRadius: "5px", border: "1px solid #ccc" }}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "10px",
+            borderRadius: "6px",
+            border: "1px solid #ccc"
+          }}
           type="password"
           placeholder="Password"
           value={password}
@@ -97,13 +104,23 @@ function Login() {
         />
 
         <button
-          style={{ width: "100%", padding: "10px", marginTop: "20px", backgroundColor: "#4f46e5", color: "white", border: "none", borderRadius: "5px", cursor: "pointer" }}
+          style={{
+            width: "100%",
+            padding: "12px",
+            marginTop: "20px",
+            backgroundColor: "#4f46e5",
+            color: "white",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer",
+            fontWeight: "bold"
+          }}
           onClick={handleLogin}
         >
           Login
         </button>
 
-        <p style={{ marginTop: "15px" }}>
+        <p style={{ marginTop: "15px", fontSize: "14px" }}>
           Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
 

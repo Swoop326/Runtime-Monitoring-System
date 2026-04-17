@@ -32,8 +32,8 @@ class TrustScoreEngine:
         self.penalties: Dict[str, int] = {
             "multiple_sessions": 20,
             "high_anomaly": 30,
-            "excess_usage": 10,
-            "long_execution": 10,
+            "excess_usage": 20,
+            "long_execution": 20,
             "location_change": 15
         }
 
@@ -54,19 +54,26 @@ class TrustScoreEngine:
     def evaluate_runtime(self, metrics: RuntimeMetrics):
 
         try:
+            penalty_applied = False   # ✅ control system
 
-            if metrics.session_count > 1:
-                self.apply_penalty("multiple_sessions")
-
+            # 🔥 PRIORITY 1 → ANOMALY (MAIN SIGNAL)
             if metrics.anomaly_score > 0.75:
                 self.apply_penalty("high_anomaly")
+                penalty_applied = True
 
-            if metrics.usage_frequency > 12:
-                self.apply_penalty("excess_usage")
+            # 🔥 PRIORITY 2 → ONLY ONE SECONDARY PENALTY
+            if not penalty_applied:
 
-            if metrics.execution_duration > 8:
-                self.apply_penalty("long_execution")
+                if metrics.usage_frequency > 12:
+                    self.apply_penalty("excess_usage")
 
+                elif metrics.execution_duration > 8:
+                    self.apply_penalty("long_execution")
+
+                elif metrics.session_count > 1:
+                    self.apply_penalty("multiple_sessions")
+
+            # 🔥 LOW IMPACT (always allowed)
             if metrics.location_change:
                 self.apply_penalty("location_change")
 
