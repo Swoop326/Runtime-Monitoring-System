@@ -1,13 +1,16 @@
 from fastapi import FastAPI
 import uuid
-from datetime import datetime, timedelta
+import datetime
+from datetime import timedelta
 from fastapi import Request
 from collections import Counter
-import datetime
 import json
 import time
+import csv
+import io
 
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 
 from runtime_monitor.monitor import start_monitoring, stop_monitoring, record_event
 from runtime_monitor.device import get_device_id
@@ -21,10 +24,12 @@ from database.database import (
     activate_license_db,
     create_user,
     get_user,
+    verify_user_password,
+    add_login_timestamp,
     update_devices
 )
 
-from database.mongo_connection import licenses_collection
+from database.mongo_connection import users_collection, licenses_collection
 
 app = FastAPI()
 
@@ -63,6 +68,7 @@ def activate_license(data: dict):
 
     license_key = data.get("license_key")
     device_id = data.get("device_id")
+    user_email = data.get("user_email")
     override = data.get("override", False)   # 🔥 for switching device
 
     license_data = get_license(license_key)
@@ -79,9 +85,13 @@ def activate_license(data: dict):
     if len(devices) == 0:
         update_devices(license_key, [device_id])
 
+        update_data = {"active": True}
+        if user_email:
+            update_data["user_email"] = user_email
+
         licenses_collection.update_one(
             {"license_key": license_key},
-            {"$set": {"active": True}}
+            {"$set": update_data}
         )
 
         return {
@@ -107,9 +117,13 @@ def activate_license(data: dict):
     # 🔥 OVERRIDE = TRUE → SWITCH DEVICE
     update_devices(license_key, [device_id])
 
+    update_data = {"active": True}
+    if user_email:
+        update_data["user_email"] = user_email
+
     licenses_collection.update_one(
         {"license_key": license_key},
-        {"$set": {"active": True}}
+        {"$set": update_data}
     )
 
     return {
@@ -150,7 +164,9 @@ def signup(data: dict):
     if not username or not email or not password:
         return {"success": False, "message": "Missing fields"}
 
-    create_user(username, email, password)
+    success = create_user(username, email, password)
+    if not success:
+        return {"success": False, "message": "Username or email already exists"}
 
     return {"success": True, "message": "User created successfully"}
 
@@ -163,7 +179,8 @@ def login(data: dict):
 
     user = get_user(email)
 
-    if user and user["password"] == password:
+    if user and verify_user_password(email, password):
+        add_login_timestamp(email)
         return {
             "success": True,
             "username": user["username"],
@@ -285,7 +302,6 @@ def dynamic_trust_scores(request: Request):
 
     import json
     import time
-    from datetime import datetime, timedelta
 
     device_id = request.query_params.get("device_id")
     license_key = request.query_params.get("license_key")
@@ -316,7 +332,7 @@ def dynamic_trust_scores(request: Request):
     total_events = len(logs)
 
     # ✅ 🔥 FIXED EVENT RATE (REAL-TIME WINDOW)
-    now = datetime.now()
+    now = datetime.datetime.now()
     window = timedelta(seconds=5)
     recent_events = []
 
@@ -324,7 +340,7 @@ def dynamic_trust_scores(request: Request):
         try:
             parsed = json.loads(log)
 
-            log_time = datetime.strptime(
+            log_time = datetime.datetime.strptime(
                 parsed["timestamp"], "%Y-%m-%d %H:%M:%S"
             )
 
@@ -342,12 +358,25 @@ def dynamic_trust_scores(request: Request):
     usage_frequency = int(event_rate * 5)
     execution_duration = total_events // 10
 
+    # 🔥 LOGIN FREQUENCY PER DAY (BEHAVIORAL METRIC)
+    login_frequency_per_day = usage_frequency
+    if license_data.get("user_email"):
+        user_data = users_collection.find_one({"email": license_data.get("user_email")})
+        if user_data:
+            login_timestamps = user_data.get("login_timestamps", [])
+            one_day_ago = now - timedelta(days=1)
+            login_frequency_per_day = sum(
+                1
+                for ts in login_timestamps
+                if datetime.datetime.strptime(ts, "%Y-%m-%d %H:%M:%S") >= one_day_ago
+            )
+
     # 🔥 ML INPUT
     runtime_data = {
         "session_duration_minutes": execution_duration,
         "active_sessions": active_sessions,
         "unique_devices_used": len(devices_used),
-        "login_frequency_per_day": usage_frequency,
+        "login_frequency_per_day": login_frequency_per_day,
         "geo_location_change": 0,
         "vpn_detected": 0,
         "rule_violation_flag": 0,
@@ -368,50 +397,59 @@ def dynamic_trust_scores(request: Request):
     last_anomaly_time = db_data.get("last_anomaly_time", 0)
 
     current_time = time.time()
+    hold_window_seconds = 5
+    hold_active = current_time - last_anomaly_time < hold_window_seconds
 
     # 🔥 HARD RULE (FAST SPAM DETECTION)
-    if event_rate > 5:
+    anomaly_penalty_allowed = False
+    if event_rate > 2.4:
         anomaly_score = 1
-
-        licenses_collection.update_one(
-            {"license_key": license_key},
-            {"$set": {"last_anomaly_time": current_time}}
-        )
-
-        last_anomaly_time = current_time
-
-        print("🚨 HIGH SPEED DETECTED")
+        if not hold_active:
+            anomaly_penalty_allowed = True
+            licenses_collection.update_one(
+                {"license_key": license_key},
+                {"$set": {"last_anomaly_time": current_time}}
+            )
+            last_anomaly_time = current_time
+            hold_active = True
+            print("🚨 HIGH SPEED DETECTED")
+        else:
+            print("🚨 HIGH SPEED DETECTED (hold window, no repeated trust penalty)")
 
     # 🔥 HOLD ANOMALY FOR 5 SEC (IMPORTANT FOR UI)
-    if current_time - last_anomaly_time < 5:
+    if hold_active:
         anomaly_score = 1
 
     print("ANOMALY SCORE:", anomaly_score)
 
-    # 🔥 TRUST SCORE ENGINE
-    metrics = RuntimeMetrics(
-        device_id=device_id,
-        session_count=active_sessions,
-        anomaly_score=anomaly_score,
-        usage_frequency=usage_frequency,
-        execution_duration=execution_duration,
-        location_change=False
-    )
-
     prev_score = license_data.get("trust_score", 100)
 
-    trust_engine = TrustScoreEngine()
-    trust_engine.score = prev_score   # ✅ CONTINUE FROM LAST SCORE
+    if hold_active and not anomaly_penalty_allowed:
+        # Keep the current trust score stable during the anomaly hold window
+        score = prev_score
+        print("⚠️ Maintaining trust score during anomaly hold window:", score)
+    else:
+        # 🔥 TRUST SCORE ENGINE
+        metrics = RuntimeMetrics(
+            device_id=device_id,
+            session_count=active_sessions,
+            anomaly_score=anomaly_score if anomaly_penalty_allowed else 0,
+            usage_frequency=usage_frequency if not hold_active else 0,  # Suppress secondary penalties during hold
+            execution_duration=execution_duration if not hold_active else 0,  # Suppress secondary penalties during hold
+            location_change=False
+        )
 
-    trust_engine.evaluate_runtime(metrics)
+        trust_engine = TrustScoreEngine()
+        trust_engine.score = prev_score   # ✅ CONTINUE FROM LAST SCORE
 
-    score = trust_engine.get_score()
+        trust_engine.evaluate_runtime(metrics)
+        score = trust_engine.get_score()
 
-    # 🔥 SAVE UPDATED SCORE
-    licenses_collection.update_one(
-        {"license_key": license_key},
-        {"$set": {"trust_score": score}}
-    )
+        # 🔥 SAVE UPDATED SCORE
+        licenses_collection.update_one(
+            {"license_key": license_key},
+            {"$set": {"trust_score": score}}
+        )
 
     # 🔥 POLICY ENGINE
     policy_engine = PolicyEngine()
@@ -423,8 +461,19 @@ def dynamic_trust_scores(request: Request):
         "policy": decision["action"],
         "events_detected": total_events,
         "event_rate": round(event_rate, 2),
+        "login_frequency_per_day": login_frequency_per_day,
         "ml_prediction": "anomaly" if anomaly_score == 1 else "normal",
-        "anomaly_score": anomaly_score
+        "anomaly_score": anomaly_score,
+        "model_name": "IsolationForest",
+        "last_ml_inference": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "feature_inputs": {
+            "session_duration_minutes": execution_duration,
+            "active_sessions": active_sessions,
+            "unique_devices_used": len(devices_used),
+            "login_frequency_per_day": login_frequency_per_day,
+            "anomaly_score": round(event_rate, 2),
+            "trust_score": prev_score
+        }
     }
 
 @app.get("/logs")
@@ -441,6 +490,112 @@ def get_logs(license_key: str):
         pass
 
     return logs
+
+
+@app.get("/download-report")
+def download_report(license_key: str):
+
+    license_data = licenses_collection.find_one({"license_key": license_key})
+
+    if not license_data:
+        return {"error": "Invalid license"}
+
+    logs = []
+    log_file = f"logs/{license_key}.txt"
+
+    try:
+        with open(log_file, "r") as file:
+            for line in file:
+                if line.strip():
+                    logs.append(json.loads(line.strip()))
+    except FileNotFoundError:
+        pass
+    except Exception:
+        pass
+
+    now = datetime.datetime.now()
+    window = timedelta(seconds=5)
+    recent_events = []
+
+    for log in logs:
+        try:
+            log_time = datetime.datetime.strptime(log["timestamp"], "%Y-%m-%d %H:%M:%S")
+            if now - log_time <= window:
+                recent_events.append(log)
+        except Exception:
+            continue
+
+    event_rate = len(recent_events) / 5 if logs else 0
+
+    summary = {
+        "license_key": license_key,
+        "devices_used": license_data.get("devices_used", []),
+        "trust_score": license_data.get("trust_score", 100),
+        "policy": PolicyEngine().evaluate_policy(license_data.get("trust_score", 100))["action"],
+        "events_detected": len(logs),
+        "event_rate": round(event_rate, 2),
+        "generated_at": now.strftime("%Y-%m-%d %H:%M:%S")
+    }
+
+    output = io.StringIO()
+    writer = csv.writer(output)
+
+    writer.writerow(["USER BEHAVIOR REPORT"])
+    writer.writerow(["License Key", summary["license_key"]])
+    writer.writerow(["Devices Used", ", ".join(summary["devices_used"]) or "None"])
+    writer.writerow(["Trust Score", summary["trust_score"]])
+    writer.writerow(["Policy", summary["policy"]])
+    writer.writerow(["Events Detected", summary["events_detected"]])
+    writer.writerow(["Recent Event Rate", summary["event_rate"]])
+    writer.writerow(["Report Generated", summary["generated_at"]])
+    writer.writerow([])
+    writer.writerow(["timestamp", "event", "device", "duration"])
+
+    for log in logs:
+        writer.writerow([
+            log.get("timestamp", ""),
+            log.get("event", ""),
+            log.get("device", ""),
+            log.get("duration", "")
+        ])
+
+    output.seek(0)
+
+    return StreamingResponse(
+        output,
+        media_type="text/csv",
+        headers={"Content-Disposition": f"attachment; filename=behavior_report_{license_key}.csv"}
+    )
+
+
+@app.post("/update-trust-score")
+def update_trust_score(data: dict):
+
+    license_key = data.get("license_key")
+    new_score = data.get("trust_score")
+
+    if not license_key or new_score is None:
+        return {"success": False, "message": "license_key and trust_score are required"}
+
+    try:
+        new_score = int(new_score)
+    except Exception:
+        return {"success": False, "message": "trust_score must be an integer"}
+
+    if new_score < 0 or new_score > 100:
+        return {"success": False, "message": "trust_score must be between 0 and 100"}
+
+    license_data = licenses_collection.find_one({"license_key": license_key})
+
+    if not license_data:
+        return {"success": False, "message": "Invalid license"}
+
+    licenses_collection.update_one(
+        {"license_key": license_key},
+        {"$set": {"trust_score": new_score}}
+    )
+
+    return {"success": True, "message": "Trust score updated successfully", "trust_score": new_score}
 
 
 @app.post("/force-switch")

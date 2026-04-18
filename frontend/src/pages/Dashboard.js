@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API_BASE_URL from "../config";
 import getDeviceId from "../utils/device";
@@ -8,6 +8,8 @@ function Dashboard() {
   const navigate = useNavigate();
   const [securityData, setSecurityData] = useState(null);
   const [prevScore, setPrevScore] = useState(null);
+  const [lastPolicy, setLastPolicy] = useState(null);
+  const lastPolicyRef = useRef(null);
 
   const container = {
     display: "flex",
@@ -62,16 +64,25 @@ function Dashboard() {
         return;
       }
 
+      const currentPolicy = data.policy;
+      const previousPolicy = lastPolicyRef.current;
+
       if (prevScore !== null && data.trust_score < prevScore) {
         alert("⚠️ Another device detected using your license!");
       }
 
-      if (data.trust_score < 30) {
-        alert("🚫 Access blocked due to suspicious activity");
-        localStorage.clear();
-        navigate("/license");
-        return;
+      if (currentPolicy !== previousPolicy) {
+        if (currentPolicy === "SUSPEND") {
+          alert("🚫 Your license has been suspended due to abnormal behavior. Actions are blocked until review.");
+        } else if (currentPolicy === "RESTRICT") {
+          alert("⚠️ Restricted mode: some actions are disabled due to suspicious behavior.");
+        } else if (currentPolicy === "WARN") {
+          alert("⚠️ Suspicious activity detected. Monitoring your session.");
+        }
       }
+
+      lastPolicyRef.current = currentPolicy;
+      setLastPolicy(currentPolicy);
 
       setPrevScore(data.trust_score);
       setSecurityData(data);
@@ -97,6 +108,16 @@ function Dashboard() {
   }, []);
 
   const sendEvent = async (eventName) => {
+
+    if (securityData?.policy === "SUSPEND") {
+      alert("🚫 Action blocked: user behavior is suspended.");
+      return;
+    }
+
+    if (securityData?.policy === "RESTRICT") {
+      alert("⚠️ Restricted mode: some actions are disabled due to suspicious behavior.");
+      return;
+    }
 
     await fetch(`${API_BASE_URL}/log-event`, {
       method: "POST",
@@ -156,11 +177,28 @@ function Dashboard() {
             borderRadius: "8px",
             width: "350px"
           }}>
+            <div style={{
+              marginBottom: "10px",
+              padding: "10px",
+              borderRadius: "8px",
+              backgroundColor:
+                securityData.policy === "ALLOW" ? "#d1fae5" :
+                securityData.policy === "WARN" ? "#fef3c7" :
+                securityData.policy === "RESTRICT" ? "#fee2e2" : "#f5f3ff",
+              color:
+                securityData.policy === "ALLOW" ? "#065f46" :
+                securityData.policy === "WARN" ? "#92400e" :
+                securityData.policy === "RESTRICT" ? "#991b1b" : "#4c1d95"
+            }}>
+              <strong>Behavior Status:</strong> {securityData.policy}
+            </div>
 
       <h3>ML Security Analysis</h3>
 
       <p><b>Trust Score:</b> {securityData.trust_score}</p>
       <p><b>Policy:</b> {securityData.policy}</p>
+      <p><b>ML Model:</b> {securityData.model_name || "IsolationForest"}</p>
+      <p><b>Last Inference:</b> {securityData.last_ml_inference}</p>
 
       <p>
         <b>ML Prediction:</b>{" "}
@@ -183,6 +221,16 @@ function Dashboard() {
         </span>
       </p>
 
+      <div style={{ marginTop: "12px", padding: "12px", backgroundColor: "#f9fafb", borderRadius: "8px" }}>
+        <p style={{ marginBottom: "6px", fontWeight: "bold" }}>ML Input Features</p>
+        <p>Session duration: {securityData.feature_inputs?.session_duration_minutes} min</p>
+        <p>Active sessions: {securityData.feature_inputs?.active_sessions}</p>
+        <p>Unique devices: {securityData.feature_inputs?.unique_devices_used}</p>
+        <p>Login frequency: {securityData.feature_inputs?.login_frequency_per_day} per day</p>
+        <p>ML anomaly input: {securityData.feature_inputs?.anomaly_score}</p>
+        <p>Stored trust score: {securityData.feature_inputs?.trust_score}</p>
+      </div>
+
       <p style={{ marginTop: "10px", fontSize: "14px", color: "gray" }}>
         ML Model → Detects anomaly → Updates trust score → Applies policy
       </p>
@@ -193,15 +241,27 @@ function Dashboard() {
         {/* ACTION BUTTONS */}
         <div style={{ marginTop: "30px", width: "300px" }}>
 
-          <button style={button} onClick={() => sendEvent("file_upload")}>
+          <button
+            style={{ ...button, opacity: securityData?.policy === "SUSPEND" ? 0.5 : 1 }}
+            onClick={() => sendEvent("file_upload")}
+            disabled={securityData?.policy === "SUSPEND"}
+          >
             Upload File
           </button>
 
-          <button style={button} onClick={() => sendEvent("data_export")}>
+          <button
+            style={{ ...button, opacity: securityData?.policy !== "ALLOW" ? 0.7 : 1 }}
+            onClick={() => sendEvent("data_export")}
+            disabled={securityData?.policy !== "ALLOW"}
+          >
             Export Data
           </button>
 
-          <button style={button} onClick={() => sendEvent("report_generated")}>
+          <button
+            style={{ ...button, opacity: securityData?.policy === "SUSPEND" ? 0.5 : 1 }}
+            onClick={() => sendEvent("report_generated")}
+            disabled={securityData?.policy === "SUSPEND"}
+          >
             Generate Report
           </button>
 

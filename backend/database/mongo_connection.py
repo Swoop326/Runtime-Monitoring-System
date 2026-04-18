@@ -4,8 +4,8 @@ import os
 
 load_dotenv()
 
-MONGO_URI = os.getenv("MONGO_URI")
-DB_NAME = os.getenv("DB_NAME")
+MONGO_URI = os.getenv("MONGO_URI") or "mongodb://localhost:27017"
+DB_NAME = os.getenv("DB_NAME") or "adaptive_system"
 
 print("MONGO_URI:", MONGO_URI)
 print("DB_NAME:", DB_NAME)

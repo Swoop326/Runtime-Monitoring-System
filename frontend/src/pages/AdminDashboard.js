@@ -8,6 +8,7 @@ function AdminDashboard() {
   const [selectedLicense, setSelectedLicense] = useState("");
   const [logs, setLogs] = useState([]);
   const [trustData, setTrustData] = useState(null);
+  const [trustScoreInput, setTrustScoreInput] = useState("");
 
   const container = {
     padding: "40px",
@@ -73,6 +74,30 @@ function AdminDashboard() {
     );
     const data = await res.json();
     setTrustData(data);
+    setTrustScoreInput(data.trust_score ?? "");
+  };
+
+  const updateTrustScore = async () => {
+    if (!selectedLicense) return;
+
+    const res = await fetch(`${API_BASE_URL}/update-trust-score`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        license_key: selectedLicense,
+        trust_score: trustScoreInput
+      })
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      alert("Trust score updated successfully");
+      loadTrustScore(selectedLicense);
+      loadLicenses();
+    } else {
+      alert(`Update failed: ${data.message}`);
+    }
   };
 
   useEffect(() => {
@@ -84,6 +109,24 @@ function AdminDashboard() {
     setSelectedLicense(selected);
     loadLogs(selected);
     loadTrustScore(selected);
+  };
+
+  const downloadReport = async () => {
+    if (!selectedLicense) return;
+
+    const res = await fetch(
+      `${API_BASE_URL}/download-report?license_key=${selectedLicense}`
+    );
+
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `behavior_report_${selectedLicense}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
   };
 
   return (
@@ -157,6 +200,33 @@ function AdminDashboard() {
           <p><b>Score:</b> {trustData.trust_score}</p>
           <p><b>Policy:</b> {trustData.policy}</p>
           <p><b>Events:</b> {trustData.events_detected}</p>
+          <p><b>Recent Rate:</b> {trustData.event_rate ?? "N/A"} events/sec</p>
+
+          <div style={{ marginTop: "12px" }}>
+            <label>
+              <b>Set Trust Score:</b>
+              <input
+                type="number"
+                value={trustScoreInput}
+                min="0"
+                max="100"
+                onChange={(e) => setTrustScoreInput(e.target.value)}
+                style={{
+                  marginLeft: "10px",
+                  width: "80px",
+                  padding: "6px",
+                  borderRadius: "5px",
+                  border: "1px solid #ccc"
+                }}
+              />
+            </label>
+            <button
+              style={{ ...button, marginTop: "10px" }}
+              onClick={updateTrustScore}
+            >
+              Update Trust Score
+            </button>
+          </div>
 
           {/* 🔥 VISUAL BAR */}
           <div style={{
@@ -174,6 +244,10 @@ function AdminDashboard() {
               borderRadius: "5px"
             }} />
           </div>
+
+          <button style={{ ...button, marginTop: "15px" }} onClick={downloadReport}>
+            Download Behavior Report
+          </button>
         </div>
       )}
 

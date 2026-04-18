@@ -57,7 +57,8 @@ function License() {
         },
         body: JSON.stringify({
           license_key: licenseKey,
-          device_id: deviceId
+          device_id: deviceId,
+          user_email: localStorage.getItem("email")
         })
       });
 
@@ -69,7 +70,7 @@ function License() {
         localStorage.setItem("device_id", deviceId);
         localStorage.setItem("licenseKey", licenseKey);
 
-        alert(data.message);
+        alert(data.message + "\n\nPlease save your license key. It will be required every time you log in.");
         navigate("/dashboard");
         return;
       }

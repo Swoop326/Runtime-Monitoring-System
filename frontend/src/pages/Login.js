@@ -36,6 +36,7 @@ function Login() {
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("role", data.role);
         localStorage.setItem("device_id", deviceId);
+        localStorage.setItem("email", email);
 
         if (data.role === "admin") {
           navigate("/admin");
