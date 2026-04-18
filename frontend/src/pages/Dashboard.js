@@ -231,6 +231,40 @@ function Dashboard() {
         <p>Stored trust score: {securityData.feature_inputs?.trust_score}</p>
       </div>
 
+      {/* BEHAVIOR TIMELINE */}
+      <div style={{ marginTop: "12px", padding: "12px", backgroundColor: "#fef3c7", borderRadius: "8px" }}>
+        <p style={{ marginBottom: "6px", fontWeight: "bold", color: "#92400e" }}>📊 Behavior Timeline</p>
+        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+          <span style={{
+            padding: "4px 8px",
+            backgroundColor: securityData.event_rate > 10 ? "#dc2626" : securityData.event_rate > 5 ? "#f59e0b" : "#10b981",
+            color: "white",
+            borderRadius: "4px",
+            fontSize: "12px"
+          }}>
+            Event Rate: {securityData.event_rate}/sec
+          </span>
+          <span style={{
+            padding: "4px 8px",
+            backgroundColor: securityData.anomaly_score === 1 ? "#dc2626" : "#10b981",
+            color: "white",
+            borderRadius: "4px",
+            fontSize: "12px"
+          }}>
+            ML: {securityData.ml_prediction}
+          </span>
+          <span style={{
+            padding: "4px 8px",
+            backgroundColor: securityData.trust_score > 80 ? "#10b981" : securityData.trust_score > 50 ? "#f59e0b" : "#dc2626",
+            color: "white",
+            borderRadius: "4px",
+            fontSize: "12px"
+          }}>
+            Trust: {securityData.trust_score}
+          </span>
+        </div>
+      </div>
+
       <p style={{ marginTop: "10px", fontSize: "14px", color: "gray" }}>
         ML Model → Detects anomaly → Updates trust score → Applies policy
       </p>

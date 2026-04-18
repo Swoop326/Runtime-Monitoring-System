@@ -218,7 +218,8 @@ def log_event_api(data: dict):
 
     event = data.get("event")
     license_key = data.get("license_key")
-    device_id = data.get("device_id")   # 🔥 ADD THIS
+    device_id = data.get("device_id")
+    timestamp = data.get("timestamp", datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 
     license_data = get_license(license_key)
 
@@ -236,6 +237,27 @@ def log_event_api(data: dict):
 
     # ✅ ONLY VALID DEVICE CAN LOG
     record_event(event, license_key=license_key)
+
+    # 🔥 ENHANCED BEHAVIOR LOGGING
+    behavior_data = {
+        "timestamp": timestamp,
+        "event": event,
+        "device_id": device_id,
+        "license_key": license_key,
+        "user_agent": data.get("user_agent", ""),
+        "ip_address": data.get("ip_address", ""),
+        "session_duration": data.get("session_duration", 0),
+        "keystroke_pattern": data.get("keystroke_pattern", ""),
+        "mouse_movements": data.get("mouse_movements", ""),
+        "behavior_score": data.get("behavior_score", 0)
+    }
+
+    # Save to enhanced behavior log
+    try:
+        with open(f"logs/behavior_{license_key}.jsonl", "a") as f:
+            f.write(json.dumps(behavior_data) + "\n")
+    except:
+        pass
 
     return {"success": True}
 
@@ -476,24 +498,97 @@ def dynamic_trust_scores(request: Request):
         }
     }
 
-@app.get("/logs")
-def get_logs(license_key: str):
+@app.get("/adaptive-challenge")
+def get_adaptive_challenge(request: Request):
+    device_id = request.query_params.get("device_id")
+    license_key = request.query_params.get("license_key")
 
-    logs = []
-    log_file = f"logs/{license_key}.txt"
+    # Get current risk assessment
+    trust_response = dynamic_trust_scores(request)
+    trust_score = trust_response.get("trust_score", 100)
+    event_rate = trust_response.get("event_rate", 0)
+
+    challenges = []
+
+    # 🔥 HIGH RISK → MULTI-FACTOR CHALLENGES
+    if trust_score < 30 or event_rate > 10:
+        challenges = [
+            {"type": "biometric", "message": "Please provide fingerprint verification"},
+            {"type": "location", "message": "Verify your current location"},
+            {"type": "behavior", "message": "Complete behavioral verification"}
+        ]
+
+    # 🔥 MEDIUM RISK → SINGLE CHALLENGE
+    elif trust_score < 70 or event_rate > 5:
+        challenges = [
+            {"type": "captcha", "message": "Please solve the security puzzle"}
+        ]
+
+    # 🔥 LOW RISK → NO CHALLENGE
+    else:
+        challenges = []
+
+    return {
+        "challenges_required": len(challenges) > 0,
+        "challenges": challenges,
+        "risk_level": "high" if trust_score < 30 else "medium" if trust_score < 70 else "low"
+    }
+
+
+@app.get("/behavior-profile")
+def get_behavior_profile(license_key: str):
+    """Generate user behavior profile for adaptive authentication"""
 
     try:
-        with open(log_file, "r") as file:
-            for line in file:
-                logs.append(line.strip())
-    except:
-        pass
+        # Load behavior logs
+        behavior_logs = []
+        try:
+            with open(f"logs/behavior_{license_key}.jsonl", "r") as f:
+                for line in f:
+                    behavior_logs.append(json.loads(line))
+        except FileNotFoundError:
+            pass
 
-    return logs
+        if not behavior_logs:
+            return {"profile": "insufficient_data", "confidence": 0}
 
+        # Analyze patterns
+        total_events = len(behavior_logs)
+        avg_session_duration = sum(log.get("session_duration", 0) for log in behavior_logs) / max(total_events, 1)
 
-@app.get("/download-report")
-def download_report(license_key: str):
+        # Time-based patterns
+        hour_counts = {}
+        for log in behavior_logs:
+            try:
+                dt = datetime.datetime.strptime(log["timestamp"], "%Y-%m-%d %H:%M:%S")
+                hour = dt.hour
+                hour_counts[hour] = hour_counts.get(hour, 0) + 1
+            except:
+                continue
+
+        peak_hour = max(hour_counts.keys(), key=lambda h: hour_counts[h]) if hour_counts else 0
+
+        # Device consistency
+        devices = set(log.get("device_id", "") for log in behavior_logs)
+        device_consistency = len(devices) <= 2  # Allow 1-2 devices
+
+        # Behavior score
+        behavior_score = min(100, (total_events * 2) + (avg_session_duration * 0.1) + (device_consistency * 20))
+
+        return {
+            "profile": {
+                "total_events": total_events,
+                "avg_session_duration": round(avg_session_duration, 2),
+                "peak_usage_hour": peak_hour,
+                "device_consistency": device_consistency,
+                "unique_devices": len(devices)
+            },
+            "behavior_score": round(behavior_score, 2),
+            "confidence": min(100, total_events * 5)  # Confidence increases with data
+        }
+
+    except Exception as e:
+        return {"error": str(e)}
 
     license_data = licenses_collection.find_one({"license_key": license_key})
 
