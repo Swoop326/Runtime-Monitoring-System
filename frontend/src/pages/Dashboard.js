@@ -250,7 +250,7 @@ function Dashboard() {
           </button>
 
           <button
-            style={{ ...button, opacity: securityData?.policy !== "ALLOW" ? 0.7 : 1 }}
+            style={{ ...button, opacity: securityData?.policy !== "ALLOW" ? 0.5 : 1 }}
             onClick={() => sendEvent("data_export")}
             disabled={securityData?.policy !== "ALLOW"}
           >
