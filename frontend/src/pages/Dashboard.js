@@ -9,6 +9,8 @@ function Dashboard() {
   const [securityData, setSecurityData] = useState(null);
   const [prevScore, setPrevScore] = useState(null);
   const [lastPolicy, setLastPolicy] = useState(null);
+  const [systemHealth, setSystemHealth] = useState(null);
+  const [demoMode, setDemoMode] = useState(false);
   const lastPolicyRef = useRef(null);
 
   const container = {
@@ -92,13 +94,39 @@ function Dashboard() {
     }
   };
 
+  const fetchSystemHealth = async () => {
+    try {
+      const res = await fetch(`${API_BASE_URL}/system-health`);
+      const data = await res.json();
+      setSystemHealth(data);
+      setDemoMode(data.demo_mode || false);
+    } catch (error) {
+      console.error("Failed to fetch system health:", error);
+    }
+  };
+
+  const toggleDemoMode = async () => {
+    try {
+      const newMode = !demoMode;
+      await fetch(`${API_BASE_URL}/demo-mode?demo=${newMode}`);
+      setDemoMode(newMode);
+      fetchSystemHealth(); // Refresh health data
+    } catch (error) {
+      console.error("Failed to toggle demo mode:", error);
+    }
+  };
+
   useEffect(() => {
 
     fetch(`${API_BASE_URL}/start-session`, { method: "POST" });
 
     checkAccess();
+    fetchSystemHealth();
 
-    const interval = setInterval(checkAccess, 2000);
+    const interval = setInterval(() => {
+      checkAccess();
+      fetchSystemHealth();
+    }, 2000);
 
     return () => {
       clearInterval(interval);
@@ -371,6 +399,65 @@ function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* SYSTEM HEALTH DASHBOARD */}
+      {systemHealth && (
+        <div style={{ marginTop: "12px", padding: "12px", backgroundColor: systemHealth.status === "HEALTHY" ? "#f0fdf4" : "#fef2f2", borderRadius: "8px", border: `1px solid ${systemHealth.status === "HEALTHY" ? "#bbf7d0" : "#fecaca"}` }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
+            <p style={{ margin: 0, fontWeight: "bold", color: systemHealth.status === "HEALTHY" ? "#166534" : "#991b1b" }}>
+              🔍 System Health: {systemHealth.status}
+            </p>
+            <button
+              onClick={toggleDemoMode}
+              style={{
+                padding: "4px 8px",
+                backgroundColor: demoMode ? "#f59e0b" : "#6b7280",
+                color: "white",
+                border: "none",
+                borderRadius: "4px",
+                fontSize: "11px",
+                cursor: "pointer"
+              }}
+            >
+              {demoMode ? "🎭 Demo ON" : "📊 Demo OFF"}
+            </button>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))", gap: "6px", fontSize: "11px" }}>
+            <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px", textAlign: "center" }}>
+              <div style={{ color: systemHealth.components?.database === "CONNECTED" ? "#10b981" : "#dc2626", fontSize: "14px", marginBottom: "2px" }}>
+                {systemHealth.components?.database === "CONNECTED" ? "🗄️" : "❌"}
+              </div>
+              <strong>Database</strong><br/>
+              <span style={{ color: systemHealth.components?.database === "CONNECTED" ? "#059669" : "#dc2626" }}>
+                {systemHealth.components?.database || "UNKNOWN"}
+              </span>
+            </div>
+            <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px", textAlign: "center" }}>
+              <div style={{ color: systemHealth.components?.ml_model === "LOADED" ? "#10b981" : "#dc2626", fontSize: "14px", marginBottom: "2px" }}>
+                {systemHealth.components?.ml_model === "LOADED" ? "🧠" : "❌"}
+              </div>
+              <strong>ML Model</strong><br/>
+              <span style={{ color: systemHealth.components?.ml_model === "LOADED" ? "#059669" : "#dc2626" }}>
+                {systemHealth.components?.ml_model || "UNKNOWN"}
+              </span>
+            </div>
+            <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px", textAlign: "center" }}>
+              <div style={{ color: systemHealth.components?.logging === "AVAILABLE" ? "#10b981" : "#dc2626", fontSize: "14px", marginBottom: "2px" }}>
+                {systemHealth.components?.logging === "AVAILABLE" ? "📝" : "❌"}
+              </div>
+              <strong>Logging</strong><br/>
+              <span style={{ color: systemHealth.components?.logging === "AVAILABLE" ? "#059669" : "#dc2626" }}>
+                {systemHealth.components?.logging || "UNKNOWN"}
+              </span>
+            </div>
+          </div>
+
+          <div style={{ marginTop: "8px", fontSize: "11px", color: "#6b7280" }}>
+            <strong>Metrics:</strong> {systemHealth.metrics?.active_sessions || 0} active sessions, {systemHealth.metrics?.total_users || 0} total users
+          </div>
+        </div>
+      )}
 
         {/* ACTION BUTTONS */}
         <div style={{ marginTop: "30px", width: "300px" }}>

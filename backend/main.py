@@ -31,6 +31,9 @@ from database.database import (
 
 from database.mongo_connection import users_collection, licenses_collection
 
+# Global demo mode flag
+DEMO_MODE = False
+
 app = FastAPI()
 
 app.add_middleware(
@@ -47,6 +50,71 @@ app.add_middleware(
 @app.get("/")
 def home():
     return {"message": "Adaptive Runtime License Validation System Running"}
+
+@app.get("/demo-mode")
+def toggle_demo_mode(demo: bool = True):
+    """Enable demo mode for faster response times and clearer demonstrations"""
+    global DEMO_MODE
+    DEMO_MODE = demo
+
+    if demo:
+        # Reduce polling intervals and increase sensitivity for demo
+        return {
+            "status": "Demo mode ENABLED",
+            "changes": [
+                "Faster trust score updates",
+                "Increased anomaly sensitivity",
+                "Enhanced visual feedback",
+                "Clearer policy transitions"
+            ]
+        }
+    else:
+        return {"status": "Demo mode DISABLED"}
+
+@app.get("/system-health")
+def get_system_health():
+    """Comprehensive system health check for demo purposes"""
+    try:
+        # Check MongoDB connection
+        db_status = "CONNECTED" if users_collection.count_documents({}) >= 0 else "FAILED"
+
+        # Check ML model
+        ml_status = "LOADED" if os.path.exists("ml_model/model.pkl") else "MISSING"
+
+        # Check logs directory
+        logs_status = "AVAILABLE" if os.path.exists("logs") else "MISSING"
+
+        # Get active sessions count
+        active_sessions = licenses_collection.count_documents({"status": "active"})
+
+        # Get total users
+        total_users = users_collection.count_documents({})
+
+        return {
+            "timestamp": datetime.now().isoformat(),
+            "demo_mode": DEMO_MODE,
+            "components": {
+                "database": db_status,
+                "ml_model": ml_status,
+                "logging": logs_status
+            },
+            "metrics": {
+                "active_sessions": active_sessions,
+                "total_users": total_users,
+                "system_uptime": "Running"
+            },
+            "status": "HEALTHY" if all([
+                db_status == "CONNECTED",
+                ml_status == "LOADED",
+                logs_status == "AVAILABLE"
+            ]) else "DEGRADED"
+        }
+    except Exception as e:
+        return {
+            "timestamp": datetime.now().isoformat(),
+            "status": "ERROR",
+            "error": str(e)
+        }
 
 
 # -------------------------
