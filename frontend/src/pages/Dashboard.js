@@ -279,12 +279,98 @@ function Dashboard() {
         <p style={{ fontSize: "10px", color: "#6b7280", marginTop: "4px" }}>Recent activity levels (last 8 checks)</p>
       </div>
 
-      <p style={{ marginTop: "10px", fontSize: "14px", color: "gray" }}>
-        ML Model → Detects anomaly → Updates trust score → Applies policy
-      </p>
+      {/* TRUST SCORE BREAKDOWN */}
+      <div style={{ marginTop: "12px", padding: "12px", backgroundColor: "#f0f9ff", borderRadius: "8px" }}>
+        <p style={{ marginBottom: "8px", fontWeight: "bold", color: "#0369a1" }}>🎯 Trust Score Calculation</p>
 
-    </div>
-  )}
+        <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
+          <div style={{ flex: 1 }}>
+            <div style={{
+              width: "100%",
+              height: "8px",
+              backgroundColor: "#e5e7eb",
+              borderRadius: "4px",
+              overflow: "hidden"
+            }}>
+              <div style={{
+                width: `${securityData.trust_score}%`,
+                height: "100%",
+                backgroundColor: securityData.trust_score > 80 ? "#10b981" : securityData.trust_score > 50 ? "#f59e0b" : "#dc2626",
+                transition: "width 0.5s ease"
+              }}></div>
+            </div>
+            <p style={{ fontSize: "12px", color: "#6b7280", marginTop: "4px" }}>
+              {securityData.trust_score}/100 Trust Score
+            </p>
+          </div>
+        </div>
+
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px", fontSize: "11px" }}>
+          <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px" }}>
+            <strong>✅ Normal Factors:</strong><br/>
+            • Device consistency<br/>
+            • Regular usage patterns<br/>
+            • Normal session duration
+          </div>
+          <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px" }}>
+            <strong>❌ Penalty Factors:</strong><br/>
+            • High anomaly score (-30)<br/>
+            • Multiple sessions (-20)<br/>
+            • Excessive usage (-20)
+          </div>
+      {/* SYSTEM STATUS */}
+      <div style={{ marginTop: "12px", padding: "12px", backgroundColor: "#ecfdf5", borderRadius: "8px", border: "1px solid #d1fae5" }}>
+        <p style={{ marginBottom: "8px", fontWeight: "bold", color: "#065f46" }}>✅ System Status: ACTIVE</p>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: "8px", fontSize: "11px" }}>
+          <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px", textAlign: "center" }}>
+            <div style={{ color: "#10b981", fontSize: "16px", marginBottom: "2px" }}>🔄</div>
+            <strong>Runtime Monitor</strong><br/>
+            <span style={{ color: "#059669" }}>Active</span>
+          </div>
+          <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px", textAlign: "center" }}>
+            <div style={{ color: "#3b82f6", fontSize: "16px", marginBottom: "2px" }}>🧠</div>
+            <strong>ML Engine</strong><br/>
+            <span style={{ color: "#059669" }}>Isolation Forest</span>
+          </div>
+          <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px", textAlign: "center" }}>
+            <div style={{ color: "#f59e0b", fontSize: "16px", marginBottom: "2px" }}>📈</div>
+            <strong>Trust Scoring</strong><br/>
+            <span style={{ color: "#059669" }}>Dynamic</span>
+          </div>
+          <div style={{ padding: "6px", backgroundColor: "white", borderRadius: "4px", textAlign: "center" }}>
+            <div style={{ color: "#8b5cf6", fontSize: "16px", marginBottom: "2px" }}>🛡️</div>
+            <strong>Policy Engine</strong><br/>
+            <span style={{ color: "#059669" }}>Enforced</span>
+          </div>
+        </div>
+      </div>
+      <div style={{ marginTop: "12px", padding: "12px", backgroundColor: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+        <p style={{ marginBottom: "8px", fontWeight: "bold", color: "#334155" }}>🏗️ System Architecture</p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "6px", fontSize: "12px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span style={{ color: "#10b981", fontWeight: "bold" }}>📊</span>
+            <span><strong>Runtime Monitor:</strong> Continuous behavior tracking</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span style={{ color: "#3b82f6", fontWeight: "bold" }}>🤖</span>
+            <span><strong>ML Engine:</strong> Isolation Forest anomaly detection</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span style={{ color: "#f59e0b", fontWeight: "bold" }}>⚖️</span>
+            <span><strong>Trust Score Engine:</strong> Dynamic risk assessment</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span style={{ color: "#8b5cf6", fontWeight: "bold" }}>📋</span>
+            <span><strong>Policy Engine:</strong> Adaptive access control</span>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+            <span style={{ color: "#ef4444", fontWeight: "bold" }}>🔒</span>
+            <span><strong>Device Binding:</strong> Hardware-locked validation</span>
+          </div>
+        </div>
+      </div>
 
         {/* ACTION BUTTONS */}
         <div style={{ marginTop: "30px", width: "300px" }}>
