@@ -263,6 +263,20 @@ function Dashboard() {
             Trust: {securityData.trust_score}
           </span>
         </div>
+
+        {/* MINI CHART */}
+        <div style={{ marginTop: "8px", height: "40px", backgroundColor: "#f3f4f6", borderRadius: "4px", display: "flex", alignItems: "flex-end", gap: "2px", padding: "4px" }}>
+          {[0.2, 0.4, 0.6, 0.8, 1.0, 0.7, 0.9, securityData.event_rate / 15].map((val, i) => (
+            <div key={i} style={{
+              flex: 1,
+              backgroundColor: val > 0.8 ? "#dc2626" : val > 0.5 ? "#f59e0b" : "#10b981",
+              height: `${Math.max(4, val * 32)}px`,
+              borderRadius: "2px",
+              transition: "height 0.3s ease"
+            }}></div>
+          ))}
+        </div>
+        <p style={{ fontSize: "10px", color: "#6b7280", marginTop: "4px" }}>Recent activity levels (last 8 checks)</p>
       </div>
 
       <p style={{ marginTop: "10px", fontSize: "14px", color: "gray" }}>
