@@ -253,7 +253,24 @@ function AdminDashboard() {
 
       {/* LOGS */}
       <div style={card}>
-        <h3>Runtime Logs</h3>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
+          <h3 style={{ margin: 0 }}>Runtime Logs</h3>
+          <button
+            onClick={() => loadLogs(selectedLicense)}
+            disabled={!selectedLicense}
+            style={{
+              padding: "6px 10px",
+              fontSize: "12px",
+              border: "none",
+              borderRadius: "5px",
+              cursor: selectedLicense ? "pointer" : "not-allowed",
+              backgroundColor: selectedLicense ? "#0ea5e9" : "#94a3b8",
+              color: "white"
+            }}
+          >
+            Refresh
+          </button>
+        </div>
 
         <div style={logBox}>
           {logs.map((log, index) => (

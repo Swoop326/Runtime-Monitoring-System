@@ -31,7 +31,7 @@ from database.database import (
     update_devices
 )
 
-from database.mongo_connection import users_collection, licenses_collection
+from database.mongo_connection import users_collection, licenses_collection, runtime_logs_collection
 
 # Global demo mode flag
 DEMO_MODE = False
@@ -381,6 +381,15 @@ def log_event_api(data: dict):
         "geo_location_changed": geo_location_changed
     }
 
+    # Save runtime behavior log to MongoDB for durable cloud storage.
+    try:
+        runtime_logs_collection.insert_one({
+            **behavior_data,
+            "created_at": datetime.datetime.now()
+        })
+    except Exception as e:
+        print("MONGO LOG SAVE ERROR:", e)
+
     # Save to enhanced behavior log
     try:
         with open(f"logs/behavior_{license_key}.jsonl", "a") as f:
@@ -411,16 +420,27 @@ def get_logs(request: Request):
         return {"error": "license_key parameter required"}
 
     try:
-        # Try to read behavior logs first (JSONL format) 
-        behavior_logs = []
-        try:
-            with open(f"logs/behavior_{license_key}.jsonl", "r") as f:
-                for line in f:
-                    if line.strip():
-                        log_entry = json.loads(line.strip())
-                        behavior_logs.append(log_entry)
-        except FileNotFoundError:
-            pass  # No behavior logs yet
+        # Read behavior logs from MongoDB first (primary source).
+        behavior_logs = list(
+            runtime_logs_collection
+            .find({"license_key": license_key}, {"_id": 0})
+            .sort("created_at", -1)
+            .limit(50)
+        )
+
+        # Fallback to JSONL logs for legacy/local data.
+        if not behavior_logs:
+            behavior_logs = []
+            try:
+                with open(f"logs/behavior_{license_key}.jsonl", "r") as f:
+                    for line in f:
+                        if line.strip():
+                            log_entry = json.loads(line.strip())
+                            behavior_logs.append(log_entry)
+            except FileNotFoundError:
+                pass  # No behavior logs yet
+
+            behavior_logs = behavior_logs[-50:]
 
         # Try to read general logs (text format) as fallback
         general_logs = [] 
@@ -436,7 +456,7 @@ def get_logs(request: Request):
         all_logs = []
 
         # Add behavior logs (more detailed) 
-        for log in behavior_logs[-50:]:  # Last 50 entries
+        for log in behavior_logs:  # Already limited when reading from source
             timestamp = log.get("timestamp", "Unknown") 
             event = log.get("event", "Unknown event")
             device_id = log.get("device_id", "Unknown device")[:20]  # Truncate long IDs
@@ -451,6 +471,55 @@ def get_logs(request: Request):
 
     except Exception as e:
         return {"error": f"Failed to read logs: {str(e)}"}
+
+
+@app.post("/migrate-logs-to-mongodb")
+def migrate_logs_to_mongodb(data: dict):
+    license_key = data.get("license_key")
+    if not license_key:
+        return {"success": False, "message": "license_key is required"}
+
+    file_path = f"logs/behavior_{license_key}.jsonl"
+    migrated_count = 0
+
+    try:
+        with open(file_path, "r") as f:
+            for line in f:
+                if not line.strip():
+                    continue
+
+                try:
+                    log_entry = json.loads(line.strip())
+                except Exception:
+                    continue
+
+                # Avoid duplicate inserts for same license/timestamp/event/device tuple.
+                existing = runtime_logs_collection.find_one({
+                    "license_key": log_entry.get("license_key"),
+                    "timestamp": log_entry.get("timestamp"),
+                    "event": log_entry.get("event"),
+                    "device_id": log_entry.get("device_id")
+                })
+
+                if existing:
+                    continue
+
+                runtime_logs_collection.insert_one({
+                    **log_entry,
+                    "created_at": datetime.datetime.now()
+                })
+                migrated_count += 1
+
+        return {
+            "success": True,
+            "license_key": license_key,
+            "migrated_count": migrated_count,
+            "message": "Logs migrated to MongoDB"
+        }
+    except FileNotFoundError:
+        return {"success": False, "message": f"No behavior log file found for {license_key}"}
+    except Exception as e:
+        return {"success": False, "message": str(e)}
 
 
 # -------------------------
@@ -748,14 +817,19 @@ def get_behavior_profile(license_key: str):
     """Generate user behavior profile for adaptive authentication"""
 
     try:
-        # Load behavior logs
-        behavior_logs = []
-        try:
-            with open(f"logs/behavior_{license_key}.jsonl", "r") as f:
-                for line in f:
-                    behavior_logs.append(json.loads(line))
-        except FileNotFoundError:
-            pass
+        # Load behavior logs from MongoDB first.
+        behavior_logs = list(
+            runtime_logs_collection.find({"license_key": license_key}, {"_id": 0})
+        )
+
+        # Fallback to JSONL for legacy/local logs.
+        if not behavior_logs:
+            try:
+                with open(f"logs/behavior_{license_key}.jsonl", "r") as f:
+                    for line in f:
+                        behavior_logs.append(json.loads(line))
+            except FileNotFoundError:
+                pass
 
         if not behavior_logs:
             return {"profile": "insufficient_data", "confidence": 0}
@@ -798,23 +872,32 @@ def get_behavior_profile(license_key: str):
     except Exception as e:
         return {"error": str(e)}
 
+
+@app.get("/download-report")
+def download_report(license_key: str):
     license_data = licenses_collection.find_one({"license_key": license_key})
 
     if not license_data:
         return {"error": "Invalid license"}
 
-    logs = []
-    log_file = f"logs/{license_key}.txt"
+    # Prefer MongoDB logs for cloud/deployment compatibility.
+    logs = list(
+        runtime_logs_collection
+        .find({"license_key": license_key}, {"_id": 0})
+        .sort("created_at", 1)
+    )
 
-    try:
-        with open(log_file, "r") as file:
-            for line in file:
-                if line.strip():
-                    logs.append(json.loads(line.strip()))
-    except FileNotFoundError:
-        pass
-    except Exception:
-        pass
+    # Fallback to local JSONL logs for historical/dev data.
+    if not logs:
+        try:
+            with open(f"logs/behavior_{license_key}.jsonl", "r") as file:
+                for line in file:
+                    if line.strip():
+                        logs.append(json.loads(line.strip()))
+        except FileNotFoundError:
+            pass
+        except Exception:
+            pass
 
     now = datetime.datetime.now()
     window = timedelta(seconds=5)
@@ -822,7 +905,7 @@ def get_behavior_profile(license_key: str):
 
     for log in logs:
         try:
-            log_time = datetime.datetime.strptime(log["timestamp"], "%Y-%m-%d %H:%M:%S")
+            log_time = datetime.datetime.strptime(log.get("timestamp", ""), "%Y-%m-%d %H:%M:%S")
             if now - log_time <= window:
                 recent_events.append(log)
         except Exception:
@@ -852,14 +935,16 @@ def get_behavior_profile(license_key: str):
     writer.writerow(["Recent Event Rate", summary["event_rate"]])
     writer.writerow(["Report Generated", summary["generated_at"]])
     writer.writerow([])
-    writer.writerow(["timestamp", "event", "device", "duration"])
+    writer.writerow(["timestamp", "event", "device_id", "session_duration", "behavior_score", "geo_location_changed"])
 
     for log in logs:
         writer.writerow([
             log.get("timestamp", ""),
             log.get("event", ""),
-            log.get("device", ""),
-            log.get("duration", "")
+            log.get("device_id", ""),
+            log.get("session_duration", ""),
+            log.get("behavior_score", ""),
+            log.get("geo_location_changed", "")
         ])
 
     output.seek(0)

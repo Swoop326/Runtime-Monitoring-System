@@ -18,20 +18,25 @@ function Dashboard() {
 
   const container = {
     display: "flex",
-    height: "100vh"
+    minHeight: "100vh",
+    background: "linear-gradient(135deg, #eef2ff 0%, #f8fafc 45%, #ecfeff 100%)"
   };
 
   const sidebar = {
-    width: "220px",
-    backgroundColor: "#1e293b",
+    width: "250px",
+    background: "linear-gradient(180deg, #0f172a 0%, #1e293b 55%, #0b1220 100%)",
     color: "white",
-    padding: "20px"
+    padding: "24px 20px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    boxShadow: "8px 0 28px rgba(15, 23, 42, 0.28)"
   };
 
   const main = {
     flex: 1,
-    padding: "40px",
-    backgroundColor: "#f5f7fb"
+    padding: "28px 32px",
+    background: "transparent"
   };
 
   const card = {
@@ -43,14 +48,17 @@ function Dashboard() {
   };
 
   const button = {
-    padding: "10px",
+    padding: "11px 12px",
     marginTop: "10px",
     width: "100%",
     border: "none",
-    borderRadius: "5px",
-    backgroundColor: "#2563eb",
+    borderRadius: "10px",
+    background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #0ea5e9 100%)",
     color: "white",
-    cursor: "pointer"
+    cursor: "pointer",
+    fontWeight: 600,
+    letterSpacing: "0.2px",
+    boxShadow: "0 8px 20px rgba(37, 99, 235, 0.28)"
   };
 
   const notifyWithCooldown = (key, message, cooldownMs = 30000) => {
@@ -226,11 +234,15 @@ function Dashboard() {
 
       {/* SIDEBAR */}
       <div style={sidebar}>
-        <h2>AdaptiveDesk</h2>
+        <div>
+          <h2 style={{ margin: 0, fontSize: "24px", letterSpacing: "0.4px" }}>AdaptiveDesk</h2>
+          <p style={{ marginTop: "10px", marginBottom: 0, opacity: 0.8, fontSize: "13px" }}>Runtime Security Console</p>
+          <div style={{ marginTop: "22px", padding: "10px 12px", borderRadius: "10px", backgroundColor: "rgba(148, 163, 184, 0.16)", fontSize: "13px" }}>
+            User Dashboard
+          </div>
+        </div>
 
-        <p style={{ marginTop: "20px" }}>Dashboard</p>
-
-        <button onClick={handleLogout} style={{ marginTop: "20px" }}>
+        <button onClick={handleLogout} style={{ ...button, background: "rgba(239, 68, 68, 0.9)", boxShadow: "none" }}>
           Logout
         </button>
       </div>
@@ -238,13 +250,24 @@ function Dashboard() {
       {/* MAIN */}
       <div style={main}>
 
-        <div style={{ padding: "20px" }}>
-          <h1>Software Dashboard</h1>
+        <div style={{ padding: "8px 10px" }}>
+          <div style={{
+            padding: "16px 18px",
+            borderRadius: "16px",
+            backgroundColor: "rgba(255, 255, 255, 0.82)",
+            border: "1px solid #e2e8f0",
+            boxShadow: "0 10px 30px rgba(15, 23, 42, 0.08)"
+          }}>
+            <h1 style={{ margin: 0, fontSize: "28px", color: "#0f172a" }}>Software Dashboard</h1>
+            <p style={{ margin: "6px 0 0 0", color: "#475569", fontSize: "14px" }}>
+              Live trust scoring, anomaly detection, and adaptive policy controls.
+            </p>
+          </div>
 
           {/* MAIN DASHBOARD GRID */}
           <div style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
             gap: "20px",
             marginTop: "20px"
           }}>
