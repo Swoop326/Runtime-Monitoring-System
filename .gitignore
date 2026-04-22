@@ -137,3 +137,40 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# -------------------------
+# Python / FastAPI backend
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local Python and IDE settings
+.python-version
+
+# Local databases and runtime files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backend generated logs/data
+backend/license_runtime.log
+backend/logs/*.txt
+backend/logs/*.jsonl
+
+# Frontend production artifacts
+frontend/build/
