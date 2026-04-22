@@ -10481,3 +10481,1960 @@
 2026-04-18 15:15:42,426 | INFO | Trust Score Engine initialized
 2026-04-18 15:15:42,435 | INFO | Policy Engine initialized
 2026-04-18 15:15:42,435 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:24,755 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:24,767 | INFO | Policy Engine initialized
+2026-04-18 16:26:24,768 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:24,811 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:24,825 | INFO | Policy Engine initialized
+2026-04-18 16:26:24,825 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:27,410 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:27,420 | INFO | Policy Engine initialized
+2026-04-18 16:26:27,420 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:29,450 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:29,459 | INFO | Policy Engine initialized
+2026-04-18 16:26:29,459 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:31,468 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:31,476 | INFO | Policy Engine initialized
+2026-04-18 16:26:31,476 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:33,406 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:33,417 | INFO | Policy Engine initialized
+2026-04-18 16:26:33,417 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:35,410 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:35,419 | INFO | Policy Engine initialized
+2026-04-18 16:26:35,420 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:37,419 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:37,429 | INFO | Policy Engine initialized
+2026-04-18 16:26:37,430 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:39,408 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:39,417 | INFO | Policy Engine initialized
+2026-04-18 16:26:39,417 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:26:41,419 | INFO | Trust Score Engine initialized
+2026-04-18 16:26:41,428 | INFO | Policy Engine initialized
+2026-04-18 16:26:41,428 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:27:37,414 | INFO | Trust Score Engine initialized
+2026-04-18 16:27:37,433 | INFO | Policy Engine initialized
+2026-04-18 16:27:37,433 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:28:37,704 | INFO | Trust Score Engine initialized
+2026-04-18 16:28:37,714 | INFO | Policy Engine initialized
+2026-04-18 16:28:37,715 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:28:59,243 | INFO | Trust Score Engine initialized
+2026-04-18 16:28:59,252 | INFO | Policy Engine initialized
+2026-04-18 16:28:59,252 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:00,795 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:00,804 | INFO | Policy Engine initialized
+2026-04-18 16:29:00,804 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:02,501 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:02,517 | INFO | Policy Engine initialized
+2026-04-18 16:29:02,517 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:04,772 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:04,783 | INFO | Policy Engine initialized
+2026-04-18 16:29:04,783 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:06,524 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:06,535 | INFO | Policy Engine initialized
+2026-04-18 16:29:06,536 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:08,784 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:08,794 | INFO | Policy Engine initialized
+2026-04-18 16:29:08,794 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:10,522 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:10,532 | INFO | Policy Engine initialized
+2026-04-18 16:29:10,532 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:12,498 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:12,507 | INFO | Policy Engine initialized
+2026-04-18 16:29:12,507 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:14,785 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:14,794 | INFO | Policy Engine initialized
+2026-04-18 16:29:14,795 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:16,495 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:16,505 | INFO | Policy Engine initialized
+2026-04-18 16:29:16,505 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:18,489 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:18,499 | INFO | Policy Engine initialized
+2026-04-18 16:29:18,499 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:19,014 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:19,022 | INFO | Policy Engine initialized
+2026-04-18 16:29:19,023 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:20,465 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:20,473 | INFO | Policy Engine initialized
+2026-04-18 16:29:20,473 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:22,801 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:22,810 | INFO | Policy Engine initialized
+2026-04-18 16:29:22,810 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:24,514 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:24,523 | INFO | Policy Engine initialized
+2026-04-18 16:29:24,523 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:26,808 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:26,818 | INFO | Policy Engine initialized
+2026-04-18 16:29:26,819 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:27,290 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:27,300 | INFO | Policy Engine initialized
+2026-04-18 16:29:27,300 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:27,456 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:27,467 | INFO | Policy Engine initialized
+2026-04-18 16:29:27,467 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:27,616 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:27,627 | INFO | Policy Engine initialized
+2026-04-18 16:29:27,627 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:27,844 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:27,853 | INFO | Policy Engine initialized
+2026-04-18 16:29:27,854 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:28,505 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:28,513 | INFO | Policy Engine initialized
+2026-04-18 16:29:28,513 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:28,574 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:28,583 | INFO | Policy Engine initialized
+2026-04-18 16:29:28,584 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:29,043 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:29,053 | INFO | Policy Engine initialized
+2026-04-18 16:29:29,053 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:29,245 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:29,253 | INFO | Policy Engine initialized
+2026-04-18 16:29:29,253 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:29,502 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:29,511 | INFO | Policy Engine initialized
+2026-04-18 16:29:29,511 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:29,751 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:29,759 | INFO | Policy Engine initialized
+2026-04-18 16:29:29,759 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:30,507 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:30,521 | INFO | Policy Engine initialized
+2026-04-18 16:29:30,521 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:32,453 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:32,462 | INFO | Policy Engine initialized
+2026-04-18 16:29:32,462 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:34,494 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:34,505 | INFO | Policy Engine initialized
+2026-04-18 16:29:34,505 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:36,802 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:36,812 | INFO | Policy Engine initialized
+2026-04-18 16:29:36,813 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:38,504 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:38,529 | INFO | Policy Engine initialized
+2026-04-18 16:29:38,529 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:40,482 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:40,491 | INFO | Policy Engine initialized
+2026-04-18 16:29:40,491 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:41,688 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:41,699 | INFO | Policy Engine initialized
+2026-04-18 16:29:41,699 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:41,840 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:41,860 | INFO | Policy Engine initialized
+2026-04-18 16:29:41,860 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:41,989 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:42,000 | INFO | Policy Engine initialized
+2026-04-18 16:29:42,000 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:42,153 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:42,163 | INFO | Policy Engine initialized
+2026-04-18 16:29:42,163 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:42,322 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:42,331 | INFO | Policy Engine initialized
+2026-04-18 16:29:42,331 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:42,458 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:42,466 | INFO | Policy Engine initialized
+2026-04-18 16:29:42,466 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:42,820 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:42,833 | INFO | Policy Engine initialized
+2026-04-18 16:29:42,834 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:42,892 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:42,900 | INFO | Policy Engine initialized
+2026-04-18 16:29:42,900 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:42,992 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:42,999 | INFO | Policy Engine initialized
+2026-04-18 16:29:43,000 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:43,073 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:43,081 | INFO | Policy Engine initialized
+2026-04-18 16:29:43,081 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:43,127 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:43,136 | INFO | Policy Engine initialized
+2026-04-18 16:29:43,136 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:43,250 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:43,259 | INFO | Policy Engine initialized
+2026-04-18 16:29:43,260 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:43,429 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:43,437 | INFO | Policy Engine initialized
+2026-04-18 16:29:43,438 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:29:43,620 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:43,620 | WARNING | Penalty applied: high_anomaly (-30) | New Score: 70
+2026-04-18 16:29:43,631 | INFO | Policy Engine initialized
+2026-04-18 16:29:43,631 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:46,507 | INFO | Policy Engine initialized
+2026-04-18 16:29:46,508 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:48,493 | INFO | Policy Engine initialized
+2026-04-18 16:29:48,493 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:50,521 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:50,530 | INFO | Policy Engine initialized
+2026-04-18 16:29:50,530 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:52,766 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:52,773 | INFO | Policy Engine initialized
+2026-04-18 16:29:52,774 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:54,501 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:54,512 | INFO | Policy Engine initialized
+2026-04-18 16:29:54,513 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:56,807 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:56,815 | INFO | Policy Engine initialized
+2026-04-18 16:29:56,816 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:58,050 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:58,061 | INFO | Policy Engine initialized
+2026-04-18 16:29:58,061 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:58,241 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:58,252 | INFO | Policy Engine initialized
+2026-04-18 16:29:58,252 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:58,400 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:58,410 | INFO | Policy Engine initialized
+2026-04-18 16:29:58,411 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:58,482 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:58,494 | INFO | Policy Engine initialized
+2026-04-18 16:29:58,494 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:58,574 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:58,582 | INFO | Policy Engine initialized
+2026-04-18 16:29:58,582 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:58,799 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:58,809 | INFO | Policy Engine initialized
+2026-04-18 16:29:58,809 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:58,956 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:58,965 | INFO | Policy Engine initialized
+2026-04-18 16:29:58,965 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:59,105 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:59,113 | INFO | Policy Engine initialized
+2026-04-18 16:29:59,113 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:59,292 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:59,300 | INFO | Policy Engine initialized
+2026-04-18 16:29:59,301 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:59,455 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:59,482 | INFO | Policy Engine initialized
+2026-04-18 16:29:59,483 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:59,734 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:59,743 | INFO | Policy Engine initialized
+2026-04-18 16:29:59,744 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:29:59,898 | INFO | Trust Score Engine initialized
+2026-04-18 16:29:59,909 | INFO | Policy Engine initialized
+2026-04-18 16:29:59,909 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:30:00,082 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:00,090 | INFO | Policy Engine initialized
+2026-04-18 16:30:00,090 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-18 16:30:00,291 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:00,291 | WARNING | Penalty applied: high_anomaly (-30) | New Score: 40
+2026-04-18 16:30:00,301 | INFO | Policy Engine initialized
+2026-04-18 16:30:00,301 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:03,571 | INFO | Policy Engine initialized
+2026-04-18 16:30:03,571 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:04,468 | INFO | Policy Engine initialized
+2026-04-18 16:30:04,468 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:06,806 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:06,817 | INFO | Policy Engine initialized
+2026-04-18 16:30:06,817 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:09,451 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:09,460 | INFO | Policy Engine initialized
+2026-04-18 16:30:09,461 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:10,680 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:10,688 | INFO | Policy Engine initialized
+2026-04-18 16:30:10,688 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:11,452 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:11,463 | INFO | Policy Engine initialized
+2026-04-18 16:30:11,464 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:13,753 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:13,763 | INFO | Policy Engine initialized
+2026-04-18 16:30:13,764 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:15,461 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:15,475 | INFO | Policy Engine initialized
+2026-04-18 16:30:15,475 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:17,755 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:17,765 | INFO | Policy Engine initialized
+2026-04-18 16:30:17,765 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-18 16:30:19,457 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:19,466 | INFO | Policy Engine initialized
+2026-04-18 16:30:19,466 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:19,801 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:19,810 | INFO | Policy Engine initialized
+2026-04-18 16:30:19,810 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:20,546 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:20,554 | INFO | Policy Engine initialized
+2026-04-18 16:30:20,554 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:22,778 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:22,787 | INFO | Policy Engine initialized
+2026-04-18 16:30:22,788 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:24,513 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:24,523 | INFO | Policy Engine initialized
+2026-04-18 16:30:24,524 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:26,788 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:26,797 | INFO | Policy Engine initialized
+2026-04-18 16:30:26,797 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:27,295 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:27,304 | INFO | Policy Engine initialized
+2026-04-18 16:30:27,304 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:27,503 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:27,512 | INFO | Policy Engine initialized
+2026-04-18 16:30:27,512 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:27,695 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:27,704 | INFO | Policy Engine initialized
+2026-04-18 16:30:27,704 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:27,889 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:27,898 | INFO | Policy Engine initialized
+2026-04-18 16:30:27,898 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:28,032 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:28,041 | INFO | Policy Engine initialized
+2026-04-18 16:30:28,041 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:28,297 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:28,306 | INFO | Policy Engine initialized
+2026-04-18 16:30:28,307 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:28,510 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:28,519 | INFO | Policy Engine initialized
+2026-04-18 16:30:28,520 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:28,765 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:28,774 | INFO | Policy Engine initialized
+2026-04-18 16:30:28,774 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:28,957 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:28,965 | INFO | Policy Engine initialized
+2026-04-18 16:30:28,965 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:29,108 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:29,117 | INFO | Policy Engine initialized
+2026-04-18 16:30:29,117 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:29,322 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:29,331 | INFO | Policy Engine initialized
+2026-04-18 16:30:29,331 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:29,548 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:29,557 | INFO | Policy Engine initialized
+2026-04-18 16:30:29,557 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:30,002 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:30,011 | INFO | Policy Engine initialized
+2026-04-18 16:30:30,012 | INFO | Policy decision generated | Score: 80 | Action: WARN
+2026-04-18 16:30:30,187 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:30,188 | WARNING | Penalty applied: high_anomaly (-30) | New Score: 50
+2026-04-18 16:30:30,203 | INFO | Policy Engine initialized
+2026-04-18 16:30:30,203 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:32,429 | INFO | Policy Engine initialized
+2026-04-18 16:30:32,429 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:32,535 | INFO | Policy Engine initialized
+2026-04-18 16:30:32,535 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:34,490 | INFO | Policy Engine initialized
+2026-04-18 16:30:34,490 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:34,784 | INFO | Policy Engine initialized
+2026-04-18 16:30:34,784 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:35,580 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:35,589 | INFO | Policy Engine initialized
+2026-04-18 16:30:35,589 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:35,806 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:35,822 | INFO | Policy Engine initialized
+2026-04-18 16:30:35,823 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:36,133 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:36,141 | INFO | Policy Engine initialized
+2026-04-18 16:30:36,141 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:36,614 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:36,624 | INFO | Policy Engine initialized
+2026-04-18 16:30:36,624 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:36,818 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:36,828 | INFO | Policy Engine initialized
+2026-04-18 16:30:36,828 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:36,908 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:36,916 | INFO | Policy Engine initialized
+2026-04-18 16:30:36,916 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:36,965 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:36,975 | INFO | Policy Engine initialized
+2026-04-18 16:30:36,975 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:37,044 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:37,053 | INFO | Policy Engine initialized
+2026-04-18 16:30:37,054 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:37,126 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:37,143 | INFO | Policy Engine initialized
+2026-04-18 16:30:37,144 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:37,300 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:37,309 | INFO | Policy Engine initialized
+2026-04-18 16:30:37,309 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:37,494 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:37,503 | INFO | Policy Engine initialized
+2026-04-18 16:30:37,503 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:37,675 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:37,684 | INFO | Policy Engine initialized
+2026-04-18 16:30:37,684 | INFO | Policy decision generated | Score: 50 | Action: WARN
+2026-04-18 16:30:37,887 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:37,887 | WARNING | Penalty applied: high_anomaly (-30) | New Score: 20
+2026-04-18 16:30:37,902 | INFO | Policy Engine initialized
+2026-04-18 16:30:37,903 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:41,226 | INFO | Policy Engine initialized
+2026-04-18 16:30:41,226 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:42,502 | INFO | Policy Engine initialized
+2026-04-18 16:30:42,502 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:44,501 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:44,512 | INFO | Policy Engine initialized
+2026-04-18 16:30:44,513 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:46,515 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:46,524 | INFO | Policy Engine initialized
+2026-04-18 16:30:46,524 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:48,493 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:48,513 | INFO | Policy Engine initialized
+2026-04-18 16:30:48,513 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:51,430 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:51,442 | INFO | Policy Engine initialized
+2026-04-18 16:30:51,443 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:53,667 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:53,674 | INFO | Policy Engine initialized
+2026-04-18 16:30:53,675 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:55,457 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:55,466 | INFO | Policy Engine initialized
+2026-04-18 16:30:55,466 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:56,120 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:56,127 | INFO | Policy Engine initialized
+2026-04-18 16:30:56,127 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:57,458 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:57,468 | INFO | Policy Engine initialized
+2026-04-18 16:30:57,468 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:30:59,760 | INFO | Trust Score Engine initialized
+2026-04-18 16:30:59,768 | INFO | Policy Engine initialized
+2026-04-18 16:30:59,768 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:01,481 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:01,490 | INFO | Policy Engine initialized
+2026-04-18 16:31:01,490 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:03,417 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:03,426 | INFO | Policy Engine initialized
+2026-04-18 16:31:03,426 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:05,392 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:05,404 | INFO | Policy Engine initialized
+2026-04-18 16:31:05,404 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:07,417 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:07,426 | INFO | Policy Engine initialized
+2026-04-18 16:31:07,426 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:09,412 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:09,421 | INFO | Policy Engine initialized
+2026-04-18 16:31:09,422 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:11,426 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:11,433 | INFO | Policy Engine initialized
+2026-04-18 16:31:11,434 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:13,441 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:13,449 | INFO | Policy Engine initialized
+2026-04-18 16:31:13,449 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:15,440 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:15,448 | INFO | Policy Engine initialized
+2026-04-18 16:31:15,448 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:17,419 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:17,427 | INFO | Policy Engine initialized
+2026-04-18 16:31:17,427 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:19,422 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:19,432 | INFO | Policy Engine initialized
+2026-04-18 16:31:19,432 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:21,430 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:21,442 | INFO | Policy Engine initialized
+2026-04-18 16:31:21,442 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:23,419 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:23,428 | INFO | Policy Engine initialized
+2026-04-18 16:31:23,428 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:25,432 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:25,441 | INFO | Policy Engine initialized
+2026-04-18 16:31:25,441 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:27,417 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:27,426 | INFO | Policy Engine initialized
+2026-04-18 16:31:27,426 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:29,730 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:29,741 | INFO | Policy Engine initialized
+2026-04-18 16:31:29,741 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:31,400 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:31,414 | INFO | Policy Engine initialized
+2026-04-18 16:31:31,414 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:33,416 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:33,426 | INFO | Policy Engine initialized
+2026-04-18 16:31:33,427 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:35,418 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:35,430 | INFO | Policy Engine initialized
+2026-04-18 16:31:35,430 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:37,411 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:37,420 | INFO | Policy Engine initialized
+2026-04-18 16:31:37,420 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:39,412 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:39,432 | INFO | Policy Engine initialized
+2026-04-18 16:31:39,432 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:41,419 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:41,430 | INFO | Policy Engine initialized
+2026-04-18 16:31:41,430 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:43,408 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:43,417 | INFO | Policy Engine initialized
+2026-04-18 16:31:43,418 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:45,419 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:45,430 | INFO | Policy Engine initialized
+2026-04-18 16:31:45,430 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:47,429 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:47,441 | INFO | Policy Engine initialized
+2026-04-18 16:31:47,441 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:31:49,410 | INFO | Trust Score Engine initialized
+2026-04-18 16:31:49,422 | INFO | Policy Engine initialized
+2026-04-18 16:31:49,422 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:32:44,137 | INFO | Trust Score Engine initialized
+2026-04-18 16:32:44,146 | INFO | Policy Engine initialized
+2026-04-18 16:32:44,146 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:33:37,840 | INFO | Trust Score Engine initialized
+2026-04-18 16:33:37,851 | INFO | Policy Engine initialized
+2026-04-18 16:33:37,852 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:34:02,707 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:02,724 | INFO | Policy Engine initialized
+2026-04-18 16:34:02,724 | INFO | Policy decision generated | Score: 20 | Action: SUSPEND
+2026-04-18 16:34:14,231 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:14,241 | INFO | Policy Engine initialized
+2026-04-18 16:34:14,241 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:14,942 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:14,951 | INFO | Policy Engine initialized
+2026-04-18 16:34:14,951 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:16,480 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:16,491 | INFO | Policy Engine initialized
+2026-04-18 16:34:16,491 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:18,473 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:18,498 | INFO | Policy Engine initialized
+2026-04-18 16:34:18,499 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:20,471 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:20,480 | INFO | Policy Engine initialized
+2026-04-18 16:34:20,480 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:21,923 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:21,932 | INFO | Policy Engine initialized
+2026-04-18 16:34:21,932 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:21,987 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:21,998 | INFO | Policy Engine initialized
+2026-04-18 16:34:21,999 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:23,930 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:23,939 | INFO | Policy Engine initialized
+2026-04-18 16:34:23,939 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:27,036 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:27,051 | INFO | Policy Engine initialized
+2026-04-18 16:34:27,051 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:28,502 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:28,512 | INFO | Policy Engine initialized
+2026-04-18 16:34:28,512 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:29,916 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:29,924 | INFO | Policy Engine initialized
+2026-04-18 16:34:29,924 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:31,920 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:31,928 | INFO | Policy Engine initialized
+2026-04-18 16:34:31,929 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:33,914 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:33,923 | INFO | Policy Engine initialized
+2026-04-18 16:34:33,923 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:35,909 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:35,918 | INFO | Policy Engine initialized
+2026-04-18 16:34:35,918 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:37,912 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:37,921 | INFO | Policy Engine initialized
+2026-04-18 16:34:37,921 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:39,920 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:39,929 | INFO | Policy Engine initialized
+2026-04-18 16:34:39,929 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:42,428 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:42,438 | INFO | Policy Engine initialized
+2026-04-18 16:34:42,438 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:44,432 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:44,441 | INFO | Policy Engine initialized
+2026-04-18 16:34:44,441 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:46,441 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:46,450 | INFO | Policy Engine initialized
+2026-04-18 16:34:46,450 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:48,440 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:48,450 | INFO | Policy Engine initialized
+2026-04-18 16:34:48,450 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:49,917 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:49,927 | INFO | Policy Engine initialized
+2026-04-18 16:34:49,927 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:52,593 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:52,604 | INFO | Policy Engine initialized
+2026-04-18 16:34:52,604 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:54,436 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:54,446 | INFO | Policy Engine initialized
+2026-04-18 16:34:54,446 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:55,917 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:55,926 | INFO | Policy Engine initialized
+2026-04-18 16:34:55,926 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:57,925 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:57,933 | INFO | Policy Engine initialized
+2026-04-18 16:34:57,933 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:34:59,920 | INFO | Trust Score Engine initialized
+2026-04-18 16:34:59,928 | INFO | Policy Engine initialized
+2026-04-18 16:34:59,929 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:01,930 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:01,938 | INFO | Policy Engine initialized
+2026-04-18 16:35:01,938 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:04,432 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:04,443 | INFO | Policy Engine initialized
+2026-04-18 16:35:04,443 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:06,461 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:06,471 | INFO | Policy Engine initialized
+2026-04-18 16:35:06,471 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:08,408 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:08,416 | INFO | Policy Engine initialized
+2026-04-18 16:35:08,416 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:10,483 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:10,492 | INFO | Policy Engine initialized
+2026-04-18 16:35:10,493 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:12,452 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:12,460 | INFO | Policy Engine initialized
+2026-04-18 16:35:12,460 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:14,418 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:14,431 | INFO | Policy Engine initialized
+2026-04-18 16:35:14,431 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:16,176 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:16,187 | INFO | Policy Engine initialized
+2026-04-18 16:35:16,187 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:18,463 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:18,478 | INFO | Policy Engine initialized
+2026-04-18 16:35:18,478 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:20,482 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:20,493 | INFO | Policy Engine initialized
+2026-04-18 16:35:20,493 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:22,479 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:22,486 | INFO | Policy Engine initialized
+2026-04-18 16:35:22,487 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:24,412 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:24,422 | INFO | Policy Engine initialized
+2026-04-18 16:35:24,422 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:41,359 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:41,369 | INFO | Policy Engine initialized
+2026-04-18 16:35:41,369 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:41,427 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:41,435 | INFO | Policy Engine initialized
+2026-04-18 16:35:41,436 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:41,613 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:41,621 | INFO | Policy Engine initialized
+2026-04-18 16:35:41,621 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:49,667 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:49,676 | INFO | Policy Engine initialized
+2026-04-18 16:35:49,676 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:49,824 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:49,835 | INFO | Policy Engine initialized
+2026-04-18 16:35:49,835 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:50,610 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:50,619 | INFO | Policy Engine initialized
+2026-04-18 16:35:50,619 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:51,477 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:51,485 | INFO | Policy Engine initialized
+2026-04-18 16:35:51,485 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:55,499 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:55,522 | INFO | Policy Engine initialized
+2026-04-18 16:35:55,522 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:55,599 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:55,610 | INFO | Policy Engine initialized
+2026-04-18 16:35:55,611 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:35:58,415 | INFO | Trust Score Engine initialized
+2026-04-18 16:35:58,425 | INFO | Policy Engine initialized
+2026-04-18 16:35:58,425 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:00,430 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:00,439 | INFO | Policy Engine initialized
+2026-04-18 16:36:00,439 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:06,103 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:06,123 | INFO | Policy Engine initialized
+2026-04-18 16:36:06,123 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:09,339 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:09,346 | INFO | Policy Engine initialized
+2026-04-18 16:36:09,346 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:16,682 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:16,690 | INFO | Policy Engine initialized
+2026-04-18 16:36:16,691 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:16,750 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:16,757 | INFO | Policy Engine initialized
+2026-04-18 16:36:16,757 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:18,547 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:18,557 | INFO | Policy Engine initialized
+2026-04-18 16:36:18,558 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:19,323 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:19,331 | INFO | Policy Engine initialized
+2026-04-18 16:36:19,331 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:19,377 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:19,387 | INFO | Policy Engine initialized
+2026-04-18 16:36:19,388 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:21,356 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:21,366 | INFO | Policy Engine initialized
+2026-04-18 16:36:21,367 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:23,345 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:23,354 | INFO | Policy Engine initialized
+2026-04-18 16:36:23,355 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:25,371 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:25,379 | INFO | Policy Engine initialized
+2026-04-18 16:36:25,379 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:27,338 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:27,347 | INFO | Policy Engine initialized
+2026-04-18 16:36:27,348 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:29,337 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:29,346 | INFO | Policy Engine initialized
+2026-04-18 16:36:29,346 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:31,359 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:31,383 | INFO | Policy Engine initialized
+2026-04-18 16:36:31,383 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:33,393 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:33,400 | INFO | Policy Engine initialized
+2026-04-18 16:36:33,401 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:35,424 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:35,434 | INFO | Policy Engine initialized
+2026-04-18 16:36:35,434 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:37,409 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:37,417 | INFO | Policy Engine initialized
+2026-04-18 16:36:37,417 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:39,410 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:39,419 | INFO | Policy Engine initialized
+2026-04-18 16:36:39,419 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:41,411 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:41,421 | INFO | Policy Engine initialized
+2026-04-18 16:36:41,421 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:43,423 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:43,433 | INFO | Policy Engine initialized
+2026-04-18 16:36:43,434 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:45,425 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:45,433 | INFO | Policy Engine initialized
+2026-04-18 16:36:45,434 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:47,423 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:47,433 | INFO | Policy Engine initialized
+2026-04-18 16:36:47,433 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:49,410 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:49,423 | INFO | Policy Engine initialized
+2026-04-18 16:36:49,424 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:51,388 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:51,395 | INFO | Policy Engine initialized
+2026-04-18 16:36:51,395 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:53,417 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:53,424 | INFO | Policy Engine initialized
+2026-04-18 16:36:53,425 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:55,449 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:55,456 | INFO | Policy Engine initialized
+2026-04-18 16:36:55,456 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:57,433 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:57,449 | INFO | Policy Engine initialized
+2026-04-18 16:36:57,449 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:36:59,403 | INFO | Trust Score Engine initialized
+2026-04-18 16:36:59,412 | INFO | Policy Engine initialized
+2026-04-18 16:36:59,413 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:01,413 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:01,425 | INFO | Policy Engine initialized
+2026-04-18 16:37:01,425 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:03,420 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:03,431 | INFO | Policy Engine initialized
+2026-04-18 16:37:03,431 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:05,422 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:05,432 | INFO | Policy Engine initialized
+2026-04-18 16:37:05,432 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:07,430 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:07,442 | INFO | Policy Engine initialized
+2026-04-18 16:37:07,442 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:09,420 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:09,432 | INFO | Policy Engine initialized
+2026-04-18 16:37:09,432 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:11,418 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:11,670 | INFO | Policy Engine initialized
+2026-04-18 16:37:11,670 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:13,483 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:13,492 | INFO | Policy Engine initialized
+2026-04-18 16:37:13,492 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:15,400 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:15,408 | INFO | Policy Engine initialized
+2026-04-18 16:37:15,409 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:17,424 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:17,437 | INFO | Policy Engine initialized
+2026-04-18 16:37:17,438 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:19,426 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:19,433 | INFO | Policy Engine initialized
+2026-04-18 16:37:19,433 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:21,421 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:21,431 | INFO | Policy Engine initialized
+2026-04-18 16:37:21,431 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:23,409 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:23,435 | INFO | Policy Engine initialized
+2026-04-18 16:37:23,435 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:25,413 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:25,425 | INFO | Policy Engine initialized
+2026-04-18 16:37:25,425 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:27,419 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:27,427 | INFO | Policy Engine initialized
+2026-04-18 16:37:27,428 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:29,424 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:29,433 | INFO | Policy Engine initialized
+2026-04-18 16:37:29,434 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:31,486 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:31,503 | INFO | Policy Engine initialized
+2026-04-18 16:37:31,503 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:37:37,702 | INFO | Trust Score Engine initialized
+2026-04-18 16:37:37,720 | INFO | Policy Engine initialized
+2026-04-18 16:37:37,720 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:06,013 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:06,022 | INFO | Policy Engine initialized
+2026-04-18 16:38:06,022 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:07,333 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:07,352 | INFO | Policy Engine initialized
+2026-04-18 16:38:07,352 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:09,348 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:09,359 | INFO | Policy Engine initialized
+2026-04-18 16:38:09,359 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:11,526 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:11,535 | INFO | Policy Engine initialized
+2026-04-18 16:38:11,535 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:13,150 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:13,160 | INFO | Policy Engine initialized
+2026-04-18 16:38:13,160 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:13,328 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:13,336 | INFO | Policy Engine initialized
+2026-04-18 16:38:13,336 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:13,449 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:13,461 | INFO | Policy Engine initialized
+2026-04-18 16:38:13,461 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:13,582 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:13,591 | INFO | Policy Engine initialized
+2026-04-18 16:38:13,592 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:15,347 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:15,359 | INFO | Policy Engine initialized
+2026-04-18 16:38:15,359 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:17,356 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:17,364 | INFO | Policy Engine initialized
+2026-04-18 16:38:17,364 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:19,431 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:19,442 | INFO | Policy Engine initialized
+2026-04-18 16:38:19,442 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:21,467 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:21,477 | INFO | Policy Engine initialized
+2026-04-18 16:38:21,477 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:23,407 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:23,416 | INFO | Policy Engine initialized
+2026-04-18 16:38:23,416 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:25,437 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:25,445 | INFO | Policy Engine initialized
+2026-04-18 16:38:25,446 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:27,435 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:27,444 | INFO | Policy Engine initialized
+2026-04-18 16:38:27,444 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:29,444 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:29,458 | INFO | Policy Engine initialized
+2026-04-18 16:38:29,459 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:29,892 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:29,901 | INFO | Policy Engine initialized
+2026-04-18 16:38:29,902 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:31,415 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:31,424 | INFO | Policy Engine initialized
+2026-04-18 16:38:31,424 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:33,447 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:33,459 | INFO | Policy Engine initialized
+2026-04-18 16:38:33,459 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:35,430 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:35,441 | INFO | Policy Engine initialized
+2026-04-18 16:38:35,441 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:37,371 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:37,381 | INFO | Policy Engine initialized
+2026-04-18 16:38:37,381 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:39,364 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:39,375 | INFO | Policy Engine initialized
+2026-04-18 16:38:39,376 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:41,359 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:41,367 | INFO | Policy Engine initialized
+2026-04-18 16:38:41,368 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:43,364 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:43,374 | INFO | Policy Engine initialized
+2026-04-18 16:38:43,375 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:45,406 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:45,414 | INFO | Policy Engine initialized
+2026-04-18 16:38:45,414 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:47,407 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:47,416 | INFO | Policy Engine initialized
+2026-04-18 16:38:47,416 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:49,414 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:49,423 | INFO | Policy Engine initialized
+2026-04-18 16:38:49,423 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:51,404 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:51,411 | INFO | Policy Engine initialized
+2026-04-18 16:38:51,412 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:53,414 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:53,422 | INFO | Policy Engine initialized
+2026-04-18 16:38:53,423 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:55,409 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:55,418 | INFO | Policy Engine initialized
+2026-04-18 16:38:55,418 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:57,409 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:57,420 | INFO | Policy Engine initialized
+2026-04-18 16:38:57,420 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:38:59,408 | INFO | Trust Score Engine initialized
+2026-04-18 16:38:59,421 | INFO | Policy Engine initialized
+2026-04-18 16:38:59,421 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:01,407 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:01,421 | INFO | Policy Engine initialized
+2026-04-18 16:39:01,421 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:03,647 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:03,656 | INFO | Policy Engine initialized
+2026-04-18 16:39:03,656 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:05,406 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:05,415 | INFO | Policy Engine initialized
+2026-04-18 16:39:05,415 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:07,417 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:07,425 | INFO | Policy Engine initialized
+2026-04-18 16:39:07,425 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:09,416 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:09,425 | INFO | Policy Engine initialized
+2026-04-18 16:39:09,426 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:11,437 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:11,446 | INFO | Policy Engine initialized
+2026-04-18 16:39:11,446 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:13,410 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:13,420 | INFO | Policy Engine initialized
+2026-04-18 16:39:13,420 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:15,422 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:15,430 | INFO | Policy Engine initialized
+2026-04-18 16:39:15,431 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:17,429 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:17,438 | INFO | Policy Engine initialized
+2026-04-18 16:39:17,439 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:19,403 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:19,411 | INFO | Policy Engine initialized
+2026-04-18 16:39:19,412 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:21,413 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:21,423 | INFO | Policy Engine initialized
+2026-04-18 16:39:21,423 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:23,408 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:23,419 | INFO | Policy Engine initialized
+2026-04-18 16:39:23,419 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:25,404 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:25,418 | INFO | Policy Engine initialized
+2026-04-18 16:39:25,419 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:27,418 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:27,429 | INFO | Policy Engine initialized
+2026-04-18 16:39:27,429 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:29,432 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:29,444 | INFO | Policy Engine initialized
+2026-04-18 16:39:29,444 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:31,403 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:31,414 | INFO | Policy Engine initialized
+2026-04-18 16:39:31,414 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:33,404 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:33,413 | INFO | Policy Engine initialized
+2026-04-18 16:39:33,413 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:35,409 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:35,418 | INFO | Policy Engine initialized
+2026-04-18 16:39:35,418 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:37,400 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:37,408 | INFO | Policy Engine initialized
+2026-04-18 16:39:37,408 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:39,404 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:39,413 | INFO | Policy Engine initialized
+2026-04-18 16:39:39,413 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:41,404 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:41,416 | INFO | Policy Engine initialized
+2026-04-18 16:39:41,416 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:39:43,408 | INFO | Trust Score Engine initialized
+2026-04-18 16:39:43,418 | INFO | Policy Engine initialized
+2026-04-18 16:39:43,418 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:40:02,983 | INFO | Trust Score Engine initialized
+2026-04-18 16:40:02,992 | INFO | Policy Engine initialized
+2026-04-18 16:40:02,992 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:40:03,337 | INFO | Trust Score Engine initialized
+2026-04-18 16:40:03,345 | INFO | Policy Engine initialized
+2026-04-18 16:40:03,345 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-18 16:40:05,403 | INFO | Trust Score Engine initialized
+2026-04-18 16:40:05,410 | INFO | Policy Engine initialized
+2026-04-18 16:40:05,411 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:07:00,199 | INFO | Trust Score Engine initialized
+2026-04-21 11:07:00,304 | INFO | Policy Engine initialized
+2026-04-21 11:07:00,304 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:07:00,818 | INFO | Trust Score Engine initialized
+2026-04-21 11:07:01,351 | INFO | Policy Engine initialized
+2026-04-21 11:07:01,351 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:07:02,112 | INFO | Trust Score Engine initialized
+2026-04-21 11:07:02,128 | INFO | Policy Engine initialized
+2026-04-21 11:07:02,128 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:07:04,301 | INFO | Trust Score Engine initialized
+2026-04-21 11:07:04,406 | INFO | Policy Engine initialized
+2026-04-21 11:07:04,406 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:23,312 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:23,332 | INFO | Policy Engine initialized
+2026-04-21 11:09:23,332 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:23,378 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:23,392 | INFO | Policy Engine initialized
+2026-04-21 11:09:23,392 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:25,265 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:25,276 | INFO | Policy Engine initialized
+2026-04-21 11:09:25,277 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:27,368 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:27,381 | INFO | Policy Engine initialized
+2026-04-21 11:09:27,381 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:29,266 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:29,282 | INFO | Policy Engine initialized
+2026-04-21 11:09:29,283 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:31,295 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:31,304 | INFO | Policy Engine initialized
+2026-04-21 11:09:31,304 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:33,308 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:33,320 | INFO | Policy Engine initialized
+2026-04-21 11:09:33,321 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:35,298 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:35,310 | INFO | Policy Engine initialized
+2026-04-21 11:09:35,310 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:37,270 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:37,282 | INFO | Policy Engine initialized
+2026-04-21 11:09:37,282 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:39,264 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:39,275 | INFO | Policy Engine initialized
+2026-04-21 11:09:39,275 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:41,728 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:41,747 | INFO | Policy Engine initialized
+2026-04-21 11:09:41,747 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:43,765 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:43,798 | INFO | Policy Engine initialized
+2026-04-21 11:09:43,798 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:45,746 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:45,760 | INFO | Policy Engine initialized
+2026-04-21 11:09:45,760 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:47,722 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:47,733 | INFO | Policy Engine initialized
+2026-04-21 11:09:47,733 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:49,738 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:49,765 | INFO | Policy Engine initialized
+2026-04-21 11:09:49,765 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:51,979 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:52,297 | INFO | Policy Engine initialized
+2026-04-21 11:09:52,298 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:53,759 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:53,779 | INFO | Policy Engine initialized
+2026-04-21 11:09:53,779 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:55,775 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:55,796 | INFO | Policy Engine initialized
+2026-04-21 11:09:55,796 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:57,797 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:57,815 | INFO | Policy Engine initialized
+2026-04-21 11:09:57,815 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:09:59,866 | INFO | Trust Score Engine initialized
+2026-04-21 11:09:59,906 | INFO | Policy Engine initialized
+2026-04-21 11:09:59,906 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:01,787 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:01,814 | INFO | Policy Engine initialized
+2026-04-21 11:10:01,814 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:03,758 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:03,777 | INFO | Policy Engine initialized
+2026-04-21 11:10:03,778 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:05,788 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:05,824 | INFO | Policy Engine initialized
+2026-04-21 11:10:05,825 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:07,868 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:07,921 | INFO | Policy Engine initialized
+2026-04-21 11:10:07,921 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:09,731 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:09,747 | INFO | Policy Engine initialized
+2026-04-21 11:10:09,747 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:11,748 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:11,761 | INFO | Policy Engine initialized
+2026-04-21 11:10:11,761 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:13,722 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:13,759 | INFO | Policy Engine initialized
+2026-04-21 11:10:13,759 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:15,738 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:15,750 | INFO | Policy Engine initialized
+2026-04-21 11:10:15,750 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:17,769 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:17,789 | INFO | Policy Engine initialized
+2026-04-21 11:10:17,790 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:19,764 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:19,788 | INFO | Policy Engine initialized
+2026-04-21 11:10:19,789 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:22,006 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:22,029 | INFO | Policy Engine initialized
+2026-04-21 11:10:22,029 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:23,772 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:23,791 | INFO | Policy Engine initialized
+2026-04-21 11:10:23,792 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:26,043 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:26,067 | INFO | Policy Engine initialized
+2026-04-21 11:10:26,068 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:28,292 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:28,311 | INFO | Policy Engine initialized
+2026-04-21 11:10:28,311 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:29,747 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:30,021 | INFO | Policy Engine initialized
+2026-04-21 11:10:30,021 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:31,750 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:31,767 | INFO | Policy Engine initialized
+2026-04-21 11:10:31,767 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:33,752 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:33,771 | INFO | Policy Engine initialized
+2026-04-21 11:10:33,771 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:35,732 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:35,754 | INFO | Policy Engine initialized
+2026-04-21 11:10:35,754 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:37,298 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:37,307 | INFO | Policy Engine initialized
+2026-04-21 11:10:37,308 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:39,281 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:39,299 | INFO | Policy Engine initialized
+2026-04-21 11:10:39,299 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:41,309 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:41,391 | INFO | Policy Engine initialized
+2026-04-21 11:10:41,391 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:43,300 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:43,316 | INFO | Policy Engine initialized
+2026-04-21 11:10:43,316 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:45,412 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:45,440 | INFO | Policy Engine initialized
+2026-04-21 11:10:45,440 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:47,323 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:47,341 | INFO | Policy Engine initialized
+2026-04-21 11:10:47,341 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:49,321 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:49,342 | INFO | Policy Engine initialized
+2026-04-21 11:10:49,343 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:51,387 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:51,398 | INFO | Policy Engine initialized
+2026-04-21 11:10:51,398 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:53,334 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:53,366 | INFO | Policy Engine initialized
+2026-04-21 11:10:53,367 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:55,312 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:55,328 | INFO | Policy Engine initialized
+2026-04-21 11:10:55,328 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:10:57,317 | INFO | Trust Score Engine initialized
+2026-04-21 11:10:57,335 | INFO | Policy Engine initialized
+2026-04-21 11:10:57,335 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:00,039 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:00,055 | INFO | Policy Engine initialized
+2026-04-21 11:11:00,056 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:01,765 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:01,794 | INFO | Policy Engine initialized
+2026-04-21 11:11:01,794 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:03,928 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:03,972 | INFO | Policy Engine initialized
+2026-04-21 11:11:03,972 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:05,819 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:05,863 | INFO | Policy Engine initialized
+2026-04-21 11:11:05,863 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:07,765 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:07,945 | INFO | Policy Engine initialized
+2026-04-21 11:11:07,945 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:09,787 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:09,809 | INFO | Policy Engine initialized
+2026-04-21 11:11:09,810 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:11,889 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:11,942 | INFO | Policy Engine initialized
+2026-04-21 11:11:11,942 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:13,769 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:13,785 | INFO | Policy Engine initialized
+2026-04-21 11:11:13,785 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:15,753 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:15,786 | INFO | Policy Engine initialized
+2026-04-21 11:11:15,787 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:17,872 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:17,888 | INFO | Policy Engine initialized
+2026-04-21 11:11:17,888 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:19,793 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:19,846 | INFO | Policy Engine initialized
+2026-04-21 11:11:19,846 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:21,743 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:21,759 | INFO | Policy Engine initialized
+2026-04-21 11:11:21,760 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:23,717 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:23,736 | INFO | Policy Engine initialized
+2026-04-21 11:11:23,736 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:25,783 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:25,803 | INFO | Policy Engine initialized
+2026-04-21 11:11:25,803 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:27,745 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:27,796 | INFO | Policy Engine initialized
+2026-04-21 11:11:27,796 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:30,205 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:30,223 | INFO | Policy Engine initialized
+2026-04-21 11:11:30,223 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:31,344 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:31,367 | INFO | Policy Engine initialized
+2026-04-21 11:11:31,367 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:33,757 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:33,812 | INFO | Policy Engine initialized
+2026-04-21 11:11:33,812 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:35,766 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:35,797 | INFO | Policy Engine initialized
+2026-04-21 11:11:35,797 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:37,726 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:37,741 | INFO | Policy Engine initialized
+2026-04-21 11:11:37,741 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:39,871 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:39,897 | INFO | Policy Engine initialized
+2026-04-21 11:11:39,898 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:41,747 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:41,765 | INFO | Policy Engine initialized
+2026-04-21 11:11:41,765 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:43,759 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:43,785 | INFO | Policy Engine initialized
+2026-04-21 11:11:43,785 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:45,741 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:45,783 | INFO | Policy Engine initialized
+2026-04-21 11:11:45,783 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:48,006 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:48,021 | INFO | Policy Engine initialized
+2026-04-21 11:11:48,022 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:49,724 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:49,743 | INFO | Policy Engine initialized
+2026-04-21 11:11:49,743 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:51,709 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:51,724 | INFO | Policy Engine initialized
+2026-04-21 11:11:51,724 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:53,749 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:53,769 | INFO | Policy Engine initialized
+2026-04-21 11:11:53,769 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:55,825 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:55,842 | INFO | Policy Engine initialized
+2026-04-21 11:11:55,843 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:57,743 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:57,764 | INFO | Policy Engine initialized
+2026-04-21 11:11:57,764 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:11:59,921 | INFO | Trust Score Engine initialized
+2026-04-21 11:11:59,939 | INFO | Policy Engine initialized
+2026-04-21 11:11:59,940 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:01,717 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:01,731 | INFO | Policy Engine initialized
+2026-04-21 11:12:01,732 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:03,761 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:03,772 | INFO | Policy Engine initialized
+2026-04-21 11:12:03,772 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:05,739 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:05,766 | INFO | Policy Engine initialized
+2026-04-21 11:12:05,766 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:07,745 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:07,755 | INFO | Policy Engine initialized
+2026-04-21 11:12:07,756 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:09,755 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:09,773 | INFO | Policy Engine initialized
+2026-04-21 11:12:09,773 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:11,741 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:11,751 | INFO | Policy Engine initialized
+2026-04-21 11:12:11,752 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:13,755 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:13,769 | INFO | Policy Engine initialized
+2026-04-21 11:12:13,769 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:15,733 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:15,743 | INFO | Policy Engine initialized
+2026-04-21 11:12:15,744 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:17,705 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:17,717 | INFO | Policy Engine initialized
+2026-04-21 11:12:17,717 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:19,718 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:19,737 | INFO | Policy Engine initialized
+2026-04-21 11:12:19,737 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:21,704 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:21,720 | INFO | Policy Engine initialized
+2026-04-21 11:12:21,720 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:23,725 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:23,736 | INFO | Policy Engine initialized
+2026-04-21 11:12:23,737 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:25,721 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:25,736 | INFO | Policy Engine initialized
+2026-04-21 11:12:25,736 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:27,742 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:27,778 | INFO | Policy Engine initialized
+2026-04-21 11:12:27,778 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:29,731 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:29,751 | INFO | Policy Engine initialized
+2026-04-21 11:12:29,751 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:31,750 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:31,798 | INFO | Policy Engine initialized
+2026-04-21 11:12:31,798 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:33,723 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:33,732 | INFO | Policy Engine initialized
+2026-04-21 11:12:33,733 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:35,733 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:35,763 | INFO | Policy Engine initialized
+2026-04-21 11:12:35,763 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:37,739 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:37,752 | INFO | Policy Engine initialized
+2026-04-21 11:12:37,753 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:38,448 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:38,460 | INFO | Policy Engine initialized
+2026-04-21 11:12:38,460 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:39,744 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:39,764 | INFO | Policy Engine initialized
+2026-04-21 11:12:39,764 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:41,737 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:41,749 | INFO | Policy Engine initialized
+2026-04-21 11:12:41,749 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:43,744 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:43,758 | INFO | Policy Engine initialized
+2026-04-21 11:12:43,759 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:45,775 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:45,849 | INFO | Policy Engine initialized
+2026-04-21 11:12:45,849 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:47,745 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:47,778 | INFO | Policy Engine initialized
+2026-04-21 11:12:47,778 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:49,744 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:49,759 | INFO | Policy Engine initialized
+2026-04-21 11:12:49,759 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:51,759 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:51,781 | INFO | Policy Engine initialized
+2026-04-21 11:12:51,781 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:53,739 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:53,756 | INFO | Policy Engine initialized
+2026-04-21 11:12:53,756 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:55,775 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:55,795 | INFO | Policy Engine initialized
+2026-04-21 11:12:55,795 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:57,826 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:57,870 | INFO | Policy Engine initialized
+2026-04-21 11:12:57,871 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:12:59,729 | INFO | Trust Score Engine initialized
+2026-04-21 11:12:59,748 | INFO | Policy Engine initialized
+2026-04-21 11:12:59,748 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:01,736 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:01,750 | INFO | Policy Engine initialized
+2026-04-21 11:13:01,750 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:03,777 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:03,801 | INFO | Policy Engine initialized
+2026-04-21 11:13:03,801 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:05,784 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:06,071 | INFO | Policy Engine initialized
+2026-04-21 11:13:06,072 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:07,754 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:07,771 | INFO | Policy Engine initialized
+2026-04-21 11:13:07,771 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:09,716 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:09,727 | INFO | Policy Engine initialized
+2026-04-21 11:13:09,727 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:11,749 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:11,775 | INFO | Policy Engine initialized
+2026-04-21 11:13:11,775 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:13,754 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:13,766 | INFO | Policy Engine initialized
+2026-04-21 11:13:13,766 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:15,757 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:15,832 | INFO | Policy Engine initialized
+2026-04-21 11:13:15,832 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:17,754 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:17,767 | INFO | Policy Engine initialized
+2026-04-21 11:13:17,767 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:19,734 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:19,749 | INFO | Policy Engine initialized
+2026-04-21 11:13:19,749 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:21,744 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:21,757 | INFO | Policy Engine initialized
+2026-04-21 11:13:21,757 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:23,721 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:23,730 | INFO | Policy Engine initialized
+2026-04-21 11:13:23,730 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:25,820 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:25,844 | INFO | Policy Engine initialized
+2026-04-21 11:13:25,844 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:27,697 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:27,708 | INFO | Policy Engine initialized
+2026-04-21 11:13:27,708 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:29,784 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:29,804 | INFO | Policy Engine initialized
+2026-04-21 11:13:29,804 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:31,773 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:31,792 | INFO | Policy Engine initialized
+2026-04-21 11:13:31,793 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:33,746 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:33,761 | INFO | Policy Engine initialized
+2026-04-21 11:13:33,761 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:13:47,065 | INFO | Trust Score Engine initialized
+2026-04-21 11:13:47,078 | INFO | Policy Engine initialized
+2026-04-21 11:13:47,079 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:14:46,816 | INFO | Trust Score Engine initialized
+2026-04-21 11:14:46,846 | INFO | Policy Engine initialized
+2026-04-21 11:14:46,846 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:15:47,048 | INFO | Trust Score Engine initialized
+2026-04-21 11:15:47,070 | INFO | Policy Engine initialized
+2026-04-21 11:15:47,071 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:16:46,736 | INFO | Trust Score Engine initialized
+2026-04-21 11:16:46,748 | INFO | Policy Engine initialized
+2026-04-21 11:16:46,749 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:17:47,043 | INFO | Trust Score Engine initialized
+2026-04-21 11:17:47,063 | INFO | Policy Engine initialized
+2026-04-21 11:17:47,063 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:18:46,770 | INFO | Trust Score Engine initialized
+2026-04-21 11:18:46,798 | INFO | Policy Engine initialized
+2026-04-21 11:18:46,798 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:19:47,042 | INFO | Trust Score Engine initialized
+2026-04-21 11:19:47,060 | INFO | Policy Engine initialized
+2026-04-21 11:19:47,060 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:20:46,783 | INFO | Trust Score Engine initialized
+2026-04-21 11:20:46,812 | INFO | Policy Engine initialized
+2026-04-21 11:20:46,812 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:21:47,051 | INFO | Trust Score Engine initialized
+2026-04-21 11:21:47,071 | INFO | Policy Engine initialized
+2026-04-21 11:21:47,072 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-21 11:22:46,784 | INFO | Trust Score Engine initialized
+2026-04-21 11:22:46,812 | INFO | Policy Engine initialized
+2026-04-21 11:22:46,812 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:23:53,258 | INFO | Trust Score Engine initialized
+2026-04-22 10:23:53,315 | INFO | Policy Engine initialized
+2026-04-22 10:23:53,315 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:23:53,511 | INFO | Trust Score Engine initialized
+2026-04-22 10:23:53,549 | INFO | Policy Engine initialized
+2026-04-22 10:23:53,549 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:23:55,226 | INFO | Trust Score Engine initialized
+2026-04-22 10:23:55,325 | INFO | Policy Engine initialized
+2026-04-22 10:23:55,325 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:23:57,308 | INFO | Trust Score Engine initialized
+2026-04-22 10:23:57,426 | INFO | Policy Engine initialized
+2026-04-22 10:23:57,426 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:23:59,285 | INFO | Trust Score Engine initialized
+2026-04-22 10:23:59,400 | INFO | Policy Engine initialized
+2026-04-22 10:23:59,400 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:01,144 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:01,183 | INFO | Policy Engine initialized
+2026-04-22 10:24:01,183 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:03,151 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:03,185 | INFO | Policy Engine initialized
+2026-04-22 10:24:03,185 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:05,161 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:05,204 | INFO | Policy Engine initialized
+2026-04-22 10:24:05,205 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:07,178 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:07,231 | INFO | Policy Engine initialized
+2026-04-22 10:24:07,231 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:09,250 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:09,289 | INFO | Policy Engine initialized
+2026-04-22 10:24:09,290 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:11,187 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:11,236 | INFO | Policy Engine initialized
+2026-04-22 10:24:11,236 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:13,127 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:13,161 | INFO | Policy Engine initialized
+2026-04-22 10:24:13,161 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:15,200 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:15,249 | INFO | Policy Engine initialized
+2026-04-22 10:24:15,249 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:17,962 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:18,009 | INFO | Policy Engine initialized
+2026-04-22 10:24:18,010 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:19,910 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:19,960 | INFO | Policy Engine initialized
+2026-04-22 10:24:19,961 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:21,922 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:21,971 | INFO | Policy Engine initialized
+2026-04-22 10:24:21,971 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:23,985 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:24,030 | INFO | Policy Engine initialized
+2026-04-22 10:24:24,031 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:25,896 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:25,940 | INFO | Policy Engine initialized
+2026-04-22 10:24:25,940 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:27,879 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:27,919 | INFO | Policy Engine initialized
+2026-04-22 10:24:27,920 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:30,280 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:30,319 | INFO | Policy Engine initialized
+2026-04-22 10:24:30,319 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:32,293 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:32,330 | INFO | Policy Engine initialized
+2026-04-22 10:24:32,330 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:34,201 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:34,282 | INFO | Policy Engine initialized
+2026-04-22 10:24:34,282 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:35,889 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:35,940 | INFO | Policy Engine initialized
+2026-04-22 10:24:35,940 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:37,879 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:37,955 | INFO | Policy Engine initialized
+2026-04-22 10:24:37,955 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:40,009 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:40,050 | INFO | Policy Engine initialized
+2026-04-22 10:24:40,050 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:41,849 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:41,880 | INFO | Policy Engine initialized
+2026-04-22 10:24:41,880 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:43,881 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:43,924 | INFO | Policy Engine initialized
+2026-04-22 10:24:43,924 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:45,904 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:46,011 | INFO | Policy Engine initialized
+2026-04-22 10:24:46,012 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:47,860 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:47,913 | INFO | Policy Engine initialized
+2026-04-22 10:24:47,914 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:49,868 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:49,913 | INFO | Policy Engine initialized
+2026-04-22 10:24:49,913 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:51,190 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:51,228 | INFO | Policy Engine initialized
+2026-04-22 10:24:51,228 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:53,189 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:53,232 | INFO | Policy Engine initialized
+2026-04-22 10:24:53,232 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:55,176 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:55,220 | INFO | Policy Engine initialized
+2026-04-22 10:24:55,220 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:57,164 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:57,208 | INFO | Policy Engine initialized
+2026-04-22 10:24:57,209 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:24:59,157 | INFO | Trust Score Engine initialized
+2026-04-22 10:24:59,211 | INFO | Policy Engine initialized
+2026-04-22 10:24:59,211 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:01,222 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:01,296 | INFO | Policy Engine initialized
+2026-04-22 10:25:01,296 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:03,223 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:03,263 | INFO | Policy Engine initialized
+2026-04-22 10:25:03,263 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:05,190 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:05,229 | INFO | Policy Engine initialized
+2026-04-22 10:25:05,229 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:07,234 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:07,277 | INFO | Policy Engine initialized
+2026-04-22 10:25:07,278 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:09,469 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:09,548 | INFO | Policy Engine initialized
+2026-04-22 10:25:09,548 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:11,199 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:11,257 | INFO | Policy Engine initialized
+2026-04-22 10:25:11,258 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:13,208 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:13,265 | INFO | Policy Engine initialized
+2026-04-22 10:25:13,266 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:15,219 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:15,273 | INFO | Policy Engine initialized
+2026-04-22 10:25:15,273 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:17,181 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:17,219 | INFO | Policy Engine initialized
+2026-04-22 10:25:17,219 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:19,179 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:19,218 | INFO | Policy Engine initialized
+2026-04-22 10:25:19,218 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:21,231 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:21,290 | INFO | Policy Engine initialized
+2026-04-22 10:25:21,291 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:23,210 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:23,249 | INFO | Policy Engine initialized
+2026-04-22 10:25:23,250 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:25,200 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:25,263 | INFO | Policy Engine initialized
+2026-04-22 10:25:25,263 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:27,240 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:27,279 | INFO | Policy Engine initialized
+2026-04-22 10:25:27,279 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:29,199 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:29,247 | INFO | Policy Engine initialized
+2026-04-22 10:25:29,247 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:31,157 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:31,222 | INFO | Policy Engine initialized
+2026-04-22 10:25:31,222 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:33,213 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:33,268 | INFO | Policy Engine initialized
+2026-04-22 10:25:33,268 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:35,162 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:35,204 | INFO | Policy Engine initialized
+2026-04-22 10:25:35,204 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:37,177 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:37,226 | INFO | Policy Engine initialized
+2026-04-22 10:25:37,226 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:39,166 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:39,207 | INFO | Policy Engine initialized
+2026-04-22 10:25:39,207 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:41,204 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:41,267 | INFO | Policy Engine initialized
+2026-04-22 10:25:41,268 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:43,181 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:43,216 | INFO | Policy Engine initialized
+2026-04-22 10:25:43,217 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:45,197 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:45,286 | INFO | Policy Engine initialized
+2026-04-22 10:25:45,286 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:47,191 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:47,240 | INFO | Policy Engine initialized
+2026-04-22 10:25:47,240 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:49,198 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:49,238 | INFO | Policy Engine initialized
+2026-04-22 10:25:49,238 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:51,198 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:51,240 | INFO | Policy Engine initialized
+2026-04-22 10:25:51,240 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:53,202 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:53,238 | INFO | Policy Engine initialized
+2026-04-22 10:25:53,239 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:55,219 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:55,284 | INFO | Policy Engine initialized
+2026-04-22 10:25:55,284 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:57,162 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:57,197 | INFO | Policy Engine initialized
+2026-04-22 10:25:57,197 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:25:59,149 | INFO | Trust Score Engine initialized
+2026-04-22 10:25:59,201 | INFO | Policy Engine initialized
+2026-04-22 10:25:59,201 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:26:00,771 | INFO | Trust Score Engine initialized
+2026-04-22 10:26:00,831 | INFO | Policy Engine initialized
+2026-04-22 10:26:00,831 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:26:01,480 | INFO | Trust Score Engine initialized
+2026-04-22 10:26:01,597 | INFO | Policy Engine initialized
+2026-04-22 10:26:01,597 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:26:01,847 | INFO | Trust Score Engine initialized
+2026-04-22 10:26:01,878 | INFO | Policy Engine initialized
+2026-04-22 10:26:01,878 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:26:02,168 | INFO | Trust Score Engine initialized
+2026-04-22 10:26:02,297 | INFO | Policy Engine initialized
+2026-04-22 10:26:02,297 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:26:02,664 | INFO | Trust Score Engine initialized
+2026-04-22 10:26:03,071 | INFO | Policy Engine initialized
+2026-04-22 10:26:03,072 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 10:26:03,513 | INFO | Trust Score Engine initialized
+2026-04-22 10:26:03,514 | WARNING | Penalty applied: high_anomaly (-30) | New Score: 70
+2026-04-22 10:26:03,646 | INFO | Policy Engine initialized
+2026-04-22 10:26:03,646 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:03,846 | INFO | Policy Engine initialized
+2026-04-22 10:26:03,846 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:04,019 | INFO | Policy Engine initialized
+2026-04-22 10:26:04,019 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:04,198 | INFO | Policy Engine initialized
+2026-04-22 10:26:04,198 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:04,359 | INFO | Policy Engine initialized
+2026-04-22 10:26:04,359 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:04,544 | INFO | Policy Engine initialized
+2026-04-22 10:26:04,545 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:04,709 | INFO | Policy Engine initialized
+2026-04-22 10:26:04,710 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:04,892 | INFO | Policy Engine initialized
+2026-04-22 10:26:04,893 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:05,057 | INFO | Policy Engine initialized
+2026-04-22 10:26:05,058 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:05,213 | INFO | Policy Engine initialized
+2026-04-22 10:26:05,213 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:05,415 | INFO | Policy Engine initialized
+2026-04-22 10:26:05,416 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:06,026 | INFO | Policy Engine initialized
+2026-04-22 10:26:06,026 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:06,398 | INFO | Policy Engine initialized
+2026-04-22 10:26:06,398 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:06,729 | INFO | Policy Engine initialized
+2026-04-22 10:26:06,729 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:07,108 | INFO | Policy Engine initialized
+2026-04-22 10:26:07,108 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:07,366 | INFO | Policy Engine initialized
+2026-04-22 10:26:07,367 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:26:07,598 | INFO | Policy Engine initialized
+2026-04-22 10:26:07,598 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:37,552 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:37,596 | INFO | Policy Engine initialized
+2026-04-22 10:27:37,596 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:39,875 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:39,901 | INFO | Policy Engine initialized
+2026-04-22 10:27:39,902 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:41,912 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:41,956 | INFO | Policy Engine initialized
+2026-04-22 10:27:41,956 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:43,877 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:43,920 | INFO | Policy Engine initialized
+2026-04-22 10:27:43,920 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:45,898 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:45,955 | INFO | Policy Engine initialized
+2026-04-22 10:27:45,955 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:47,917 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:47,976 | INFO | Policy Engine initialized
+2026-04-22 10:27:47,976 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:48,335 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:48,375 | INFO | Policy Engine initialized
+2026-04-22 10:27:48,375 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:49,899 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:49,930 | INFO | Policy Engine initialized
+2026-04-22 10:27:49,930 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:51,946 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:51,985 | INFO | Policy Engine initialized
+2026-04-22 10:27:51,986 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:53,937 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:53,976 | INFO | Policy Engine initialized
+2026-04-22 10:27:53,977 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:55,907 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:55,957 | INFO | Policy Engine initialized
+2026-04-22 10:27:55,957 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:27:57,897 | INFO | Trust Score Engine initialized
+2026-04-22 10:27:57,946 | INFO | Policy Engine initialized
+2026-04-22 10:27:57,947 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:00,006 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:00,045 | INFO | Policy Engine initialized
+2026-04-22 10:28:00,045 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:01,896 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:01,976 | INFO | Policy Engine initialized
+2026-04-22 10:28:01,976 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:03,912 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:03,972 | INFO | Policy Engine initialized
+2026-04-22 10:28:03,972 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:05,925 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:05,964 | INFO | Policy Engine initialized
+2026-04-22 10:28:05,965 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:07,874 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:07,914 | INFO | Policy Engine initialized
+2026-04-22 10:28:07,915 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:09,914 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:09,949 | INFO | Policy Engine initialized
+2026-04-22 10:28:09,949 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:11,892 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:11,936 | INFO | Policy Engine initialized
+2026-04-22 10:28:11,936 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:13,941 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:13,980 | INFO | Policy Engine initialized
+2026-04-22 10:28:13,981 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:15,914 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:15,953 | INFO | Policy Engine initialized
+2026-04-22 10:28:15,954 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:17,909 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:17,938 | INFO | Policy Engine initialized
+2026-04-22 10:28:17,938 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:19,897 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:19,944 | INFO | Policy Engine initialized
+2026-04-22 10:28:19,945 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:21,965 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:22,003 | INFO | Policy Engine initialized
+2026-04-22 10:28:22,004 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:23,934 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:23,975 | INFO | Policy Engine initialized
+2026-04-22 10:28:23,975 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:25,936 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:25,976 | INFO | Policy Engine initialized
+2026-04-22 10:28:25,976 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:27,938 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:27,974 | INFO | Policy Engine initialized
+2026-04-22 10:28:27,974 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:29,912 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:29,951 | INFO | Policy Engine initialized
+2026-04-22 10:28:29,951 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:31,914 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:31,956 | INFO | Policy Engine initialized
+2026-04-22 10:28:31,956 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:33,903 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:33,947 | INFO | Policy Engine initialized
+2026-04-22 10:28:33,947 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:28:35,922 | INFO | Trust Score Engine initialized
+2026-04-22 10:28:35,968 | INFO | Policy Engine initialized
+2026-04-22 10:28:35,968 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:29:03,177 | INFO | Trust Score Engine initialized
+2026-04-22 10:29:03,233 | INFO | Policy Engine initialized
+2026-04-22 10:29:03,233 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:30:02,901 | INFO | Trust Score Engine initialized
+2026-04-22 10:30:02,961 | INFO | Policy Engine initialized
+2026-04-22 10:30:02,961 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:31:03,235 | INFO | Trust Score Engine initialized
+2026-04-22 10:31:03,272 | INFO | Policy Engine initialized
+2026-04-22 10:31:03,273 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:32:02,928 | INFO | Trust Score Engine initialized
+2026-04-22 10:32:02,985 | INFO | Policy Engine initialized
+2026-04-22 10:32:02,986 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:33:03,193 | INFO | Trust Score Engine initialized
+2026-04-22 10:33:03,231 | INFO | Policy Engine initialized
+2026-04-22 10:33:03,232 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:34:02,920 | INFO | Trust Score Engine initialized
+2026-04-22 10:34:02,963 | INFO | Policy Engine initialized
+2026-04-22 10:34:02,963 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:35:03,271 | INFO | Trust Score Engine initialized
+2026-04-22 10:35:03,319 | INFO | Policy Engine initialized
+2026-04-22 10:35:03,320 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:36:02,880 | INFO | Trust Score Engine initialized
+2026-04-22 10:36:02,909 | INFO | Policy Engine initialized
+2026-04-22 10:36:02,910 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:37:03,200 | INFO | Trust Score Engine initialized
+2026-04-22 10:37:03,240 | INFO | Policy Engine initialized
+2026-04-22 10:37:03,241 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:38:02,884 | INFO | Trust Score Engine initialized
+2026-04-22 10:38:02,928 | INFO | Policy Engine initialized
+2026-04-22 10:38:02,928 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:39:03,229 | INFO | Trust Score Engine initialized
+2026-04-22 10:39:03,269 | INFO | Policy Engine initialized
+2026-04-22 10:39:03,269 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:40:02,875 | INFO | Trust Score Engine initialized
+2026-04-22 10:40:02,907 | INFO | Policy Engine initialized
+2026-04-22 10:40:02,908 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:41:03,193 | INFO | Trust Score Engine initialized
+2026-04-22 10:41:03,243 | INFO | Policy Engine initialized
+2026-04-22 10:41:03,243 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:42:02,878 | INFO | Trust Score Engine initialized
+2026-04-22 10:42:02,908 | INFO | Policy Engine initialized
+2026-04-22 10:42:02,908 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:43:03,191 | INFO | Trust Score Engine initialized
+2026-04-22 10:43:03,230 | INFO | Policy Engine initialized
+2026-04-22 10:43:03,231 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:44:02,897 | INFO | Trust Score Engine initialized
+2026-04-22 10:44:02,949 | INFO | Policy Engine initialized
+2026-04-22 10:44:02,949 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:45:03,197 | INFO | Trust Score Engine initialized
+2026-04-22 10:45:03,230 | INFO | Policy Engine initialized
+2026-04-22 10:45:03,231 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:46:02,893 | INFO | Trust Score Engine initialized
+2026-04-22 10:46:02,930 | INFO | Policy Engine initialized
+2026-04-22 10:46:02,930 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:47:03,184 | INFO | Trust Score Engine initialized
+2026-04-22 10:47:03,228 | INFO | Policy Engine initialized
+2026-04-22 10:47:03,228 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:48:02,945 | INFO | Trust Score Engine initialized
+2026-04-22 10:48:02,991 | INFO | Policy Engine initialized
+2026-04-22 10:48:02,991 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:49:03,183 | INFO | Trust Score Engine initialized
+2026-04-22 10:49:03,216 | INFO | Policy Engine initialized
+2026-04-22 10:49:03,217 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:50:02,900 | INFO | Trust Score Engine initialized
+2026-04-22 10:50:02,937 | INFO | Policy Engine initialized
+2026-04-22 10:50:02,938 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:51:03,217 | INFO | Trust Score Engine initialized
+2026-04-22 10:51:03,249 | INFO | Policy Engine initialized
+2026-04-22 10:51:03,249 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:52:02,884 | INFO | Trust Score Engine initialized
+2026-04-22 10:52:02,920 | INFO | Policy Engine initialized
+2026-04-22 10:52:02,920 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:53:03,211 | INFO | Trust Score Engine initialized
+2026-04-22 10:53:03,264 | INFO | Policy Engine initialized
+2026-04-22 10:53:03,264 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 10:54:02,874 | INFO | Trust Score Engine initialized
+2026-04-22 10:54:02,896 | INFO | Policy Engine initialized
+2026-04-22 10:54:02,897 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:00,355 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:00,365 | INFO | Policy Engine initialized
+2026-04-22 20:31:00,365 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:00,458 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:00,468 | INFO | Policy Engine initialized
+2026-04-22 20:31:00,468 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:02,328 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:02,337 | INFO | Policy Engine initialized
+2026-04-22 20:31:02,338 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:04,309 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:04,320 | INFO | Policy Engine initialized
+2026-04-22 20:31:04,321 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:06,534 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:06,544 | INFO | Policy Engine initialized
+2026-04-22 20:31:06,544 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:08,545 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:08,554 | INFO | Policy Engine initialized
+2026-04-22 20:31:08,554 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:08,667 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:08,677 | INFO | Policy Engine initialized
+2026-04-22 20:31:08,678 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:10,512 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:10,522 | INFO | Policy Engine initialized
+2026-04-22 20:31:10,522 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:12,507 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:12,516 | INFO | Policy Engine initialized
+2026-04-22 20:31:12,517 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:14,501 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:14,510 | INFO | Policy Engine initialized
+2026-04-22 20:31:14,510 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:15,585 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:15,597 | INFO | Policy Engine initialized
+2026-04-22 20:31:15,598 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:16,296 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:16,306 | INFO | Policy Engine initialized
+2026-04-22 20:31:16,306 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:18,289 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:18,300 | INFO | Policy Engine initialized
+2026-04-22 20:31:18,301 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:19,015 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:19,024 | INFO | Policy Engine initialized
+2026-04-22 20:31:19,024 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:19,156 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:19,164 | INFO | Policy Engine initialized
+2026-04-22 20:31:19,165 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:19,321 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:19,332 | INFO | Policy Engine initialized
+2026-04-22 20:31:19,332 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:19,476 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:19,486 | INFO | Policy Engine initialized
+2026-04-22 20:31:19,486 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:19,634 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:19,643 | INFO | Policy Engine initialized
+2026-04-22 20:31:19,643 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:19,807 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:19,816 | INFO | Policy Engine initialized
+2026-04-22 20:31:19,817 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:19,976 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:19,985 | INFO | Policy Engine initialized
+2026-04-22 20:31:19,986 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:20,165 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:20,179 | INFO | Policy Engine initialized
+2026-04-22 20:31:20,179 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:20,316 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:20,325 | INFO | Policy Engine initialized
+2026-04-22 20:31:20,325 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:20,435 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:20,445 | INFO | Policy Engine initialized
+2026-04-22 20:31:20,445 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:20,532 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:20,541 | INFO | Policy Engine initialized
+2026-04-22 20:31:20,541 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:20,655 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:20,664 | INFO | Policy Engine initialized
+2026-04-22 20:31:20,664 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:20,933 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:20,943 | INFO | Policy Engine initialized
+2026-04-22 20:31:20,943 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:21,053 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:21,053 | WARNING | Penalty applied: high_anomaly (-30) | New Score: 70
+2026-04-22 20:31:21,066 | INFO | Policy Engine initialized
+2026-04-22 20:31:21,066 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:21,156 | INFO | Policy Engine initialized
+2026-04-22 20:31:21,157 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:21,370 | INFO | Policy Engine initialized
+2026-04-22 20:31:21,371 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:22,305 | INFO | Policy Engine initialized
+2026-04-22 20:31:22,306 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:24,067 | INFO | Policy Engine initialized
+2026-04-22 20:31:24,068 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:24,241 | INFO | Policy Engine initialized
+2026-04-22 20:31:24,242 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:24,340 | INFO | Policy Engine initialized
+2026-04-22 20:31:24,340 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:24,419 | INFO | Policy Engine initialized
+2026-04-22 20:31:24,420 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:24,584 | INFO | Policy Engine initialized
+2026-04-22 20:31:24,585 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:24,733 | INFO | Policy Engine initialized
+2026-04-22 20:31:24,734 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:24,915 | INFO | Policy Engine initialized
+2026-04-22 20:31:24,915 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:25,084 | INFO | Policy Engine initialized
+2026-04-22 20:31:25,085 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:25,260 | INFO | Policy Engine initialized
+2026-04-22 20:31:25,261 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:25,445 | INFO | Policy Engine initialized
+2026-04-22 20:31:25,445 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:25,603 | INFO | Policy Engine initialized
+2026-04-22 20:31:25,603 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:25,795 | INFO | Policy Engine initialized
+2026-04-22 20:31:25,795 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:25,971 | INFO | Policy Engine initialized
+2026-04-22 20:31:25,971 | INFO | Policy decision generated | Score: 70 | Action: WARN
+2026-04-22 20:31:26,161 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:26,162 | WARNING | Penalty applied: high_anomaly (-30) | New Score: 40
+2026-04-22 20:31:26,193 | INFO | Policy Engine initialized
+2026-04-22 20:31:26,194 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:31,671 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:31,684 | INFO | Policy Engine initialized
+2026-04-22 20:31:31,685 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:32,328 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:32,348 | INFO | Policy Engine initialized
+2026-04-22 20:31:32,349 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:34,324 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:34,337 | INFO | Policy Engine initialized
+2026-04-22 20:31:34,337 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:36,541 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:36,558 | INFO | Policy Engine initialized
+2026-04-22 20:31:36,558 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:38,499 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:38,514 | INFO | Policy Engine initialized
+2026-04-22 20:31:38,515 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:40,496 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:40,504 | INFO | Policy Engine initialized
+2026-04-22 20:31:40,504 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:42,528 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:42,538 | INFO | Policy Engine initialized
+2026-04-22 20:31:42,538 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:44,516 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:44,525 | INFO | Policy Engine initialized
+2026-04-22 20:31:44,525 | INFO | Policy decision generated | Score: 40 | Action: RESTRICT
+2026-04-22 20:31:46,497 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:46,506 | INFO | Policy Engine initialized
+2026-04-22 20:31:46,507 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:46,877 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:46,887 | INFO | Policy Engine initialized
+2026-04-22 20:31:46,888 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:48,299 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:48,309 | INFO | Policy Engine initialized
+2026-04-22 20:31:48,310 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:50,462 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:50,470 | INFO | Policy Engine initialized
+2026-04-22 20:31:50,470 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:52,518 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:52,530 | INFO | Policy Engine initialized
+2026-04-22 20:31:52,530 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:54,473 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:54,483 | INFO | Policy Engine initialized
+2026-04-22 20:31:54,483 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:56,491 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:56,501 | INFO | Policy Engine initialized
+2026-04-22 20:31:56,501 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:31:58,478 | INFO | Trust Score Engine initialized
+2026-04-22 20:31:58,490 | INFO | Policy Engine initialized
+2026-04-22 20:31:58,491 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:32:00,499 | INFO | Trust Score Engine initialized
+2026-04-22 20:32:00,509 | INFO | Policy Engine initialized
+2026-04-22 20:32:00,510 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:32:02,556 | INFO | Trust Score Engine initialized
+2026-04-22 20:32:02,606 | INFO | Policy Engine initialized
+2026-04-22 20:32:02,607 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:32:04,496 | INFO | Trust Score Engine initialized
+2026-04-22 20:32:04,506 | INFO | Policy Engine initialized
+2026-04-22 20:32:04,507 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:32:06,494 | INFO | Trust Score Engine initialized
+2026-04-22 20:32:06,504 | INFO | Policy Engine initialized
+2026-04-22 20:32:06,505 | INFO | Policy decision generated | Score: 100 | Action: ALLOW
+2026-04-22 20:32:08,484 | INFO | Trust Score Engine initialized
+2026-04-22 20:32:08,494 | INFO | Policy Engine initialized
+2026-04-22 20:32:08,494 | INFO | Policy decision generated | Score: 100 | Action: ALLOW

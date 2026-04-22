@@ -2,12 +2,14 @@ from fastapi import FastAPI
 import uuid
 import datetime
 from datetime import timedelta
+import math
 from fastapi import Request
 from collections import Counter
 import json
 import time
 import csv
 import io
+import os
 
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -33,6 +35,50 @@ from database.mongo_connection import users_collection, licenses_collection
 
 # Global demo mode flag
 DEMO_MODE = False
+
+
+def normalize_geo_location(raw_geo):
+    if not raw_geo:
+        return None
+
+    try:
+        latitude = float(raw_geo.get("latitude"))
+        longitude = float(raw_geo.get("longitude"))
+        accuracy = float(raw_geo.get("accuracy", 0))
+        return {
+            "latitude": round(latitude, 6),
+            "longitude": round(longitude, 6),
+            "accuracy": round(accuracy, 2)
+        }
+    except (TypeError, ValueError, AttributeError):
+        return None
+
+
+def haversine_km(location_a, location_b):
+    if not location_a or not location_b:
+        return 0
+
+    radius_km = 6371
+    lat1 = math.radians(location_a["latitude"])
+    lon1 = math.radians(location_a["longitude"])
+    lat2 = math.radians(location_b["latitude"])
+    lon2 = math.radians(location_b["longitude"])
+
+    dlat = lat2 - lat1
+    dlon = lon2 - lon1
+
+    a = math.sin(dlat / 2) ** 2 + math.cos(lat1) * math.cos(lat2) * math.sin(dlon / 2) ** 2
+    return 2 * radius_km * math.asin(math.sqrt(a))
+
+
+def location_changed(previous_location, current_location, threshold_km=1.0):
+    if not previous_location or not current_location:
+        return False
+
+    try:
+        return haversine_km(previous_location, current_location) >= threshold_km
+    except (KeyError, TypeError, ValueError):
+        return False
 
 app = FastAPI()
 
@@ -111,7 +157,7 @@ def get_system_health():
         }
     except Exception as e:
         return {
-            "timestamp": datetime.now().isoformat(),
+            "timestamp": datetime.datetime.now().isoformat(),
             "status": "ERROR",
             "error": str(e)
         }
@@ -306,6 +352,19 @@ def log_event_api(data: dict):
     # ✅ ONLY VALID DEVICE CAN LOG
     record_event(event, license_key=license_key)
 
+    geo_location = normalize_geo_location(data.get("geo_location"))
+    previous_geo_location = normalize_geo_location(license_data.get("last_geo_location"))
+    geo_location_changed = location_changed(previous_geo_location, geo_location)
+
+    if geo_location:
+        update_payload = {"last_geo_location": geo_location}
+        if geo_location_changed:
+            update_payload["geo_location_change_count"] = int(license_data.get("geo_location_change_count", 0)) + 1
+        licenses_collection.update_one(
+            {"license_key": license_key},
+            {"$set": update_payload}
+        )
+
     # 🔥 ENHANCED BEHAVIOR LOGGING
     behavior_data = {
         "timestamp": timestamp,
@@ -317,7 +376,9 @@ def log_event_api(data: dict):
         "session_duration": data.get("session_duration", 0),
         "keystroke_pattern": data.get("keystroke_pattern", ""),
         "mouse_movements": data.get("mouse_movements", ""),
-        "behavior_score": data.get("behavior_score", 0)
+        "behavior_score": data.get("behavior_score", 0),
+        "geo_location": geo_location,
+        "geo_location_changed": geo_location_changed
     }
 
     # Save to enhanced behavior log
@@ -338,6 +399,58 @@ def get_all_licenses():
     licenses = list(licenses_collection.find({}, {"_id": 0}))
 
     return licenses
+
+
+# -------------------------
+# LOGS ENDPOINT (for Admin Dashboard)  
+# -------------------------
+@app.get("/logs")
+def get_logs(request: Request):
+    license_key = request.query_params.get("license_key")
+    if not license_key:
+        return {"error": "license_key parameter required"}
+
+    try:
+        # Try to read behavior logs first (JSONL format) 
+        behavior_logs = []
+        try:
+            with open(f"logs/behavior_{license_key}.jsonl", "r") as f:
+                for line in f:
+                    if line.strip():
+                        log_entry = json.loads(line.strip())
+                        behavior_logs.append(log_entry)
+        except FileNotFoundError:
+            pass  # No behavior logs yet
+
+        # Try to read general logs (text format) as fallback
+        general_logs = [] 
+        try:
+            with open(f"logs/{license_key}.txt", "r") as f:
+                for line in f:
+                    if line.strip():
+                        general_logs.append(line.strip())
+        except FileNotFoundError:
+            pass  # No general logs yet
+
+        # Combine and format logs for display
+        all_logs = []
+
+        # Add behavior logs (more detailed) 
+        for log in behavior_logs[-50:]:  # Last 50 entries
+            timestamp = log.get("timestamp", "Unknown") 
+            event = log.get("event", "Unknown event")
+            device_id = log.get("device_id", "Unknown device")[:20]  # Truncate long IDs
+            all_logs.append(f"[{timestamp}] {event} - Device: {device_id}")
+
+        # Add general logs if no behavior logs exist
+        if not behavior_logs and general_logs:
+            for log in general_logs[-50:]:  # Last 50 entries
+                all_logs.append(log)
+
+        return all_logs[::-1]  # Return in reverse chronological order (newest first)
+
+    except Exception as e:
+        return {"error": f"Failed to read logs: {str(e)}"}
 
 
 # -------------------------
@@ -395,6 +508,11 @@ def dynamic_trust_scores(request: Request):
 
     device_id = request.query_params.get("device_id")
     license_key = request.query_params.get("license_key")
+    geo_location = normalize_geo_location({
+        "latitude": request.query_params.get("latitude"),
+        "longitude": request.query_params.get("longitude"),
+        "accuracy": request.query_params.get("accuracy")
+    })
 
     # 🔥 GET LICENSE DATA
     license_data = licenses_collection.find_one({"license_key": license_key})
@@ -513,6 +631,21 @@ def dynamic_trust_scores(request: Request):
     print("ANOMALY SCORE:", anomaly_score)
 
     prev_score = license_data.get("trust_score", 100)
+    geo_change_count = int(license_data.get("geo_location_change_count", 0))
+
+    previous_geo_location = normalize_geo_location(license_data.get("last_geo_location"))
+    geo_location_changed = location_changed(previous_geo_location, geo_location)
+
+    if geo_location:
+        update_payload = {"last_geo_location": geo_location}
+        if geo_location_changed:
+            geo_change_count += 1
+            update_payload["geo_location_change_count"] = geo_change_count
+
+        licenses_collection.update_one(
+            {"license_key": license_key},
+            {"$set": update_payload}
+        )
 
     if hold_active and not anomaly_penalty_allowed:
         # Keep the current trust score stable during the anomaly hold window
@@ -526,7 +659,7 @@ def dynamic_trust_scores(request: Request):
             anomaly_score=anomaly_score if anomaly_penalty_allowed else 0,
             usage_frequency=usage_frequency if not hold_active else 0,  # Suppress secondary penalties during hold
             execution_duration=execution_duration if not hold_active else 0,  # Suppress secondary penalties during hold
-            location_change=False
+            location_change=geo_location_changed
         )
 
         trust_engine = TrustScoreEngine()
@@ -534,6 +667,10 @@ def dynamic_trust_scores(request: Request):
 
         trust_engine.evaluate_runtime(metrics)
         score = trust_engine.get_score()
+
+        if geo_location_changed and geo_change_count > 1:
+            repeated_geo_penalty = min((geo_change_count - 1) * 5, 15)
+            score = max(0, score - repeated_geo_penalty)
 
         # 🔥 SAVE UPDATED SCORE
         licenses_collection.update_one(
@@ -554,6 +691,8 @@ def dynamic_trust_scores(request: Request):
         "login_frequency_per_day": login_frequency_per_day,
         "ml_prediction": "anomaly" if anomaly_score == 1 else "normal",
         "anomaly_score": anomaly_score,
+        "geo_location_change_count": geo_change_count,
+        "geo_location_changed": geo_location_changed,
         "model_name": "IsolationForest",
         "last_ml_inference": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "feature_inputs": {
@@ -562,7 +701,8 @@ def dynamic_trust_scores(request: Request):
             "unique_devices_used": len(devices_used),
             "login_frequency_per_day": login_frequency_per_day,
             "anomaly_score": round(event_rate, 2),
-            "trust_score": prev_score
+            "trust_score": prev_score,
+            "geo_location_changes": geo_change_count
         }
     }
 

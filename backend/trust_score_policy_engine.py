@@ -31,7 +31,7 @@ class TrustScoreEngine:
 
         self.penalties: Dict[str, int] = {
             "multiple_sessions": 20,
-            "high_anomaly": 30,
+            "high_anomaly": 20,
             "excess_usage": 20,
             "long_execution": 20,
             "location_change": 15
