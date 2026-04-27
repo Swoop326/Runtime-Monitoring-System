@@ -26,9 +26,11 @@ from database.database import (
     activate_license_db,
     create_user,
     get_user,
+    update_device_location,
     verify_user_password,
     add_login_timestamp,
     update_devices
+    update_device_location
 )
 
 from database.mongo_connection import users_collection, licenses_collection, runtime_logs_collection
@@ -183,7 +185,7 @@ def activate_license(data: dict):
     license_key = data.get("license_key")
     device_id = data.get("device_id")
     user_email = data.get("user_email")
-    override = data.get("override", False)   # 🔥 for switching device
+    override = data.get("override", False)  
 
     license_data = get_license(license_key)
 
@@ -364,6 +366,11 @@ def log_event_api(data: dict):
             {"license_key": license_key},
             {"$set": update_payload}
         )
+        # Also save per-device last known location for admin visibility
+        try:
+            update_device_location(license_key, device_id, geo_location)
+        except Exception:
+            pass
 
     # 🔥 ENHANCED BEHAVIOR LOGGING
     behavior_data = {

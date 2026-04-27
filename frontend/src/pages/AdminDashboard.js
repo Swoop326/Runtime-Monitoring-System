@@ -154,9 +154,9 @@ function AdminDashboard() {
         <table border="1" cellPadding="10" style={{ width: "100%" }}>
           <thead>
             <tr>
-              <th>License Key</th>
-              <th>Status</th>
-              <th>Devices</th>
+                <th>License Key</th>
+                <th>Status</th>
+                <th>Devices (last location)</th>
             </tr>
           </thead>
 
@@ -167,11 +167,26 @@ function AdminDashboard() {
                 <td style={{ color: l.active ? "green" : "red" }}>
                   {l.active ? "Active" : "Inactive"}
                 </td>
-                <td>
-                  {l.devices_used?.length > 0
-                    ? l.devices_used.join(", ")
-                    : "Not Used"}
-                </td>
+                  <td>
+                    {l.devices_used?.length > 0 ? (
+                      (() => {
+                        const devicesInfo = l.devices_info || {};
+                        return l.devices_used
+                          .map((d) => {
+                            const info = devicesInfo[d];
+                            if (info && info.latitude && info.longitude) {
+                              return `${d} (${info.latitude}, ${info.longitude})`;
+                            } else if (info) {
+                              return `${d} (${JSON.stringify(info)})`;
+                            }
+                            return d;
+                          })
+                          .join(", ");
+                      })()
+                    ) : (
+                      "Not Used"
+                    )}
+                  </td>
               </tr>
             ))}
           </tbody>

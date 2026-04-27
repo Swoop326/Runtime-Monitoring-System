@@ -16,6 +16,8 @@ def create_license(license_key, created_at):
         "license_key": license_key,
         "active": False,
         "devices_used": [],
+        # per-device info mapping: device_id -> last known geo/location dict
+        "devices_info": {},
         "created_at": created_at
     })
 
@@ -124,3 +126,17 @@ def update_devices(license_key, devices):
         {"license_key": license_key},
         {"$set": {"devices_used": devices}}
     )
+
+
+def update_device_location(license_key, device_id, geo_location):
+    """Store last known geo/location for a specific device under devices_info."""
+    try:
+        # Use dot notation to set nested field for the device id key
+        field = f"devices_info.{device_id}"
+        licenses_collection.update_one(
+            {"license_key": license_key},
+            {"$set": {field: geo_location}}
+        )
+        return True
+    except Exception:
+        return False
