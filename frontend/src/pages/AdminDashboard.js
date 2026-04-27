@@ -154,41 +154,60 @@ function AdminDashboard() {
         <table border="1" cellPadding="10" style={{ width: "100%" }}>
           <thead>
             <tr>
-                <th>License Key</th>
-                <th>Status</th>
-                <th>Devices (last location)</th>
+              <th>License Key</th>
+              <th>Status</th>
+              <th>Devices</th>
+              <th>Location (lat, long)</th>
             </tr>
           </thead>
 
           <tbody>
-            {licenses.map((l, index) => (
-              <tr key={index}>
-                <td>{l.license_key}</td>
-                <td style={{ color: l.active ? "green" : "red" }}>
-                  {l.active ? "Active" : "Inactive"}
-                </td>
+            {licenses.map((l, index) => {
+              const devices = l.devices_used || [];
+              const devicesInfo = l.devices_info || {};
+
+              return (
+                <tr key={index}>
+                  <td style={{ verticalAlign: "top" }}>{l.license_key}</td>
+                  <td style={{ color: l.active ? "green" : "red", verticalAlign: "top" }}>
+                    {l.active ? "Active" : "Inactive"}
+                  </td>
+
                   <td>
-                    {l.devices_used?.length > 0 ? (
-                      (() => {
-                        const devicesInfo = l.devices_info || {};
-                        return l.devices_used
-                          .map((d) => {
-                            const info = devicesInfo[d];
-                            if (info && info.latitude && info.longitude) {
-                              return `${d} (${info.latitude}, ${info.longitude})`;
-                            } else if (info) {
-                              return `${d} (${JSON.stringify(info)})`;
-                            }
-                            return d;
-                          })
-                          .join(", ");
-                      })()
+                    {devices.length > 0 ? (
+                      devices.map((d) => (
+                        <div key={d} style={{ marginBottom: "6px" }}>
+                          {d}
+                        </div>
+                      ))
                     ) : (
-                      "Not Used"
+                      <div>Not Used</div>
                     )}
                   </td>
-              </tr>
-            ))}
+
+                  <td>
+                    {devices.length > 0 ? (
+                      devices.map((d) => {
+                        const info = devicesInfo[d];
+                        const text = info && info.latitude && info.longitude
+                          ? `${info.latitude}, ${info.longitude}`
+                          : info && (info.latitude || info.longitude)
+                            ? `${info.latitude || ""}, ${info.longitude || ""}`
+                            : "Not available";
+
+                        return (
+                          <div key={d} style={{ marginBottom: "6px" }}>
+                            {text}
+                          </div>
+                        );
+                      })
+                    ) : (
+                      <div>-</div>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
