@@ -29,7 +29,7 @@ from database.database import (
     update_device_location,
     verify_user_password,
     add_login_timestamp,
-    update_devices
+    update_devices,
     update_device_location
 )
 
